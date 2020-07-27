@@ -1,0 +1,2 @@
+convert_to_dem:dem_to_occupancy
+-DCATKIN_DEVEL_PREFIX=/home/sandy/Animal_Navigation/convert_dem_occupancygrid/devel -DCMAKE_INSTALL_PREFIX=/home/sandy/Animal_Navigation/convert_dem_occupancygrid/install -G Unix Makefiles

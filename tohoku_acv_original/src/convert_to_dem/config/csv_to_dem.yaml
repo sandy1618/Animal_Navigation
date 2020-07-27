@@ -1,0 +1,7 @@
+csv:
+  x: /home/sandy/rosws/tohoku_acv_original/src/data/20200221/0.5m/x_dem_0.5m_391x409_utm.csv
+  y: /home/sandy/rosws/tohoku_acv_original/src/data/20200221/0.5m/y_dem_0.5m_391x409_utm.csv
+  z: /home/sandy/rosws/tohoku_acv_original/src/data/20200221/0.5m/z_dem_0.5m_391x409_utm.csv
+resolution: 0.5
+gnss_frame_id: gps_origin
+map_frame_id: map

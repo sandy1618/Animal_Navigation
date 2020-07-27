@@ -1,0 +1,11 @@
+# Request
+grid_map_msgs/GridMap grid_map
+# Which layer to look at
+string layer
+# Float between 0.0 and 1.0
+# Set to negative value to disable threshold
+float64 threshold
+bool retain_unknown
+---
+# Response
+nav_msgs/OccupancyGrid grid

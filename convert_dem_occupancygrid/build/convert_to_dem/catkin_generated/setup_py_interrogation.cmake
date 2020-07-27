@@ -1,0 +1,6 @@
+set(convert_to_dem_SETUP_PY_VERSION "0.1.0")
+set(convert_to_dem_SETUP_PY_SCRIPTS "")
+set(convert_to_dem_SETUP_PY_PACKAGES "convert_to_dem")
+set(convert_to_dem_SETUP_PY_PACKAGE_DIRS "src/convert_to_dem")
+set(convert_to_dem_SETUP_PY_MODULES "")
+set(convert_to_dem_SETUP_PY_MODULE_DIRS "")

@@ -1,0 +1,8 @@
+prefix=/home/sandy/rosws/tohoku_acv_original/devel
+
+Name: convert_to_dem
+Description: Description of convert_to_dem
+Version: 0.1.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

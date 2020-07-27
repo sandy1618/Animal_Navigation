@@ -1,0 +1,2 @@
+set(grid_map_msgs_MESSAGE_FILES "/home/sandy/rosws/gridmap/src/grid_map_msgs/msg/GridMapInfo.msg;/home/sandy/rosws/gridmap/src/grid_map_msgs/msg/GridMap.msg")
+set(grid_map_msgs_SERVICE_FILES "/home/sandy/rosws/gridmap/src/grid_map_msgs/srv/SetGridMap.srv;/home/sandy/rosws/gridmap/src/grid_map_msgs/srv/GetGridMap.srv;/home/sandy/rosws/gridmap/src/grid_map_msgs/srv/GetGridMapInfo.srv;/home/sandy/rosws/gridmap/src/grid_map_msgs/srv/ProcessFile.srv")
