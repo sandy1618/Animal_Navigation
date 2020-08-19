@@ -1,6 +1,6 @@
 # CMake generated Testfile for 
-# Source directory: /home/sandy/rosws/gridmap/src
-# Build directory: /home/sandy/rosws/gridmap/build
+# Source directory: /home/kvothe/Animal_Navigation/gridmap/src
+# Build directory: /home/kvothe/Animal_Navigation/gridmap/build
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.

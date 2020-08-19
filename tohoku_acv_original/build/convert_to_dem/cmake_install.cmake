@@ -1,8 +1,8 @@
-# Install script for directory: /home/sandy/rosws/tohoku_acv_original/src/convert_to_dem
+# Install script for directory: /home/kvothe/Animal_Navigation/tohoku_acv_original/src/convert_to_dem
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/sandy/rosws/tohoku_acv_original/install")
+  set(CMAKE_INSTALL_PREFIX "/home/kvothe/Animal_Navigation/tohoku_acv_original/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,21 +33,21 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/sandy/rosws/tohoku_acv_original/build/convert_to_dem/catkin_generated/installspace/convert_to_dem.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/kvothe/Animal_Navigation/tohoku_acv_original/build/convert_to_dem/catkin_generated/installspace/convert_to_dem.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/convert_to_dem/cmake" TYPE FILE FILES
-    "/home/sandy/rosws/tohoku_acv_original/build/convert_to_dem/catkin_generated/installspace/convert_to_demConfig.cmake"
-    "/home/sandy/rosws/tohoku_acv_original/build/convert_to_dem/catkin_generated/installspace/convert_to_demConfig-version.cmake"
+    "/home/kvothe/Animal_Navigation/tohoku_acv_original/build/convert_to_dem/catkin_generated/installspace/convert_to_demConfig.cmake"
+    "/home/kvothe/Animal_Navigation/tohoku_acv_original/build/convert_to_dem/catkin_generated/installspace/convert_to_demConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/convert_to_dem" TYPE FILE FILES "/home/sandy/rosws/tohoku_acv_original/src/convert_to_dem/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/convert_to_dem" TYPE FILE FILES "/home/kvothe/Animal_Navigation/tohoku_acv_original/src/convert_to_dem/package.xml")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  include("/home/sandy/rosws/tohoku_acv_original/build/convert_to_dem/catkin_generated/safe_execute_install.cmake")
+  include("/home/kvothe/Animal_Navigation/tohoku_acv_original/build/convert_to_dem/catkin_generated/safe_execute_install.cmake")
 endif()
 

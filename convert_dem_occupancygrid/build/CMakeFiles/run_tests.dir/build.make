@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/sandy/Animal_Navigation/convert_dem_occupancygrid/src
+CMAKE_SOURCE_DIR = /home/kvothe/Animal_Navigation/convert_dem_occupancygrid/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/sandy/Animal_Navigation/convert_dem_occupancygrid/build
+CMAKE_BINARY_DIR = /home/kvothe/Animal_Navigation/convert_dem_occupancygrid/build
 
 # Utility rule file for run_tests.
 
@@ -67,6 +67,6 @@ CMakeFiles/run_tests.dir/clean:
 .PHONY : CMakeFiles/run_tests.dir/clean
 
 CMakeFiles/run_tests.dir/depend:
-	cd /home/sandy/Animal_Navigation/convert_dem_occupancygrid/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/sandy/Animal_Navigation/convert_dem_occupancygrid/src /home/sandy/Animal_Navigation/convert_dem_occupancygrid/src /home/sandy/Animal_Navigation/convert_dem_occupancygrid/build /home/sandy/Animal_Navigation/convert_dem_occupancygrid/build /home/sandy/Animal_Navigation/convert_dem_occupancygrid/build/CMakeFiles/run_tests.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/kvothe/Animal_Navigation/convert_dem_occupancygrid/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/kvothe/Animal_Navigation/convert_dem_occupancygrid/src /home/kvothe/Animal_Navigation/convert_dem_occupancygrid/src /home/kvothe/Animal_Navigation/convert_dem_occupancygrid/build /home/kvothe/Animal_Navigation/convert_dem_occupancygrid/build /home/kvothe/Animal_Navigation/convert_dem_occupancygrid/build/CMakeFiles/run_tests.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/run_tests.dir/depend
 

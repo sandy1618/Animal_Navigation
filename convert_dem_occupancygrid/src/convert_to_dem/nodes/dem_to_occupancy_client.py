@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/python
 
 import rospy
 from nav_msgs.msg import OccupancyGrid
@@ -33,6 +33,6 @@ class DemToOccupancyClient(object):
 
 
 if __name__ == '__main__':
-    rospy.init_node('dem_to_occupancy')
+    rospy.init_node('dem_to_occupancy_client')
     dtoc = DemToOccupancyClient()
     dtoc.spin()

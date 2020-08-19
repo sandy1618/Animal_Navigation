@@ -2,7 +2,7 @@
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/sandy/rosws/gridmap/install")
+  set(CMAKE_INSTALL_PREFIX "/home/kvothe/Animal_Navigation/gridmap/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -34,7 +34,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/sandy/rosws/gridmap/build/gtest/gtest/cmake_install.cmake")
+  include("/home/kvothe/Animal_Navigation/gridmap/build/gtest/gtest/cmake_install.cmake")
 
 endif()
 

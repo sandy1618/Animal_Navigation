@@ -1,8 +1,8 @@
--I/home/sandy/rosws/gridmap/src/grid_map_rviz_plugin/include
--I/home/sandy/rosws/gridmap/devel/include
--I/home/sandy/rosws/gridmap/src/grid_map_ros/include
--I/home/sandy/rosws/gridmap/src/grid_map_core/include
--I/home/sandy/rosws/gridmap/src/grid_map_cv/include
+-I/home/kvothe/Animal_Navigation/gridmap/src/grid_map_rviz_plugin/include
+-I/home/kvothe/Animal_Navigation/gridmap/devel/include
+-I/home/kvothe/Animal_Navigation/gridmap/src/grid_map_ros/include
+-I/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/include
+-I/home/kvothe/Animal_Navigation/gridmap/src/grid_map_cv/include
 -I/opt/ros/kinetic/include
 -I/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp
 -I/opt/ros/kinetic/include/opencv-3.3.1-dev
@@ -18,5 +18,5 @@
 -DEIGEN_FUNCTORS_PLUGIN="grid_map_core/eigen_plugins/FunctorsPlugin.hpp"
 -DEIGEN_DENSEBASE_PLUGIN="grid_map_core/eigen_plugins/DenseBasePlugin.hpp"
 -o
-/home/sandy/rosws/gridmap/build/grid_map_rviz_plugin/include/grid_map_rviz_plugin/moc_GridMapDisplay.cpp
-/home/sandy/rosws/gridmap/src/grid_map_rviz_plugin/include/grid_map_rviz_plugin/GridMapDisplay.hpp
+/home/kvothe/Animal_Navigation/gridmap/build/grid_map_rviz_plugin/include/grid_map_rviz_plugin/moc_GridMapDisplay.cpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_rviz_plugin/include/grid_map_rviz_plugin/GridMapDisplay.hpp

@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/interpolation_demo.dir/src/interpolation_demo_node.cpp.o"
   "CMakeFiles/interpolation_demo.dir/src/InterpolationDemo.cpp.o"
-  "/home/sandy/rosws/gridmap/devel/lib/grid_map_demos/interpolation_demo.pdb"
-  "/home/sandy/rosws/gridmap/devel/lib/grid_map_demos/interpolation_demo"
+  "/home/kvothe/Animal_Navigation/gridmap/devel/lib/grid_map_demos/interpolation_demo.pdb"
+  "/home/kvothe/Animal_Navigation/gridmap/devel/lib/grid_map_demos/interpolation_demo"
 )
 
 # Per-language clean rules from dependency scanning.

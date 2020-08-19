@@ -20,4 +20,5 @@ class CsvToDf(ToDfConverter):
         z_df = pd.read_csv(z_csv, header=None)
         xyz = pd.concat([x_df.stack(), y_df.stack(), z_df.stack()], axis=1)
         xyz.columns = list('xyz')
+        xyz.to_csv('/home/kvothe/Animal_Navigation/data/tohokuacv.csv')
         return xyz

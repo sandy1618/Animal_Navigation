@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/test_costmap_2d_ros.dir/costmap_2d_ros/costmap_2d_ros.cpp.o"
-  "/home/sandy/rosws/gridmap/devel/lib/grid_map_costmap_2d/test_costmap_2d_ros.pdb"
-  "/home/sandy/rosws/gridmap/devel/lib/grid_map_costmap_2d/test_costmap_2d_ros"
+  "/home/kvothe/Animal_Navigation/gridmap/devel/lib/grid_map_costmap_2d/test_costmap_2d_ros.pdb"
+  "/home/kvothe/Animal_Navigation/gridmap/devel/lib/grid_map_costmap_2d/test_costmap_2d_ros"
 )
 
 # Per-language clean rules from dependency scanning.

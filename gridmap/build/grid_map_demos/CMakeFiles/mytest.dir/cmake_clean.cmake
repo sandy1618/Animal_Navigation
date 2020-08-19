@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/mytest.dir/src/mytest.cpp.o"
-  "/home/sandy/rosws/gridmap/devel/lib/grid_map_demos/mytest.pdb"
-  "/home/sandy/rosws/gridmap/devel/lib/grid_map_demos/mytest"
+  "/home/kvothe/Animal_Navigation/gridmap/devel/lib/grid_map_demos/mytest.pdb"
+  "/home/kvothe/Animal_Navigation/gridmap/devel/lib/grid_map_demos/mytest"
 )
 
 # Per-language clean rules from dependency scanning.

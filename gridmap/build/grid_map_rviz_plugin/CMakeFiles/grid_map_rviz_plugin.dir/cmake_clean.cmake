@@ -5,8 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/grid_map_rviz_plugin.dir/src/GridMapVisual.cpp.o"
   "CMakeFiles/grid_map_rviz_plugin.dir/include/grid_map_rviz_plugin/moc_GridMapDisplay.cpp.o"
   "CMakeFiles/grid_map_rviz_plugin.dir/grid_map_rviz_plugin_automoc.cpp.o"
-  "/home/sandy/rosws/gridmap/devel/lib/libgrid_map_rviz_plugin.pdb"
-  "/home/sandy/rosws/gridmap/devel/lib/libgrid_map_rviz_plugin.so"
+  "/home/kvothe/Animal_Navigation/gridmap/devel/lib/libgrid_map_rviz_plugin.pdb"
+  "/home/kvothe/Animal_Navigation/gridmap/devel/lib/libgrid_map_rviz_plugin.so"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -4,5 +4,5 @@ PROJECT_PKG_CONFIG_INCLUDE_DIRS = "${prefix}/include".split(';') if "${prefix}/i
 PROJECT_CATKIN_DEPENDS = "roscpp;grid_map_msgs;grid_map_ros".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "".split(';') if "" != "" else []
 PROJECT_NAME = "dem_to_occupancy"
-PROJECT_SPACE_DIR = "/home/sandy/rosws/tohoku_acv_original/install"
+PROJECT_SPACE_DIR = "/home/kvothe/Animal_Navigation/tohoku_acv_original/install"
 PROJECT_VERSION = "0.1.0"

@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/grid_map_cv.dir/src/GridMapCvProcessing.cpp.o"
   "CMakeFiles/grid_map_cv.dir/src/InpaintFilter.cpp.o"
-  "/home/sandy/rosws/gridmap/devel/lib/libgrid_map_cv.pdb"
-  "/home/sandy/rosws/gridmap/devel/lib/libgrid_map_cv.so"
+  "/home/kvothe/Animal_Navigation/gridmap/devel/lib/libgrid_map_cv.pdb"
+  "/home/kvothe/Animal_Navigation/gridmap/devel/lib/libgrid_map_cv.so"
 )
 
 # Per-language clean rules from dependency scanning.

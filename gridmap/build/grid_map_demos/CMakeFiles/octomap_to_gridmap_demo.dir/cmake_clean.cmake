@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/octomap_to_gridmap_demo.dir/src/octomap_to_gridmap_demo_node.cpp.o"
   "CMakeFiles/octomap_to_gridmap_demo.dir/src/OctomapToGridmapDemo.cpp.o"
-  "/home/sandy/rosws/gridmap/devel/lib/grid_map_demos/octomap_to_gridmap_demo.pdb"
-  "/home/sandy/rosws/gridmap/devel/lib/grid_map_demos/octomap_to_gridmap_demo"
+  "/home/kvothe/Animal_Navigation/gridmap/devel/lib/grid_map_demos/octomap_to_gridmap_demo.pdb"
+  "/home/kvothe/Animal_Navigation/gridmap/devel/lib/grid_map_demos/octomap_to_gridmap_demo"
 )
 
 # Per-language clean rules from dependency scanning.

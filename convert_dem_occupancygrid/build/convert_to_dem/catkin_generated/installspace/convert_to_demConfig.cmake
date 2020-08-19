@@ -67,14 +67,14 @@ set(convert_to_dem_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(convert_to_dem_SOURCE_PREFIX /home/sandy/Animal_Navigation/convert_dem_occupancygrid/src/convert_to_dem)
-  set(convert_to_dem_DEVEL_PREFIX /home/sandy/Animal_Navigation/convert_dem_occupancygrid/devel)
+  set(convert_to_dem_SOURCE_PREFIX /home/kvothe/Animal_Navigation/convert_dem_occupancygrid/src/convert_to_dem)
+  set(convert_to_dem_DEVEL_PREFIX /home/kvothe/Animal_Navigation/convert_dem_occupancygrid/devel)
   set(convert_to_dem_INSTALL_PREFIX "")
   set(convert_to_dem_PREFIX ${convert_to_dem_DEVEL_PREFIX})
 else()
   set(convert_to_dem_SOURCE_PREFIX "")
   set(convert_to_dem_DEVEL_PREFIX "")
-  set(convert_to_dem_INSTALL_PREFIX /home/sandy/Animal_Navigation/convert_dem_occupancygrid/install)
+  set(convert_to_dem_INSTALL_PREFIX /home/kvothe/Animal_Navigation/convert_dem_occupancygrid/install)
   set(convert_to_dem_PREFIX ${convert_to_dem_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/sandy/Animal_Navigation/convert_dem_occupancygrid/install/lib;/opt/ros/kinetic/lib)
+    foreach(path /home/kvothe/Animal_Navigation/convert_dem_occupancygrid/install/lib;/home/kvothe/Animal_Navigation/convert_dem_occupancygrid/devel/lib;/home/kvothe/Animal_Navigation/gridmap/devel/lib;/home/kvothe/loam_ws/devel/lib;/opt/ros/kinetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

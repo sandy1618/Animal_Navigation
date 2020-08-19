@@ -1,5 +1,6 @@
+#!/usr/bin/python
 import rospy
-from std_msgs.msg import Float32MultiArray, MultiArrayDimension
+from std_msgs.msg import Float32MultiArray, MultiArrayDimension,Float64MultiArray
 from geometry_msgs.msg import Pose
 from grid_map_msgs.msg import GridMap
 
@@ -72,16 +73,18 @@ class DfToDem(object):
         dim_col = MultiArrayDimension()
         dim_col.label = 'column_index'
         dim_col.size = grids_y
-        dim_col.stride = grids_x * grids_y
+        dim_col.stride = grids_y #grids_x * 
         dim_row = MultiArrayDimension()
         dim_row.label = 'row_index'
         dim_row.size = grids_x
         dim_row.stride = grids_x
 
         # The actual data
-        flma = Float32MultiArray()
+        flma = Float64MultiArray()
         flma.layout.data_offset = 0
         flma.layout.dim = [dim_col, dim_row]
+        # m=df['z']+100
+        # flma.data = m.values.tolist()
         flma.data = df['z'].values.tolist()
         gm.data.append(flma)
         return gm

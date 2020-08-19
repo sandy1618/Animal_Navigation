@@ -67,14 +67,14 @@ set(dem_to_occupancy_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(dem_to_occupancy_SOURCE_PREFIX /home/sandy/rosws/tohoku_acv_original/src/dem_to_occupancy)
-  set(dem_to_occupancy_DEVEL_PREFIX /home/sandy/rosws/tohoku_acv_original/devel)
+  set(dem_to_occupancy_SOURCE_PREFIX /home/kvothe/Animal_Navigation/tohoku_acv_original/src/dem_to_occupancy)
+  set(dem_to_occupancy_DEVEL_PREFIX /home/kvothe/Animal_Navigation/tohoku_acv_original/devel)
   set(dem_to_occupancy_INSTALL_PREFIX "")
   set(dem_to_occupancy_PREFIX ${dem_to_occupancy_DEVEL_PREFIX})
 else()
   set(dem_to_occupancy_SOURCE_PREFIX "")
   set(dem_to_occupancy_DEVEL_PREFIX "")
-  set(dem_to_occupancy_INSTALL_PREFIX /home/sandy/rosws/tohoku_acv_original/install)
+  set(dem_to_occupancy_INSTALL_PREFIX /home/kvothe/Animal_Navigation/tohoku_acv_original/install)
   set(dem_to_occupancy_PREFIX ${dem_to_occupancy_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/sandy/rosws/tohoku_acv_original/install/lib;/opt/ros/kinetic/lib)
+    foreach(path /home/kvothe/Animal_Navigation/tohoku_acv_original/install/lib;/home/kvothe/Animal_Navigation/convert_dem_occupancygrid/devel/lib;/home/kvothe/Animal_Navigation/gridmap/devel/lib;/home/kvothe/loam_ws/devel/lib;/opt/ros/kinetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

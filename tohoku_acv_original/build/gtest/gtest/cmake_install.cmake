@@ -2,7 +2,7 @@
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/sandy/rosws/tohoku_acv_original/install")
+  set(CMAKE_INSTALL_PREFIX "/home/kvothe/Animal_Navigation/tohoku_acv_original/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/grid_map_pcl_loader_node.dir/src/grid_map_pcl_loader_node.cpp.o"
-  "/home/sandy/rosws/gridmap/devel/lib/grid_map_pcl/grid_map_pcl_loader_node.pdb"
-  "/home/sandy/rosws/gridmap/devel/lib/grid_map_pcl/grid_map_pcl_loader_node"
+  "/home/kvothe/Animal_Navigation/gridmap/devel/lib/grid_map_pcl/grid_map_pcl_loader_node.pdb"
+  "/home/kvothe/Animal_Navigation/gridmap/devel/lib/grid_map_pcl/grid_map_pcl_loader_node"
 )
 
 # Per-language clean rules from dependency scanning.

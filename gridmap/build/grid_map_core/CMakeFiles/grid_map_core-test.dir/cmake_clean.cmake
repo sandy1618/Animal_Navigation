@@ -14,8 +14,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/grid_map_core-test.dir/test/EigenPluginsTest.cpp.o"
   "CMakeFiles/grid_map_core-test.dir/test/SpiralIteratorTest.cpp.o"
   "CMakeFiles/grid_map_core-test.dir/test/SlidingWindowIteratorTest.cpp.o"
-  "/home/sandy/rosws/gridmap/devel/lib/grid_map_core/grid_map_core-test.pdb"
-  "/home/sandy/rosws/gridmap/devel/lib/grid_map_core/grid_map_core-test"
+  "/home/kvothe/Animal_Navigation/gridmap/devel/lib/grid_map_core/grid_map_core-test.pdb"
+  "/home/kvothe/Animal_Navigation/gridmap/devel/lib/grid_map_core/grid_map_core-test"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -1,4 +1,4 @@
-prefix=/home/sandy/rosws/tohoku_acv_original/devel
+prefix=/home/kvothe/Animal_Navigation/tohoku_acv_original/devel
 
 Name: convert_to_dem
 Description: Description of convert_to_dem

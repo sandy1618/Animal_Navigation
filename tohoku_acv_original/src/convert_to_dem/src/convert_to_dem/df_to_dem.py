@@ -72,7 +72,7 @@ class DfToDem(object):
         dim_col = MultiArrayDimension()
         dim_col.label = 'column_index'
         dim_col.size = grids_y
-        dim_col.stride = grids_x * grids_y
+        dim_col.stride = grids_y #grids_x * 
         dim_row = MultiArrayDimension()
         dim_row.label = 'row_index'
         dim_row.size = grids_x

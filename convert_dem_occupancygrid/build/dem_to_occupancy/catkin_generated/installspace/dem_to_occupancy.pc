@@ -1,4 +1,4 @@
-prefix=/home/sandy/Animal_Navigation/convert_dem_occupancygrid/install
+prefix=/home/kvothe/Animal_Navigation/convert_dem_occupancygrid/install
 
 Name: dem_to_occupancy
 Description: Description of dem_to_occupancy

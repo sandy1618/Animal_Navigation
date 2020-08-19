@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/image_to_gridmap_demo.dir/src/image_to_gridmap_demo_node.cpp.o"
   "CMakeFiles/image_to_gridmap_demo.dir/src/ImageToGridmapDemo.cpp.o"
-  "/home/sandy/rosws/gridmap/devel/lib/grid_map_demos/image_to_gridmap_demo.pdb"
-  "/home/sandy/rosws/gridmap/devel/lib/grid_map_demos/image_to_gridmap_demo"
+  "/home/kvothe/Animal_Navigation/gridmap/devel/lib/grid_map_demos/image_to_gridmap_demo.pdb"
+  "/home/kvothe/Animal_Navigation/gridmap/devel/lib/grid_map_demos/image_to_gridmap_demo"
 )
 
 # Per-language clean rules from dependency scanning.

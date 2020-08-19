@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/sandy/rosws/gridmap/src/grid_map_core/include/grid_map_core/BufferRegion.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/include/grid_map_core/BufferRegion.hpp
 grid_map_core/TypeDefs.hpp
-/home/sandy/rosws/gridmap/src/grid_map_core/include/grid_map_core/grid_map_core/TypeDefs.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/include/grid_map_core/grid_map_core/TypeDefs.hpp
 
-/home/sandy/rosws/gridmap/src/grid_map_core/include/grid_map_core/CubicInterpolation.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/include/grid_map_core/CubicInterpolation.hpp
 Eigen/Core
 -
 vector
@@ -18,15 +18,15 @@ vector
 map
 -
 grid_map_core/TypeDefs.hpp
-/home/sandy/rosws/gridmap/src/grid_map_core/include/grid_map_core/grid_map_core/TypeDefs.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/include/grid_map_core/grid_map_core/TypeDefs.hpp
 
-/home/sandy/rosws/gridmap/src/grid_map_core/include/grid_map_core/GridMap.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/include/grid_map_core/GridMap.hpp
 grid_map_core/TypeDefs.hpp
-/home/sandy/rosws/gridmap/src/grid_map_core/include/grid_map_core/grid_map_core/TypeDefs.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/include/grid_map_core/grid_map_core/TypeDefs.hpp
 grid_map_core/SubmapGeometry.hpp
-/home/sandy/rosws/gridmap/src/grid_map_core/include/grid_map_core/grid_map_core/SubmapGeometry.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/include/grid_map_core/grid_map_core/SubmapGeometry.hpp
 grid_map_core/BufferRegion.hpp
-/home/sandy/rosws/gridmap/src/grid_map_core/include/grid_map_core/grid_map_core/BufferRegion.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/include/grid_map_core/grid_map_core/BufferRegion.hpp
 vector
 -
 unordered_map
@@ -36,11 +36,11 @@ Eigen/Core
 Eigen/Geometry
 -
 
-/home/sandy/rosws/gridmap/src/grid_map_core/include/grid_map_core/GridMapMath.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/include/grid_map_core/GridMapMath.hpp
 grid_map_core/TypeDefs.hpp
-/home/sandy/rosws/gridmap/src/grid_map_core/include/grid_map_core/grid_map_core/TypeDefs.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/include/grid_map_core/grid_map_core/TypeDefs.hpp
 grid_map_core/BufferRegion.hpp
-/home/sandy/rosws/gridmap/src/grid_map_core/include/grid_map_core/grid_map_core/BufferRegion.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/include/grid_map_core/grid_map_core/BufferRegion.hpp
 Eigen/Core
 -
 vector
@@ -48,7 +48,7 @@ vector
 map
 -
 
-/home/sandy/rosws/gridmap/src/grid_map_core/include/grid_map_core/Polygon.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/include/grid_map_core/Polygon.hpp
 grid_map_core/TypeDefs.hpp
 -
 vector
@@ -56,69 +56,69 @@ vector
 Eigen/Core
 -
 
-/home/sandy/rosws/gridmap/src/grid_map_core/include/grid_map_core/SubmapGeometry.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/include/grid_map_core/SubmapGeometry.hpp
 grid_map_core/GridMap.hpp
 -
 
-/home/sandy/rosws/gridmap/src/grid_map_core/include/grid_map_core/TypeDefs.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/include/grid_map_core/TypeDefs.hpp
 Eigen/Core
 -
 
-/home/sandy/rosws/gridmap/src/grid_map_core/include/grid_map_core/iterators/CircleIterator.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/include/grid_map_core/iterators/CircleIterator.hpp
 grid_map_core/GridMap.hpp
-/home/sandy/rosws/gridmap/src/grid_map_core/include/grid_map_core/iterators/grid_map_core/GridMap.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/include/grid_map_core/iterators/grid_map_core/GridMap.hpp
 grid_map_core/iterators/SubmapIterator.hpp
-/home/sandy/rosws/gridmap/src/grid_map_core/include/grid_map_core/iterators/grid_map_core/iterators/SubmapIterator.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/include/grid_map_core/iterators/grid_map_core/iterators/SubmapIterator.hpp
 Eigen/Core
 -
 memory
 -
 
-/home/sandy/rosws/gridmap/src/grid_map_core/include/grid_map_core/iterators/EllipseIterator.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/include/grid_map_core/iterators/EllipseIterator.hpp
 grid_map_core/GridMap.hpp
-/home/sandy/rosws/gridmap/src/grid_map_core/include/grid_map_core/iterators/grid_map_core/GridMap.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/include/grid_map_core/iterators/grid_map_core/GridMap.hpp
 grid_map_core/iterators/SubmapIterator.hpp
-/home/sandy/rosws/gridmap/src/grid_map_core/include/grid_map_core/iterators/grid_map_core/iterators/SubmapIterator.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/include/grid_map_core/iterators/grid_map_core/iterators/SubmapIterator.hpp
 Eigen/Core
 -
 memory
 -
 
-/home/sandy/rosws/gridmap/src/grid_map_core/include/grid_map_core/iterators/GridMapIterator.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/include/grid_map_core/iterators/GridMapIterator.hpp
 grid_map_core/GridMap.hpp
-/home/sandy/rosws/gridmap/src/grid_map_core/include/grid_map_core/iterators/grid_map_core/GridMap.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/include/grid_map_core/iterators/grid_map_core/GridMap.hpp
 Eigen/Core
 -
 
-/home/sandy/rosws/gridmap/src/grid_map_core/include/grid_map_core/iterators/LineIterator.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/include/grid_map_core/iterators/LineIterator.hpp
 grid_map_core/GridMap.hpp
-/home/sandy/rosws/gridmap/src/grid_map_core/include/grid_map_core/iterators/grid_map_core/GridMap.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/include/grid_map_core/iterators/grid_map_core/GridMap.hpp
 grid_map_core/iterators/SubmapIterator.hpp
-/home/sandy/rosws/gridmap/src/grid_map_core/include/grid_map_core/iterators/grid_map_core/iterators/SubmapIterator.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/include/grid_map_core/iterators/grid_map_core/iterators/SubmapIterator.hpp
 Eigen/Core
 -
 
-/home/sandy/rosws/gridmap/src/grid_map_core/include/grid_map_core/iterators/PolygonIterator.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/include/grid_map_core/iterators/PolygonIterator.hpp
 grid_map_core/GridMap.hpp
-/home/sandy/rosws/gridmap/src/grid_map_core/include/grid_map_core/iterators/grid_map_core/GridMap.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/include/grid_map_core/iterators/grid_map_core/GridMap.hpp
 grid_map_core/Polygon.hpp
-/home/sandy/rosws/gridmap/src/grid_map_core/include/grid_map_core/iterators/grid_map_core/Polygon.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/include/grid_map_core/iterators/grid_map_core/Polygon.hpp
 grid_map_core/iterators/SubmapIterator.hpp
-/home/sandy/rosws/gridmap/src/grid_map_core/include/grid_map_core/iterators/grid_map_core/iterators/SubmapIterator.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/include/grid_map_core/iterators/grid_map_core/iterators/SubmapIterator.hpp
 memory
 -
 
-/home/sandy/rosws/gridmap/src/grid_map_core/include/grid_map_core/iterators/SlidingWindowIterator.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/include/grid_map_core/iterators/SlidingWindowIterator.hpp
 grid_map_core/GridMap.hpp
-/home/sandy/rosws/gridmap/src/grid_map_core/include/grid_map_core/iterators/grid_map_core/GridMap.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/include/grid_map_core/iterators/grid_map_core/GridMap.hpp
 grid_map_core/iterators/GridMapIterator.hpp
-/home/sandy/rosws/gridmap/src/grid_map_core/include/grid_map_core/iterators/grid_map_core/iterators/GridMapIterator.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/include/grid_map_core/iterators/grid_map_core/iterators/GridMapIterator.hpp
 Eigen/Core
 -
 
-/home/sandy/rosws/gridmap/src/grid_map_core/include/grid_map_core/iterators/SpiralIterator.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/include/grid_map_core/iterators/SpiralIterator.hpp
 grid_map_core/GridMap.hpp
-/home/sandy/rosws/gridmap/src/grid_map_core/include/grid_map_core/iterators/grid_map_core/GridMap.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/include/grid_map_core/iterators/grid_map_core/GridMap.hpp
 Eigen/Core
 -
 memory
@@ -126,39 +126,39 @@ memory
 vector
 -
 
-/home/sandy/rosws/gridmap/src/grid_map_core/include/grid_map_core/iterators/SubmapIterator.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/include/grid_map_core/iterators/SubmapIterator.hpp
 grid_map_core/GridMap.hpp
-/home/sandy/rosws/gridmap/src/grid_map_core/include/grid_map_core/iterators/grid_map_core/GridMap.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/include/grid_map_core/iterators/grid_map_core/GridMap.hpp
 grid_map_core/SubmapGeometry.hpp
-/home/sandy/rosws/gridmap/src/grid_map_core/include/grid_map_core/iterators/grid_map_core/SubmapGeometry.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/include/grid_map_core/iterators/grid_map_core/SubmapGeometry.hpp
 grid_map_core/BufferRegion.hpp
-/home/sandy/rosws/gridmap/src/grid_map_core/include/grid_map_core/iterators/grid_map_core/BufferRegion.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/include/grid_map_core/iterators/grid_map_core/BufferRegion.hpp
 Eigen/Core
 -
 
-/home/sandy/rosws/gridmap/src/grid_map_core/src/BufferRegion.cpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/src/BufferRegion.cpp
 grid_map_core/BufferRegion.hpp
 -
 
-/home/sandy/rosws/gridmap/src/grid_map_core/src/CubicInterpolation.cpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/src/CubicInterpolation.cpp
 grid_map_core/CubicInterpolation.hpp
-/home/sandy/rosws/gridmap/src/grid_map_core/src/grid_map_core/CubicInterpolation.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/src/grid_map_core/CubicInterpolation.hpp
 grid_map_core/GridMap.hpp
-/home/sandy/rosws/gridmap/src/grid_map_core/src/grid_map_core/GridMap.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/src/grid_map_core/GridMap.hpp
 grid_map_core/GridMapMath.hpp
-/home/sandy/rosws/gridmap/src/grid_map_core/src/grid_map_core/GridMapMath.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/src/grid_map_core/GridMapMath.hpp
 
-/home/sandy/rosws/gridmap/src/grid_map_core/src/GridMap.cpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/src/GridMap.cpp
 grid_map_core/GridMap.hpp
-/home/sandy/rosws/gridmap/src/grid_map_core/src/grid_map_core/GridMap.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/src/grid_map_core/GridMap.hpp
 grid_map_core/CubicInterpolation.hpp
-/home/sandy/rosws/gridmap/src/grid_map_core/src/grid_map_core/CubicInterpolation.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/src/grid_map_core/CubicInterpolation.hpp
 grid_map_core/GridMapMath.hpp
-/home/sandy/rosws/gridmap/src/grid_map_core/src/grid_map_core/GridMapMath.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/src/grid_map_core/GridMapMath.hpp
 grid_map_core/SubmapGeometry.hpp
-/home/sandy/rosws/gridmap/src/grid_map_core/src/grid_map_core/SubmapGeometry.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/src/grid_map_core/SubmapGeometry.hpp
 grid_map_core/iterators/GridMapIterator.hpp
-/home/sandy/rosws/gridmap/src/grid_map_core/src/grid_map_core/iterators/GridMapIterator.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/src/grid_map_core/iterators/GridMapIterator.hpp
 Eigen/Dense
 -
 math.h
@@ -172,15 +172,15 @@ iostream
 stdexcept
 -
 
-/home/sandy/rosws/gridmap/src/grid_map_core/src/GridMapMath.cpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/src/GridMapMath.cpp
 grid_map_core/GridMapMath.hpp
-/home/sandy/rosws/gridmap/src/grid_map_core/src/grid_map_core/GridMapMath.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/src/grid_map_core/GridMapMath.hpp
 cmath
 -
 limits
 -
 
-/home/sandy/rosws/gridmap/src/grid_map_core/src/Polygon.cpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/src/Polygon.cpp
 grid_map_core/Polygon.hpp
 -
 Eigen/Core
@@ -192,67 +192,67 @@ limits
 algorithm
 -
 
-/home/sandy/rosws/gridmap/src/grid_map_core/src/SubmapGeometry.cpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/src/SubmapGeometry.cpp
 grid_map_core/GridMapMath.hpp
 -
 grid_map_core/SubmapGeometry.hpp
 -
 
-/home/sandy/rosws/gridmap/src/grid_map_core/src/iterators/CircleIterator.cpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/src/iterators/CircleIterator.cpp
 grid_map_core/iterators/CircleIterator.hpp
-/home/sandy/rosws/gridmap/src/grid_map_core/src/iterators/grid_map_core/iterators/CircleIterator.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/src/iterators/grid_map_core/iterators/CircleIterator.hpp
 grid_map_core/GridMapMath.hpp
-/home/sandy/rosws/gridmap/src/grid_map_core/src/iterators/grid_map_core/GridMapMath.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/src/iterators/grid_map_core/GridMapMath.hpp
 
-/home/sandy/rosws/gridmap/src/grid_map_core/src/iterators/EllipseIterator.cpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/src/iterators/EllipseIterator.cpp
 grid_map_core/iterators/EllipseIterator.hpp
-/home/sandy/rosws/gridmap/src/grid_map_core/src/iterators/grid_map_core/iterators/EllipseIterator.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/src/iterators/grid_map_core/iterators/EllipseIterator.hpp
 grid_map_core/GridMapMath.hpp
-/home/sandy/rosws/gridmap/src/grid_map_core/src/iterators/grid_map_core/GridMapMath.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/src/iterators/grid_map_core/GridMapMath.hpp
 math.h
 -
 Eigen/Geometry
 -
 
-/home/sandy/rosws/gridmap/src/grid_map_core/src/iterators/GridMapIterator.cpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/src/iterators/GridMapIterator.cpp
 grid_map_core/iterators/GridMapIterator.hpp
-/home/sandy/rosws/gridmap/src/grid_map_core/src/iterators/grid_map_core/iterators/GridMapIterator.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/src/iterators/grid_map_core/iterators/GridMapIterator.hpp
 grid_map_core/GridMapMath.hpp
-/home/sandy/rosws/gridmap/src/grid_map_core/src/iterators/grid_map_core/GridMapMath.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/src/iterators/grid_map_core/GridMapMath.hpp
 
-/home/sandy/rosws/gridmap/src/grid_map_core/src/iterators/LineIterator.cpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/src/iterators/LineIterator.cpp
 grid_map_core/iterators/LineIterator.hpp
-/home/sandy/rosws/gridmap/src/grid_map_core/src/iterators/grid_map_core/iterators/LineIterator.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/src/iterators/grid_map_core/iterators/LineIterator.hpp
 grid_map_core/GridMapMath.hpp
-/home/sandy/rosws/gridmap/src/grid_map_core/src/iterators/grid_map_core/GridMapMath.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/src/iterators/grid_map_core/GridMapMath.hpp
 
-/home/sandy/rosws/gridmap/src/grid_map_core/src/iterators/PolygonIterator.cpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/src/iterators/PolygonIterator.cpp
 grid_map_core/iterators/PolygonIterator.hpp
-/home/sandy/rosws/gridmap/src/grid_map_core/src/iterators/grid_map_core/iterators/PolygonIterator.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/src/iterators/grid_map_core/iterators/PolygonIterator.hpp
 grid_map_core/GridMapMath.hpp
-/home/sandy/rosws/gridmap/src/grid_map_core/src/iterators/grid_map_core/GridMapMath.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/src/iterators/grid_map_core/GridMapMath.hpp
 
-/home/sandy/rosws/gridmap/src/grid_map_core/src/iterators/SlidingWindowIterator.cpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/src/iterators/SlidingWindowIterator.cpp
 grid_map_core/iterators/SlidingWindowIterator.hpp
-/home/sandy/rosws/gridmap/src/grid_map_core/src/iterators/grid_map_core/iterators/SlidingWindowIterator.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/src/iterators/grid_map_core/iterators/SlidingWindowIterator.hpp
 grid_map_core/GridMapMath.hpp
-/home/sandy/rosws/gridmap/src/grid_map_core/src/iterators/grid_map_core/GridMapMath.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/src/iterators/grid_map_core/GridMapMath.hpp
 iostream
 -
 
-/home/sandy/rosws/gridmap/src/grid_map_core/src/iterators/SpiralIterator.cpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/src/iterators/SpiralIterator.cpp
 grid_map_core/iterators/SpiralIterator.hpp
-/home/sandy/rosws/gridmap/src/grid_map_core/src/iterators/grid_map_core/iterators/SpiralIterator.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/src/iterators/grid_map_core/iterators/SpiralIterator.hpp
 grid_map_core/GridMapMath.hpp
-/home/sandy/rosws/gridmap/src/grid_map_core/src/iterators/grid_map_core/GridMapMath.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/src/iterators/grid_map_core/GridMapMath.hpp
 cmath
 -
 
-/home/sandy/rosws/gridmap/src/grid_map_core/src/iterators/SubmapIterator.cpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/src/iterators/SubmapIterator.cpp
 grid_map_core/iterators/SubmapIterator.hpp
-/home/sandy/rosws/gridmap/src/grid_map_core/src/iterators/grid_map_core/iterators/SubmapIterator.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/src/iterators/grid_map_core/iterators/SubmapIterator.hpp
 grid_map_core/GridMapMath.hpp
-/home/sandy/rosws/gridmap/src/grid_map_core/src/iterators/grid_map_core/GridMapMath.hpp
+/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/src/iterators/grid_map_core/GridMapMath.hpp
 
 /usr/include/eigen3/Eigen/Cholesky
 Core

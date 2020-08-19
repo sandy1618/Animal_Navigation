@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/sandy/rosws/tohoku_acv_original/src
+CMAKE_SOURCE_DIR = /home/kvothe/Animal_Navigation/tohoku_acv_original/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/sandy/rosws/tohoku_acv_original/build
+CMAKE_BINARY_DIR = /home/kvothe/Animal_Navigation/tohoku_acv_original/build
 
 # Utility rule file for doxygen.
 
@@ -67,6 +67,6 @@ CMakeFiles/doxygen.dir/clean:
 .PHONY : CMakeFiles/doxygen.dir/clean
 
 CMakeFiles/doxygen.dir/depend:
-	cd /home/sandy/rosws/tohoku_acv_original/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/sandy/rosws/tohoku_acv_original/src /home/sandy/rosws/tohoku_acv_original/src /home/sandy/rosws/tohoku_acv_original/build /home/sandy/rosws/tohoku_acv_original/build /home/sandy/rosws/tohoku_acv_original/build/CMakeFiles/doxygen.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/kvothe/Animal_Navigation/tohoku_acv_original/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/kvothe/Animal_Navigation/tohoku_acv_original/src /home/kvothe/Animal_Navigation/tohoku_acv_original/src /home/kvothe/Animal_Navigation/tohoku_acv_original/build /home/kvothe/Animal_Navigation/tohoku_acv_original/build /home/kvothe/Animal_Navigation/tohoku_acv_original/build/CMakeFiles/doxygen.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/doxygen.dir/depend
 

@@ -67,14 +67,14 @@ set(grid_map_sdf_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(grid_map_sdf_SOURCE_PREFIX /home/sandy/rosws/gridmap/src/grid_map_sdf)
-  set(grid_map_sdf_DEVEL_PREFIX /home/sandy/rosws/gridmap/devel)
+  set(grid_map_sdf_SOURCE_PREFIX /home/kvothe/Animal_Navigation/gridmap/src/grid_map_sdf)
+  set(grid_map_sdf_DEVEL_PREFIX /home/kvothe/Animal_Navigation/gridmap/devel)
   set(grid_map_sdf_INSTALL_PREFIX "")
   set(grid_map_sdf_PREFIX ${grid_map_sdf_DEVEL_PREFIX})
 else()
   set(grid_map_sdf_SOURCE_PREFIX "")
   set(grid_map_sdf_DEVEL_PREFIX "")
-  set(grid_map_sdf_INSTALL_PREFIX /home/sandy/rosws/gridmap/install)
+  set(grid_map_sdf_INSTALL_PREFIX /home/kvothe/Animal_Navigation/gridmap/install)
   set(grid_map_sdf_PREFIX ${grid_map_sdf_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/sandy/rosws/gridmap/install/lib;/home/sandy/rosws/gridmap/devel/lib;/opt/ros/kinetic/lib)
+    foreach(path /home/kvothe/Animal_Navigation/gridmap/install/lib;/home/kvothe/loam_ws/devel/lib;/opt/ros/kinetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

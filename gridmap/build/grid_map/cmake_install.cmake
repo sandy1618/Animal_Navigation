@@ -1,8 +1,8 @@
-# Install script for directory: /home/sandy/rosws/gridmap/src/grid_map
+# Install script for directory: /home/kvothe/Animal_Navigation/gridmap/src/grid_map
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/sandy/rosws/gridmap/install")
+  set(CMAKE_INSTALL_PREFIX "/home/kvothe/Animal_Navigation/gridmap/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,6 +33,6 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/grid_map" TYPE FILE FILES "/home/sandy/rosws/gridmap/src/grid_map/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/grid_map" TYPE FILE FILES "/home/kvothe/Animal_Navigation/gridmap/src/grid_map/package.xml")
 endif()
 

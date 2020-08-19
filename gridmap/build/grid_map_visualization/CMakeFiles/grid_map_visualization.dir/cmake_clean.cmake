@@ -10,8 +10,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/grid_map_visualization.dir/src/visualizations/OccupancyGridVisualization.cpp.o"
   "CMakeFiles/grid_map_visualization.dir/src/visualizations/GridCellsVisualization.cpp.o"
   "CMakeFiles/grid_map_visualization.dir/src/visualizations/MapRegionVisualization.cpp.o"
-  "/home/sandy/rosws/gridmap/devel/lib/grid_map_visualization/grid_map_visualization.pdb"
-  "/home/sandy/rosws/gridmap/devel/lib/grid_map_visualization/grid_map_visualization"
+  "/home/kvothe/Animal_Navigation/gridmap/devel/lib/grid_map_visualization/grid_map_visualization.pdb"
+  "/home/kvothe/Animal_Navigation/gridmap/devel/lib/grid_map_visualization/grid_map_visualization"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -9,42 +9,42 @@ grid_map_filters:
     params:
       input_layer: elevation
       output_layer: elevation_inpainted
-      radius: 1.0
+      radius: 0.2
 
-  # Compute surface normals.
-  - name: surface_normals
-    type: gridMapFilters/NormalVectorsFilter
-    params:
-      input_layer: elevation_inpainted
-      output_layers_prefix: normal_vectors_
-      radius: 1.0
-      normal_vector_positive_axis: z
+  # # Compute surface normals.
+  # - name: surface_normals
+  #   type: gridMapFilters/NormalVectorsFilter
+  #   params:
+  #     input_layer: elevation_inpainted
+  #     output_layers_prefix: normal_vectors_
+  #     radius: 1
+  #     normal_vector_positive_axis: z
 
-  # Compute slope from surface normal.
-  - name: slope
-    type: gridMapFilters/MathExpressionFilter
-    params:
-      output_layer: slope
-      expression: acos(normal_vectors_z)
+  # # Compute slope from surface normal.
+  # - name: slope
+  #   type: gridMapFilters/MathExpressionFilter
+  #   params:
+  #     output_layer: slope
+  #     expression: acos(normal_vectors_z)
 
-  - name: traversability
-    type: gridMapFilters/MathExpressionFilter
-    params:
-      output_layer: traversability
-      expression: 1.0 - slope
+  # - name: traversability
+  #   type: gridMapFilters/MathExpressionFilter
+  #   params:
+  #     output_layer: traversability
+  #     expression: 1.0 - slope
 
-  # Set lower threshold on traversability.
-  - name: traversability_lower_threshold
-    type: gridMapFilters/ThresholdFilter
-    params:
-      layer: traversability
-      lower_threshold: 0.0
-      set_to: 0.0
+  # # Set lower threshold on traversability.
+  # - name: traversability_lower_threshold
+  #   type: gridMapFilters/ThresholdFilter
+  #   params:
+  #     layer: traversability
+  #     lower_threshold: 0.0
+  #     set_to: 0.0
 
-  # Set upper threshold on traversability.
-  - name: traversability_upper_threshold
-    type: gridMapFilters/ThresholdFilter
-    params:
-      layer: traversability
-      upper_threshold: 1.0
-      set_to: 1.0 # Other uses: .nan, .inf
+  # # Set upper threshold on traversability.
+  # - name: traversability_upper_threshold
+  #   type: gridMapFilters/ThresholdFilter
+  #   params:
+  #     layer: traversability
+  #     upper_threshold: 1.0
+  #     set_to: 1.0 # Other uses: .nan, .inf

@@ -5,8 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/grid_map_pcl-test.dir/test/PointcloudProcessorTest.cpp.o"
   "CMakeFiles/grid_map_pcl-test.dir/test/test_helpers.cpp.o"
   "CMakeFiles/grid_map_pcl-test.dir/test/PointcloudCreator.cpp.o"
-  "/home/sandy/rosws/gridmap/devel/lib/grid_map_pcl/grid_map_pcl-test.pdb"
-  "/home/sandy/rosws/gridmap/devel/lib/grid_map_pcl/grid_map_pcl-test"
+  "/home/kvothe/Animal_Navigation/gridmap/devel/lib/grid_map_pcl/grid_map_pcl-test.pdb"
+  "/home/kvothe/Animal_Navigation/gridmap/devel/lib/grid_map_pcl/grid_map_pcl-test"
 )
 
 # Per-language clean rules from dependency scanning.

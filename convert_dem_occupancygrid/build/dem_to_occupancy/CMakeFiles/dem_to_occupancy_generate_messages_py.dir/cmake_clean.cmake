@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/dem_to_occupancy_generate_messages_py"
-  "/home/sandy/Animal_Navigation/convert_dem_occupancygrid/devel/lib/python2.7/dist-packages/dem_to_occupancy/srv/_Conversion.py"
-  "/home/sandy/Animal_Navigation/convert_dem_occupancygrid/devel/lib/python2.7/dist-packages/dem_to_occupancy/srv/__init__.py"
+  "/home/kvothe/Animal_Navigation/convert_dem_occupancygrid/devel/lib/python2.7/dist-packages/dem_to_occupancy/srv/_Conversion.py"
+  "/home/kvothe/Animal_Navigation/convert_dem_occupancygrid/devel/lib/python2.7/dist-packages/dem_to_occupancy/srv/__init__.py"
 )
 
 # Per-language clean rules from dependency scanning.

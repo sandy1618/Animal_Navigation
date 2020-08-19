@@ -64,7 +64,7 @@ Visualization Manager:
       Min Color: 0; 0; 0
       Min Intensity: 0
       Name: GridMap
-      Show Grid Lines: false
+      Show Grid Lines: true
       Topic: /filtered_map
       Unreliable: false
       Use Rainbow: true

@@ -1,24 +1,24 @@
 Determining if the pthread_create exist failed with the following output:
-Change Dir: /home/sandy/rosws/gridmap/build/CMakeFiles/CMakeTmp
+Change Dir: /home/kvothe/Animal_Navigation/gridmap/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_c60b1/fast"
-/usr/bin/make -f CMakeFiles/cmTC_c60b1.dir/build.make CMakeFiles/cmTC_c60b1.dir/build
-make[1]: Entering directory '/home/sandy/rosws/gridmap/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_c60b1.dir/CheckSymbolExists.c.o
-/usr/bin/cc     -o CMakeFiles/cmTC_c60b1.dir/CheckSymbolExists.c.o   -c /home/sandy/rosws/gridmap/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTC_c60b1
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c60b1.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_c60b1.dir/CheckSymbolExists.c.o  -o cmTC_c60b1 -rdynamic 
-CMakeFiles/cmTC_c60b1.dir/CheckSymbolExists.c.o: In function `main':
+Run Build Command:"/usr/bin/make" "cmTC_efc5b/fast"
+/usr/bin/make -f CMakeFiles/cmTC_efc5b.dir/build.make CMakeFiles/cmTC_efc5b.dir/build
+make[1]: Entering directory '/home/kvothe/Animal_Navigation/gridmap/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_efc5b.dir/CheckSymbolExists.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_efc5b.dir/CheckSymbolExists.c.o   -c /home/kvothe/Animal_Navigation/gridmap/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_efc5b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_efc5b.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_efc5b.dir/CheckSymbolExists.c.o  -o cmTC_efc5b -rdynamic 
+CMakeFiles/cmTC_efc5b.dir/CheckSymbolExists.c.o: In function `main':
 CheckSymbolExists.c:(.text+0x16): undefined reference to `pthread_create'
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_c60b1.dir/build.make:97: recipe for target 'cmTC_c60b1' failed
-make[1]: *** [cmTC_c60b1] Error 1
-make[1]: Leaving directory '/home/sandy/rosws/gridmap/build/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_c60b1/fast' failed
-make: *** [cmTC_c60b1/fast] Error 2
+CMakeFiles/cmTC_efc5b.dir/build.make:97: recipe for target 'cmTC_efc5b' failed
+make[1]: *** [cmTC_efc5b] Error 1
+make[1]: Leaving directory '/home/kvothe/Animal_Navigation/gridmap/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_efc5b/fast' failed
+make: *** [cmTC_efc5b/fast] Error 2
 
-File /home/sandy/rosws/gridmap/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+File /home/kvothe/Animal_Navigation/gridmap/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
 #include <pthread.h>
 
@@ -34,22 +34,22 @@ int main(int argc, char** argv)
 }
 
 Determining if the function pthread_create exists in the pthreads failed with the following output:
-Change Dir: /home/sandy/rosws/gridmap/build/CMakeFiles/CMakeTmp
+Change Dir: /home/kvothe/Animal_Navigation/gridmap/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_1081f/fast"
-/usr/bin/make -f CMakeFiles/cmTC_1081f.dir/build.make CMakeFiles/cmTC_1081f.dir/build
-make[1]: Entering directory '/home/sandy/rosws/gridmap/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_1081f.dir/CheckFunctionExists.c.o
-/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_1081f.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
-Linking C executable cmTC_1081f
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1081f.dir/link.txt --verbose=1
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_1081f.dir/CheckFunctionExists.c.o  -o cmTC_1081f -rdynamic -lpthreads 
+Run Build Command:"/usr/bin/make" "cmTC_7b653/fast"
+/usr/bin/make -f CMakeFiles/cmTC_7b653.dir/build.make CMakeFiles/cmTC_7b653.dir/build
+make[1]: Entering directory '/home/kvothe/Animal_Navigation/gridmap/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_7b653.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_7b653.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_7b653
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7b653.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_7b653.dir/CheckFunctionExists.c.o  -o cmTC_7b653 -rdynamic -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_1081f.dir/build.make:97: recipe for target 'cmTC_1081f' failed
-make[1]: *** [cmTC_1081f] Error 1
-make[1]: Leaving directory '/home/sandy/rosws/gridmap/build/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_1081f/fast' failed
-make: *** [cmTC_1081f/fast] Error 2
+CMakeFiles/cmTC_7b653.dir/build.make:97: recipe for target 'cmTC_7b653' failed
+make[1]: *** [cmTC_7b653] Error 1
+make[1]: Leaving directory '/home/kvothe/Animal_Navigation/gridmap/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_7b653/fast' failed
+make: *** [cmTC_7b653/fast] Error 2
 
 

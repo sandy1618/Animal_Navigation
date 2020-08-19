@@ -7,10 +7,5 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/sandy/Animal_Navigation/convert_dem_occupancygrid/devel:/opt/ros/kinetic"
-export LD_LIBRARY_PATH="/home/sandy/Animal_Navigation/convert_dem_occupancygrid/devel/lib:/opt/ros/kinetic/lib:/opt/ros/kinetic/lib/x86_64-linux-gnu"
-export PKG_CONFIG_PATH="/home/sandy/Animal_Navigation/convert_dem_occupancygrid/devel/lib/pkgconfig:/opt/ros/kinetic/lib/pkgconfig:/opt/ros/kinetic/lib/x86_64-linux-gnu/pkgconfig"
-export PWD="/home/sandy/Animal_Navigation/convert_dem_occupancygrid/build"
-export PYTHONPATH="/home/sandy/Animal_Navigation/convert_dem_occupancygrid/devel/lib/python2.7/dist-packages:/opt/ros/kinetic/lib/python2.7/dist-packages"
-export ROSLISP_PACKAGE_DIRECTORIES="/home/sandy/Animal_Navigation/convert_dem_occupancygrid/devel/share/common-lisp"
-export ROS_PACKAGE_PATH="/home/sandy/Animal_Navigation/convert_dem_occupancygrid/src:/opt/ros/kinetic/share"
+export PATH="/opt/ros/kinetic/bin:/usr/bin/python:/usr/local/cuda-9.0/bin:/usr/bin/python:/usr/local/cuda-9.0/bin:/home/kvothe/anaconda2/condabin:/home/kvothe/anaconda3/bin:/usr/local/cuda-9.0/bin:/home/kvothe/bin:/home/kvothe/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+export PWD="/home/kvothe/Animal_Navigation/convert_dem_occupancygrid/build"

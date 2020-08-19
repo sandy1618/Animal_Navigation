@@ -2,7 +2,7 @@
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/sandy/Animal_Navigation/convert_dem_occupancygrid/install")
+  set(CMAKE_INSTALL_PREFIX "/home/kvothe/Animal_Navigation/convert_dem_occupancygrid/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

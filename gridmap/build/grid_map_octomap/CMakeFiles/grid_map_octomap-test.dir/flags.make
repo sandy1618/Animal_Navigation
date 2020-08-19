@@ -6,5 +6,5 @@ CXX_FLAGS = -std=c++11  -pthread
 
 CXX_DEFINES = -DEIGEN_DENSEBASE_PLUGIN=\"grid_map_core/eigen_plugins/DenseBasePlugin.hpp\" -DEIGEN_FUNCTORS_PLUGIN=\"grid_map_core/eigen_plugins/FunctorsPlugin.hpp\" -DROS_BUILD_SHARED_LIBS=1
 
-CXX_INCLUDES = -I/home/sandy/rosws/gridmap/src/grid_map_octomap/include -I/home/sandy/rosws/gridmap/src/grid_map_core/include -I/usr/include/eigen3 -I/opt/ros/kinetic/include 
+CXX_INCLUDES = -I/home/kvothe/Animal_Navigation/gridmap/src/grid_map_octomap/include -I/home/kvothe/Animal_Navigation/gridmap/src/grid_map_core/include -I/usr/include/eigen3 -I/opt/ros/kinetic/include 
 

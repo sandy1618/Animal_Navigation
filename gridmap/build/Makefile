@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/sandy/rosws/gridmap/src
+CMAKE_SOURCE_DIR = /home/kvothe/Animal_Navigation/gridmap/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/sandy/rosws/gridmap/build
+CMAKE_BINARY_DIR = /home/kvothe/Animal_Navigation/gridmap/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -70,8 +70,8 @@ install/fast: preinstall/fast
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -135,9 +135,9 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sandy/rosws/gridmap/build/CMakeFiles /home/sandy/rosws/gridmap/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kvothe/Animal_Navigation/gridmap/build/CMakeFiles /home/kvothe/Animal_Navigation/gridmap/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sandy/rosws/gridmap/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kvothe/Animal_Navigation/gridmap/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -738,6 +738,32 @@ grid_map_msgs_generate_messages_cpp/fast:
 .PHONY : grid_map_msgs_generate_messages_cpp/fast
 
 #=============================================================================
+# Target rules for targets named _grid_map_msgs_generate_messages_check_deps_GridMapInfo
+
+# Build rule for target.
+_grid_map_msgs_generate_messages_check_deps_GridMapInfo: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _grid_map_msgs_generate_messages_check_deps_GridMapInfo
+.PHONY : _grid_map_msgs_generate_messages_check_deps_GridMapInfo
+
+# fast build rule for target.
+_grid_map_msgs_generate_messages_check_deps_GridMapInfo/fast:
+	$(MAKE) -f grid_map_msgs/CMakeFiles/_grid_map_msgs_generate_messages_check_deps_GridMapInfo.dir/build.make grid_map_msgs/CMakeFiles/_grid_map_msgs_generate_messages_check_deps_GridMapInfo.dir/build
+.PHONY : _grid_map_msgs_generate_messages_check_deps_GridMapInfo/fast
+
+#=============================================================================
+# Target rules for targets named _grid_map_msgs_generate_messages_check_deps_GetGridMap
+
+# Build rule for target.
+_grid_map_msgs_generate_messages_check_deps_GetGridMap: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _grid_map_msgs_generate_messages_check_deps_GetGridMap
+.PHONY : _grid_map_msgs_generate_messages_check_deps_GetGridMap
+
+# fast build rule for target.
+_grid_map_msgs_generate_messages_check_deps_GetGridMap/fast:
+	$(MAKE) -f grid_map_msgs/CMakeFiles/_grid_map_msgs_generate_messages_check_deps_GetGridMap.dir/build.make grid_map_msgs/CMakeFiles/_grid_map_msgs_generate_messages_check_deps_GetGridMap.dir/build
+.PHONY : _grid_map_msgs_generate_messages_check_deps_GetGridMap/fast
+
+#=============================================================================
 # Target rules for targets named grid_map_msgs_generate_messages
 
 # Build rule for target.
@@ -762,45 +788,6 @@ _grid_map_msgs_generate_messages_check_deps_GridMap: cmake_check_build_system
 _grid_map_msgs_generate_messages_check_deps_GridMap/fast:
 	$(MAKE) -f grid_map_msgs/CMakeFiles/_grid_map_msgs_generate_messages_check_deps_GridMap.dir/build.make grid_map_msgs/CMakeFiles/_grid_map_msgs_generate_messages_check_deps_GridMap.dir/build
 .PHONY : _grid_map_msgs_generate_messages_check_deps_GridMap/fast
-
-#=============================================================================
-# Target rules for targets named _grid_map_msgs_generate_messages_check_deps_GetGridMap
-
-# Build rule for target.
-_grid_map_msgs_generate_messages_check_deps_GetGridMap: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _grid_map_msgs_generate_messages_check_deps_GetGridMap
-.PHONY : _grid_map_msgs_generate_messages_check_deps_GetGridMap
-
-# fast build rule for target.
-_grid_map_msgs_generate_messages_check_deps_GetGridMap/fast:
-	$(MAKE) -f grid_map_msgs/CMakeFiles/_grid_map_msgs_generate_messages_check_deps_GetGridMap.dir/build.make grid_map_msgs/CMakeFiles/_grid_map_msgs_generate_messages_check_deps_GetGridMap.dir/build
-.PHONY : _grid_map_msgs_generate_messages_check_deps_GetGridMap/fast
-
-#=============================================================================
-# Target rules for targets named _grid_map_msgs_generate_messages_check_deps_ProcessFile
-
-# Build rule for target.
-_grid_map_msgs_generate_messages_check_deps_ProcessFile: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _grid_map_msgs_generate_messages_check_deps_ProcessFile
-.PHONY : _grid_map_msgs_generate_messages_check_deps_ProcessFile
-
-# fast build rule for target.
-_grid_map_msgs_generate_messages_check_deps_ProcessFile/fast:
-	$(MAKE) -f grid_map_msgs/CMakeFiles/_grid_map_msgs_generate_messages_check_deps_ProcessFile.dir/build.make grid_map_msgs/CMakeFiles/_grid_map_msgs_generate_messages_check_deps_ProcessFile.dir/build
-.PHONY : _grid_map_msgs_generate_messages_check_deps_ProcessFile/fast
-
-#=============================================================================
-# Target rules for targets named _grid_map_msgs_generate_messages_check_deps_GridMapInfo
-
-# Build rule for target.
-_grid_map_msgs_generate_messages_check_deps_GridMapInfo: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _grid_map_msgs_generate_messages_check_deps_GridMapInfo
-.PHONY : _grid_map_msgs_generate_messages_check_deps_GridMapInfo
-
-# fast build rule for target.
-_grid_map_msgs_generate_messages_check_deps_GridMapInfo/fast:
-	$(MAKE) -f grid_map_msgs/CMakeFiles/_grid_map_msgs_generate_messages_check_deps_GridMapInfo.dir/build.make grid_map_msgs/CMakeFiles/_grid_map_msgs_generate_messages_check_deps_GridMapInfo.dir/build
-.PHONY : _grid_map_msgs_generate_messages_check_deps_GridMapInfo/fast
 
 #=============================================================================
 # Target rules for targets named grid_map_msgs_genpy
@@ -840,6 +827,19 @@ grid_map_msgs_generate_messages_eus: cmake_check_build_system
 grid_map_msgs_generate_messages_eus/fast:
 	$(MAKE) -f grid_map_msgs/CMakeFiles/grid_map_msgs_generate_messages_eus.dir/build.make grid_map_msgs/CMakeFiles/grid_map_msgs_generate_messages_eus.dir/build
 .PHONY : grid_map_msgs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named _grid_map_msgs_generate_messages_check_deps_ProcessFile
+
+# Build rule for target.
+_grid_map_msgs_generate_messages_check_deps_ProcessFile: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _grid_map_msgs_generate_messages_check_deps_ProcessFile
+.PHONY : _grid_map_msgs_generate_messages_check_deps_ProcessFile
+
+# fast build rule for target.
+_grid_map_msgs_generate_messages_check_deps_ProcessFile/fast:
+	$(MAKE) -f grid_map_msgs/CMakeFiles/_grid_map_msgs_generate_messages_check_deps_ProcessFile.dir/build.make grid_map_msgs/CMakeFiles/_grid_map_msgs_generate_messages_check_deps_ProcessFile.dir/build
+.PHONY : _grid_map_msgs_generate_messages_check_deps_ProcessFile/fast
 
 #=============================================================================
 # Target rules for targets named grid_map_msgs_generate_messages_lisp
@@ -3043,14 +3043,14 @@ help:
 	@echo "... geometry_msgs_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... grid_map_msgs_generate_messages_cpp"
+	@echo "... _grid_map_msgs_generate_messages_check_deps_GridMapInfo"
+	@echo "... _grid_map_msgs_generate_messages_check_deps_GetGridMap"
 	@echo "... grid_map_msgs_generate_messages"
 	@echo "... _grid_map_msgs_generate_messages_check_deps_GridMap"
-	@echo "... _grid_map_msgs_generate_messages_check_deps_GetGridMap"
-	@echo "... _grid_map_msgs_generate_messages_check_deps_ProcessFile"
-	@echo "... _grid_map_msgs_generate_messages_check_deps_GridMapInfo"
 	@echo "... grid_map_msgs_genpy"
 	@echo "... _grid_map_msgs_generate_messages_check_deps_SetGridMap"
 	@echo "... grid_map_msgs_generate_messages_eus"
+	@echo "... _grid_map_msgs_generate_messages_check_deps_ProcessFile"
 	@echo "... grid_map_msgs_generate_messages_lisp"
 	@echo "... grid_map_msgs_gencpp"
 	@echo "... grid_map_msgs_geneus"

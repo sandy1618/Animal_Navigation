@@ -67,14 +67,14 @@ set(dem_to_occupancy_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(dem_to_occupancy_SOURCE_PREFIX /home/sandy/Animal_Navigation/convert_dem_occupancygrid/src/dem_to_occupancy)
-  set(dem_to_occupancy_DEVEL_PREFIX /home/sandy/Animal_Navigation/convert_dem_occupancygrid/devel)
+  set(dem_to_occupancy_SOURCE_PREFIX /home/kvothe/Animal_Navigation/convert_dem_occupancygrid/src/dem_to_occupancy)
+  set(dem_to_occupancy_DEVEL_PREFIX /home/kvothe/Animal_Navigation/convert_dem_occupancygrid/devel)
   set(dem_to_occupancy_INSTALL_PREFIX "")
   set(dem_to_occupancy_PREFIX ${dem_to_occupancy_DEVEL_PREFIX})
 else()
   set(dem_to_occupancy_SOURCE_PREFIX "")
   set(dem_to_occupancy_DEVEL_PREFIX "")
-  set(dem_to_occupancy_INSTALL_PREFIX /home/sandy/Animal_Navigation/convert_dem_occupancygrid/install)
+  set(dem_to_occupancy_INSTALL_PREFIX /home/kvothe/Animal_Navigation/convert_dem_occupancygrid/install)
   set(dem_to_occupancy_PREFIX ${dem_to_occupancy_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(dem_to_occupancy_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/sandy/Animal_Navigation/convert_dem_occupancygrid/devel/include " STREQUAL " ")
+if(NOT "/home/kvothe/Animal_Navigation/convert_dem_occupancygrid/devel/include " STREQUAL " ")
   set(dem_to_occupancy_INCLUDE_DIRS "")
-  set(_include_dirs "/home/sandy/Animal_Navigation/convert_dem_occupancygrid/devel/include")
+  set(_include_dirs "/home/kvothe/Animal_Navigation/convert_dem_occupancygrid/devel/include")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT " " STREQUAL " ")
@@ -110,7 +110,7 @@ if(NOT "/home/sandy/Animal_Navigation/convert_dem_occupancygrid/devel/include " 
         message(FATAL_ERROR "Project 'dem_to_occupancy' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'dem_to_occupancy' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/sandy/Animal_Navigation/convert_dem_occupancygrid/src/dem_to_occupancy/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'dem_to_occupancy' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/kvothe/Animal_Navigation/convert_dem_occupancygrid/src/dem_to_occupancy/${idir}'.  ${_report}")
     endif()
     _list_append_unique(dem_to_occupancy_INCLUDE_DIRS ${include})
   endforeach()
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/sandy/Animal_Navigation/convert_dem_occupancygrid/devel/lib;/opt/ros/kinetic/lib)
+    foreach(path /home/kvothe/Animal_Navigation/convert_dem_occupancygrid/devel/lib;/home/kvothe/Animal_Navigation/convert_dem_occupancygrid/devel/lib;/home/kvothe/Animal_Navigation/gridmap/devel/lib;/home/kvothe/loam_ws/devel/lib;/opt/ros/kinetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

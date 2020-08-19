@@ -7,7 +7,7 @@ from sys import path as sys_path
 
 from pkgutil import extend_path
 
-__extended_path = "/home/sandy/rosws/tohoku_acv_original/src/convert_to_dem/src".split(";")
+__extended_path = "/home/kvothe/Animal_Navigation/tohoku_acv_original/src/convert_to_dem/src".split(";")
 for p in reversed(__extended_path):
     sys_path.insert(0, p)
     del p
