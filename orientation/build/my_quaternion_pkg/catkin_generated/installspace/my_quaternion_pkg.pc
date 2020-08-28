@@ -1,0 +1,8 @@
+prefix=/home/kvothe/Animal_Navigation/orientation/install
+
+Name: my_quaternion_pkg
+Description: Description of my_quaternion_pkg
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: rospy std_msgs geometry_msgs message_runtime sensor_msgs tf

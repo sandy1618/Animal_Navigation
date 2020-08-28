@@ -33,12 +33,12 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/usr/lib/openmpi/include"
   "/usr/lib/openmpi/include/openmpi"
   "/usr/include/jsoncpp"
+  "/usr/include/x86_64-linux-gnu"
   "/usr/include/freetype2"
   "/usr/include/x86_64-linux-gnu/freetype2"
   "/usr/include/python2.7"
-  "/usr/include/x86_64-linux-gnu"
-  "/usr/include/tcl"
   "/usr/include/libxml2"
+  "/usr/include/tcl"
   )
 
 # Targets to which this target links.

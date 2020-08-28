@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC -std=c++11 -Wall -Wextra -Wpedantic  -shared -Wl,-soname,libspatial.so -o /home/kvothe/Animal_Navigation/animal_navigation/devel/lib/libspatial.so CMakeFiles/spatial.dir/src/spatial.cpp.o 

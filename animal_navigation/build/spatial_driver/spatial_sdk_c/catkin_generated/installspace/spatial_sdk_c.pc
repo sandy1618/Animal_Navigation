@@ -1,0 +1,8 @@
+prefix=/home/kvothe/Animal_Navigation/animal_navigation/install
+
+Name: spatial_sdk_c
+Description: Description of spatial_sdk_c
+Version: 0.0.4
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -lspatial_sdk_c -lspatial_sdk_c_rs232
+Requires: 

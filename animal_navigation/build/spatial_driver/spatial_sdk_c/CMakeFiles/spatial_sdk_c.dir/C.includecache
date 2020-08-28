@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/kvothe/Animal_Navigation/animal_navigation/src/spatial_driver/spatial_sdk_c/include/spatial_sdk_c/an_packet_protocol.h
+cstdint
+-
+stdint.h
+-
+
+/home/kvothe/Animal_Navigation/animal_navigation/src/spatial_driver/spatial_sdk_c/include/spatial_sdk_c/spatial_packets.h
+cstdint
+-
+stdint.h
+-
+
+/home/kvothe/Animal_Navigation/animal_navigation/src/spatial_driver/spatial_sdk_c/src/an_packet_protocol.c
+stdlib.h
+-
+stdint.h
+-
+string.h
+-
+an_packet_protocol.h
+/home/kvothe/Animal_Navigation/animal_navigation/src/spatial_driver/spatial_sdk_c/src/an_packet_protocol.h
+
+/home/kvothe/Animal_Navigation/animal_navigation/src/spatial_driver/spatial_sdk_c/src/spatial_packets.c
+stdint.h
+-
+string.h
+-
+an_packet_protocol.h
+/home/kvothe/Animal_Navigation/animal_navigation/src/spatial_driver/spatial_sdk_c/src/an_packet_protocol.h
+spatial_packets.h
+/home/kvothe/Animal_Navigation/animal_navigation/src/spatial_driver/spatial_sdk_c/src/spatial_packets.h
+

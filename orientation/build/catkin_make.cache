@@ -1,0 +1,2 @@
+my_quaternion_pkg
+-DCATKIN_DEVEL_PREFIX=/home/kvothe/Animal_Navigation/orientation/devel -DCMAKE_INSTALL_PREFIX=/home/kvothe/Animal_Navigation/orientation/install -G Unix Makefiles

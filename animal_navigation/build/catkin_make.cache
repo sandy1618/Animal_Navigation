@@ -1,0 +1,2 @@
+gps_umd/gps_common:gps_umd/gps_umd:gps_umd/gpsd_client:spatial_driver/spatial_driver:spatial_driver/spatial_sdk_c
+-DCATKIN_DEVEL_PREFIX=/home/kvothe/Animal_Navigation/animal_navigation/devel -DCMAKE_INSTALL_PREFIX=/home/kvothe/Animal_Navigation/animal_navigation/install -G Unix Makefiles
