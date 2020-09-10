@@ -1,2 +1,0 @@
-amcl:base_local_planner:carrot_planner:clear_costmap_recovery:costmap_2d:dwa_local_planner:fake_localization:global_planner:map_server:move_base:move_slow_and_clear:nav_core:navfn:navigation/navigation:rotate_recovery:voxel_grid
--DCATKIN_DEVEL_PREFIX=/home/kvothe/Animal_Navigation/navigation/devel -DCMAKE_INSTALL_PREFIX=/home/kvothe/Animal_Navigation/navigation/install -G Unix Makefiles
