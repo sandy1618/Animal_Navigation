@@ -530,7 +530,7 @@ namespace move_base {
     cmd_sig.sound = 0;
 
     // publishing zero signals / or stop signals 
-    sig_pub_.publish(light_signal);
+    sig_pub_.publish(cmd_sig);
   }
 
   bool MoveBase::isQuaternionValid(const geometry_msgs::Quaternion& q){
@@ -830,7 +830,7 @@ namespace move_base {
 
     // i need to be able to publish the light signals 
     move_base::light_signal cmd_sig;
-    
+
     //update feedback to correspond to our curent position
     geometry_msgs::PoseStamped global_pose;
     getRobotPose(global_pose, planner_costmap_ros_);

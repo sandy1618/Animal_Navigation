@@ -22,5 +22,7 @@
     <depend>geometry_msgs</depend>
     <depend>std_msgs</depend>
     <depend>tf2_ros</depend>
+    <depend>light_signal_msg</depend>
+    <!-- <depend>move_base</depend> -->
 
 </package>
