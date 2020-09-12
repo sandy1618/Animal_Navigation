@@ -41,6 +41,7 @@
 #include <geometry_msgs/Twist.h>
 #include <costmap_2d/costmap_2d_ros.h>
 #include <tf2_ros/buffer.h>
+#include <light_signal_msg/light_signal.h>
 
 namespace nav_core {
   /**
