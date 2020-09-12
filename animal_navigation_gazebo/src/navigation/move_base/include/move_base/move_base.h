@@ -151,12 +151,6 @@ namespace move_base {
       void publishZeroVelocity();
 
       /**
-       * @brief Pubhishes zeros signals to base in all the signals as of now 
-       * @todo Think more on implementing this node in a much independent way like stop to be 1 which means all other zero
-       * 
-       */
-      void publishZeroSignal();
-      /**
        * @brief  Reset the state of the move_base action and send a zero velocity command to the base
        */
       void resetState();
@@ -200,7 +194,6 @@ namespace move_base {
       uint32_t planning_retries_;
       double conservative_reset_dist_, clearing_radius_;
       ros::Publisher current_goal_pub_, vel_pub_, action_goal_pub_;
-      ros::Publisher sig_pub_ ; // for publishing light signals . 
       ros::Subscriber goal_sub_;
       ros::ServiceServer make_plan_srv_, clear_costmaps_srv_;
       bool shutdown_costmaps_, clearing_rotation_allowed_, recovery_behavior_enabled_;

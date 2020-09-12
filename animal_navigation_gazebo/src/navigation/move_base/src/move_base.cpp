@@ -45,9 +45,6 @@
 
 #include <tf2_geometry_msgs/tf2_geometry_msgs.h>
 
-//importing custom message 
-#include <move_base/light_signal.h>
-
 namespace move_base {
 
   MoveBase::MoveBase(tf2_ros::Buffer& tf) :
@@ -94,16 +91,8 @@ namespace move_base {
     //set up the planner's thread
     planner_thread_ = new boost::thread(boost::bind(&MoveBase::planThread, this));
 
-    //for commanding the base , check the definintion in the header file . 
+    //for commanding the base
     vel_pub_ = nh.advertise<geometry_msgs::Twist>("cmd_vel", 1);
-
-
-    //light signal message 
-    move_base::light_signal cmd_sig;
-
-    // for commanding the base with light signal 
-    sig_pub_ = nh.advertise<move_base::light_signal>("cmd_sig", 1);
-    
     current_goal_pub_ = private_nh.advertise<geometry_msgs::PoseStamped>("current_goal", 0 );
 
     ros::NodeHandle action_nh("move_base");
@@ -516,21 +505,6 @@ namespace move_base {
     cmd_vel.linear.y = 0.0;
     cmd_vel.angular.z = 0.0;
     vel_pub_.publish(cmd_vel);
-
-    
-  }
-
-  void MoveBase::publishZeroSignal(){
-    move_base::light_signal cmd_sig;
-
-    cmd_sig.left = 0;
-    cmd_sig.right = 0;
-    cmd_sig.forward = 0;
-    cmd_sig.stop = 0;
-    cmd_sig.sound = 0;
-
-    // publishing zero signals / or stop signals 
-    sig_pub_.publish(cmd_sig);
   }
 
   bool MoveBase::isQuaternionValid(const geometry_msgs::Quaternion& q){
@@ -589,7 +563,7 @@ namespace move_base {
     // we have slept long enough for rate
     planner_cond_.notify_one();
   }
-//The main function is to call the global path plan to obtain the path, and ensure the periodicity of the plan and the planned timeout to clear the goal.
+
   void MoveBase::planThread(){
     ROS_DEBUG_NAMED("move_base_plan_thread","Starting planner thread...");
     ros::NodeHandle n;
@@ -827,9 +801,6 @@ namespace move_base {
     boost::recursive_mutex::scoped_lock ecl(configuration_mutex_);
     //we need to be able to publish velocity commands
     geometry_msgs::Twist cmd_vel;
-
-    // i need to be able to publish the light signals 
-    move_base::light_signal cmd_sig;
 
     //update feedback to correspond to our curent position
     geometry_msgs::PoseStamped global_pose;

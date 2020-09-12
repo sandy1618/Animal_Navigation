@@ -31,15 +31,6 @@ generate_dynamic_reconfigure_options(
     cfg/MoveBase.cfg
 )
 
-add_message_files(
-   FILES
-   light_signal.msg
- )
-
-generate_messages(
-  DEPENDENCIES
-  std_msgs
-)
 catkin_package(
     CATKIN_DEPENDS
         dynamic_reconfigure
@@ -47,17 +38,13 @@ catkin_package(
         move_base_msgs
         nav_msgs
         roscpp
-        message_runtime
 )
-
 
 include_directories(
     include
     ${catkin_INCLUDE_DIRS}
     ${EIGEN3_INCLUDE_DIRS}
 )
-
-
 
 # move_base
 add_library(move_base

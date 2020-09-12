@@ -41,8 +41,6 @@
 #include <geometry_msgs/Twist.h>
 #include <costmap_2d/costmap_2d_ros.h>
 #include <tf2_ros/buffer.h>
-//importing custom message 
-#include <light_signal_msg/light_signal.h>
 
 namespace nav_core {
   /**
@@ -54,25 +52,14 @@ namespace nav_core {
       /**
        * @brief  Given the current position, orientation, and velocity of the robot, compute velocity commands to send to the base
        * @param cmd_vel Will be filled with the velocity command to be passed to the robot base
-       * @param cmd_sig will be filled be state based commands passed to the robot base 
        * @return True if a valid velocity command was found, false otherwise
        */
-
       virtual bool computeVelocityCommands(geometry_msgs::Twist& cmd_vel) = 0;
 
-
-      virtual bool computeStateCommands(geometry_msgs::Twist& cmd_vel, light_signal_msg::light_signal& cmd_sig  );
-
       /**
        * @brief  Check if the goal pose has been achieved by the local planner
        * @return True if achieved, false otherwise
        */
-
-      /**
-       * @brief  Check if the goal pose has been achieved by the local planner
-       * @return True if achieved, false otherwise
-       */
-
       virtual bool isGoalReached() = 0;
 
       /**

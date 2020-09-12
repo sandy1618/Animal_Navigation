@@ -1,5 +1,10 @@
 ### Animal_Description 
 
+#### Links 
+https://github.com/ros-planning/navigation
+https://github.com/adrianapadilla/simple_local_planner
+
+
 #### Dependencies 
 sudo apt-get install ros-kinetic-teleop-twist-keyboard
 sudo apt-get install ros-kinetic-ros-control
