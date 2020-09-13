@@ -1,1 +1,0 @@
-/usr/bin/cc  -fPIC   -shared -Wl,-soname,libspatial_sdk_c_rs232.so -o /home/kvothe/Animal_Navigation/animal_navigation/devel/lib/libspatial_sdk_c_rs232.so CMakeFiles/spatial_sdk_c_rs232.dir/src/rs232/rs232.c.o 

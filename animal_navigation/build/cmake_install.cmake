@@ -1,8 +1,8 @@
-# Install script for directory: /home/kvothe/Animal_Navigation/animal_navigation/src
+# Install script for directory: /home/sandy/Animal_Navigation/animal_navigation/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/kvothe/Animal_Navigation/animal_navigation/install")
+  set(CMAKE_INSTALL_PREFIX "/home/sandy/Animal_Navigation/animal_navigation/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -44,93 +44,88 @@ endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/kvothe/Animal_Navigation/animal_navigation/install/_setup_util.py")
+   "/home/sandy/Animal_Navigation/animal_navigation/install/_setup_util.py")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/kvothe/Animal_Navigation/animal_navigation/install" TYPE PROGRAM FILES "/home/kvothe/Animal_Navigation/animal_navigation/build/catkin_generated/installspace/_setup_util.py")
+file(INSTALL DESTINATION "/home/sandy/Animal_Navigation/animal_navigation/install" TYPE PROGRAM FILES "/home/sandy/Animal_Navigation/animal_navigation/build/catkin_generated/installspace/_setup_util.py")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/kvothe/Animal_Navigation/animal_navigation/install/env.sh")
+   "/home/sandy/Animal_Navigation/animal_navigation/install/env.sh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/kvothe/Animal_Navigation/animal_navigation/install" TYPE PROGRAM FILES "/home/kvothe/Animal_Navigation/animal_navigation/build/catkin_generated/installspace/env.sh")
+file(INSTALL DESTINATION "/home/sandy/Animal_Navigation/animal_navigation/install" TYPE PROGRAM FILES "/home/sandy/Animal_Navigation/animal_navigation/build/catkin_generated/installspace/env.sh")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/kvothe/Animal_Navigation/animal_navigation/install/setup.bash;/home/kvothe/Animal_Navigation/animal_navigation/install/local_setup.bash")
+   "/home/sandy/Animal_Navigation/animal_navigation/install/setup.bash;/home/sandy/Animal_Navigation/animal_navigation/install/local_setup.bash")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/kvothe/Animal_Navigation/animal_navigation/install" TYPE FILE FILES
-    "/home/kvothe/Animal_Navigation/animal_navigation/build/catkin_generated/installspace/setup.bash"
-    "/home/kvothe/Animal_Navigation/animal_navigation/build/catkin_generated/installspace/local_setup.bash"
+file(INSTALL DESTINATION "/home/sandy/Animal_Navigation/animal_navigation/install" TYPE FILE FILES
+    "/home/sandy/Animal_Navigation/animal_navigation/build/catkin_generated/installspace/setup.bash"
+    "/home/sandy/Animal_Navigation/animal_navigation/build/catkin_generated/installspace/local_setup.bash"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/kvothe/Animal_Navigation/animal_navigation/install/setup.sh;/home/kvothe/Animal_Navigation/animal_navigation/install/local_setup.sh")
+   "/home/sandy/Animal_Navigation/animal_navigation/install/setup.sh;/home/sandy/Animal_Navigation/animal_navigation/install/local_setup.sh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/kvothe/Animal_Navigation/animal_navigation/install" TYPE FILE FILES
-    "/home/kvothe/Animal_Navigation/animal_navigation/build/catkin_generated/installspace/setup.sh"
-    "/home/kvothe/Animal_Navigation/animal_navigation/build/catkin_generated/installspace/local_setup.sh"
+file(INSTALL DESTINATION "/home/sandy/Animal_Navigation/animal_navigation/install" TYPE FILE FILES
+    "/home/sandy/Animal_Navigation/animal_navigation/build/catkin_generated/installspace/setup.sh"
+    "/home/sandy/Animal_Navigation/animal_navigation/build/catkin_generated/installspace/local_setup.sh"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/kvothe/Animal_Navigation/animal_navigation/install/setup.zsh;/home/kvothe/Animal_Navigation/animal_navigation/install/local_setup.zsh")
+   "/home/sandy/Animal_Navigation/animal_navigation/install/setup.zsh;/home/sandy/Animal_Navigation/animal_navigation/install/local_setup.zsh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/kvothe/Animal_Navigation/animal_navigation/install" TYPE FILE FILES
-    "/home/kvothe/Animal_Navigation/animal_navigation/build/catkin_generated/installspace/setup.zsh"
-    "/home/kvothe/Animal_Navigation/animal_navigation/build/catkin_generated/installspace/local_setup.zsh"
+file(INSTALL DESTINATION "/home/sandy/Animal_Navigation/animal_navigation/install" TYPE FILE FILES
+    "/home/sandy/Animal_Navigation/animal_navigation/build/catkin_generated/installspace/setup.zsh"
+    "/home/sandy/Animal_Navigation/animal_navigation/build/catkin_generated/installspace/local_setup.zsh"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/kvothe/Animal_Navigation/animal_navigation/install/.rosinstall")
+   "/home/sandy/Animal_Navigation/animal_navigation/install/.rosinstall")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/kvothe/Animal_Navigation/animal_navigation/install" TYPE FILE FILES "/home/kvothe/Animal_Navigation/animal_navigation/build/catkin_generated/installspace/.rosinstall")
+file(INSTALL DESTINATION "/home/sandy/Animal_Navigation/animal_navigation/install" TYPE FILE FILES "/home/sandy/Animal_Navigation/animal_navigation/build/catkin_generated/installspace/.rosinstall")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/kvothe/Animal_Navigation/animal_navigation/build/gtest/cmake_install.cmake")
-  include("/home/kvothe/Animal_Navigation/animal_navigation/build/gps_umd/gps_umd/cmake_install.cmake")
-  include("/home/kvothe/Animal_Navigation/animal_navigation/build/spatial_driver/spatial_sdk_c/cmake_install.cmake")
-  include("/home/kvothe/Animal_Navigation/animal_navigation/build/spatial_driver/spatial_driver/cmake_install.cmake")
-  include("/home/kvothe/Animal_Navigation/animal_navigation/build/gps_umd/gps_common/cmake_install.cmake")
-  include("/home/kvothe/Animal_Navigation/animal_navigation/build/gps_umd/gpsd_client/cmake_install.cmake")
+  include("/home/sandy/Animal_Navigation/animal_navigation/build/gtest/cmake_install.cmake")
 
 endif()
 
@@ -142,5 +137,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/kvothe/Animal_Navigation/animal_navigation/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/sandy/Animal_Navigation/animal_navigation/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

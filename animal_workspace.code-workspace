@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "light_signal"
+		},
+		{
+			"path": "animal_motion_control"
 		}
 	],
 	"settings": {

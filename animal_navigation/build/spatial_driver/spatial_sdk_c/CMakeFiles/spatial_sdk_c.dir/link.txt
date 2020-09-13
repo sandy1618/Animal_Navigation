@@ -1,1 +1,0 @@
-/usr/bin/cc  -fPIC   -shared -Wl,-soname,libspatial_sdk_c.so -o /home/kvothe/Animal_Navigation/animal_navigation/devel/lib/libspatial_sdk_c.so CMakeFiles/spatial_sdk_c.dir/src/an_packet_protocol.c.o CMakeFiles/spatial_sdk_c.dir/src/spatial_packets.c.o 

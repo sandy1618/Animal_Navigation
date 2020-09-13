@@ -1,8 +1,0 @@
-prefix=/home/kvothe/Animal_Navigation/animal_navigation/install
-
-Name: spatial_driver
-Description: Description of spatial_driver
-Version: 1.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: tf2 tf2_ros geometry_msgs std_msgs roscpp sensor_msgs spatial_sdk_c diagnostic_updater
