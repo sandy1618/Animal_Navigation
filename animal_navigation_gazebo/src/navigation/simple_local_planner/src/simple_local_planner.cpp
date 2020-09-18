@@ -72,7 +72,7 @@ namespace simple_local_planner{
 		//beforee = ros::Time::now().toSec();
 
 		//open file
-		file.open("/home/adriana/adrianaTFG/simple_cs/simple_cs_10.txt", ios::out);
+		// file.open("/home/adriana/adrianaTFG/simple_cs/simple_cs_10.txt", ios::out);
 		// set initialized flag
 		initialized_ = true;
 
@@ -114,7 +114,6 @@ namespace simple_local_planner{
 			four = ros::Time::now().toSec()-beginning2;
 			number1 = 0;
 		}
-		ROS_INFO("minus: %f", (minus));
 		ROS_INFO("four: %f", (four));
 		ROS_INFO("between2: %f", (ending2-beginning2-minus-four));
 		average += 0.05;//(ending2-beginning2-minus-four);
@@ -178,12 +177,12 @@ namespace simple_local_planner{
 					//average executation time (for computational cost)
 					ROS_INFO("avrg exec time: %f", average/num);
 
-					if(file.is_open()){
-						ROS_INFO("I'm OPEN!");
-						//file.close();
-					}else{
-						ROS_INFO("I'm NOT open!");
-					}
+					// if(file.is_open()){
+					// 	ROS_INFO("I'm OPEN!");
+					// 	//file.close();
+					// }else{
+					// 	ROS_INFO("I'm NOT open!");
+					// }
 
 					setVelZ();
 					goal_reached_ = true;
@@ -214,7 +213,7 @@ namespace simple_local_planner{
 
 		// set retrieved commands to reference variable
 		ROS_DEBUG("Retrieving velocity command: (%f, %f, %f)", cmd.linear.x, cmd.linear.y, cmd.angular.z);
-		file << cmd.linear.x << " "<< cmd.linear.y << " "<< cmd.angular.z << endl;
+		// file << cmd.linear.x << " "<< cmd.linear.y << " "<< cmd.angular.z << endl;
 		cmd_vel = cmd;  
 
 		return true;
@@ -339,6 +338,9 @@ namespace simple_local_planner{
 
 		nError.x = (next.x - now.x);
 		nError.y = (next.y - now.y);
+
+		// if these two variables are null, the tangent doesn't exist 
+		// plus, the angle error is irrelevant because we have arrived at our destination
 
 		// if these two variables are null, the tangent doesn't exist 
 		// plus, the angle error is irrelevant because we have arrived at our destination

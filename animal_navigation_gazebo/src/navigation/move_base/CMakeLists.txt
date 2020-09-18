@@ -50,6 +50,7 @@ include_directories(
 add_library(move_base
   src/move_base.cpp
 )
+
 target_link_libraries(move_base
     ${Boost_LIBRARIES}
     ${catkin_LIBRARIES}

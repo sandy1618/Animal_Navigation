@@ -679,6 +679,7 @@ namespace move_base {
     planning_retries_ = 0;
 
     ros::NodeHandle n;
+    
     while(n.ok())
     {
       if(c_freq_change_)

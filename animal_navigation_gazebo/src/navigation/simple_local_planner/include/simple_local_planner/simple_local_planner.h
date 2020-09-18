@@ -1,4 +1,3 @@
-
 #ifndef SIMPLE_LOCAL_PLANNER_ROS_H_
 #define SIMPLE_LOCAL_PLANNER_ROS_H_
 
@@ -111,7 +110,7 @@ namespace simple_local_planner{
        */
       bool isGoalReached();
 
-    private:
+    public:
 
       //Pointer to external objects (do NOT delete object)
       costmap_2d::Costmap2DROS* costmap_ros_; ///<@brief pointer to costmap  
@@ -141,7 +140,7 @@ namespace simple_local_planner{
       double minus;
       double haha, haha2;
       double beforee;
-      ofstream file;
+      // ofstream file;
 
      //measuring
       double stopTime, startTime;
