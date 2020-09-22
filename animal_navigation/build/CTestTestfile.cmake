@@ -5,3 +5,6 @@
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
 subdirs(gtest)
+subdirs(spatial_driver/spatial_sdk_c)
+subdirs(spatial_driver/spatial_driver)
+subdirs(robot_setup_tf)

@@ -1,2 +1,2 @@
-
+robot_setup_tf:spatial_driver/spatial_driver:spatial_driver/spatial_sdk_c
 -DCATKIN_DEVEL_PREFIX=/home/sandy/Animal_Navigation/animal_navigation/devel -DCMAKE_INSTALL_PREFIX=/home/sandy/Animal_Navigation/animal_navigation/install -G Unix Makefiles
