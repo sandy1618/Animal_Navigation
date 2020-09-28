@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/sandy/Animal_Navigation/animal_navigation/src
+CMAKE_SOURCE_DIR = /home/kvothe/Animal_Navigation/animal_navigation/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/sandy/Animal_Navigation/animal_navigation/build
+CMAKE_BINARY_DIR = /home/kvothe/Animal_Navigation/animal_navigation/build
 
 # Utility rule file for tests.
 
@@ -67,6 +67,6 @@ CMakeFiles/tests.dir/clean:
 .PHONY : CMakeFiles/tests.dir/clean
 
 CMakeFiles/tests.dir/depend:
-	cd /home/sandy/Animal_Navigation/animal_navigation/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/sandy/Animal_Navigation/animal_navigation/src /home/sandy/Animal_Navigation/animal_navigation/src /home/sandy/Animal_Navigation/animal_navigation/build /home/sandy/Animal_Navigation/animal_navigation/build /home/sandy/Animal_Navigation/animal_navigation/build/CMakeFiles/tests.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/kvothe/Animal_Navigation/animal_navigation/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/kvothe/Animal_Navigation/animal_navigation/src /home/kvothe/Animal_Navigation/animal_navigation/src /home/kvothe/Animal_Navigation/animal_navigation/build /home/kvothe/Animal_Navigation/animal_navigation/build /home/kvothe/Animal_Navigation/animal_navigation/build/CMakeFiles/tests.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/tests.dir/depend
 

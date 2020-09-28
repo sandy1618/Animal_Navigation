@@ -2,19 +2,28 @@
 
 ### Workflow 
 
-cd ~/Animal_Navigation/
+cd ~/Animal_Navigation/data/
 rosbag play -l --clock .bag
 
 cd ~/Animal_Navigation/gridmap2
 roslaunch grid_map_pcl grid_map_pcl_loader_node.launch
 roslaunch grid_map_pcl grid_map_pcl_loader_node_support.launch
 
+// Remeber that, for a proper Occupancy grid map, you need to set mininmum and maximum value based on heght. in 
+// grid_map_pcl_loader_node.cpp. 
+// The python file is Height_Min_Max.ipynb (open with jupyter notebooks), in Animal_Naviation/data/
+// Make sure you make the file accessible and executeble 
+
 // This contains both the spatial -> utm and map->spatial tranformation tf
 cd ~/Animal_Navigation/animal_navigation
 roslaunch gps_common utm_converter_tf_publisher.launch
+- input: /spatial/fix  < /sensor_msgs/NavSatFix >
+- output: /gps_common_navsat/odom < /nav_msgs/Odometry >
+
 
 cd ~/Animal_Navigation/hector_slam
 roslaunch hector_imu_attitude_to_tf example.launch
 
 
 
+Note: utm_transfom.cpp inside gps_common has the map to spatial transformnation. 

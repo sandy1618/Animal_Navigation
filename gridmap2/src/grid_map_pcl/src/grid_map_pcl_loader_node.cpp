@@ -50,6 +50,7 @@ int main(int argc, char** argv) {
   //Convert to occupancygrid message 
   nav_msgs::OccupancyGrid occupancymsg;
   // elevation is default layer name.
+  // Here you need to specify the minimum and maximum values for height. 
   grid_map::GridMapRosConverter::toOccupancyGrid(gridMap,"elevation",-0.6858147,5.7494574,occupancymsg) ;
   occupancyMapPub.publish(occupancymsg);
 

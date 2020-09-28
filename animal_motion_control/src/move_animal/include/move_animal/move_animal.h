@@ -40,6 +40,10 @@ light_signal_msg::light_signal cmd_sig{}; // contains the velocity
  */ 
 void getRobotPoseAMCL(const geometry_msgs::PoseWithCovarianceStamped& msg);
 
+void getHumanPoseGNSS(const geometry_msgs::PoseWithCovarianceStamped& msg);
+
+void getDogPoseGNSS(const geometry_msgs::PoseWithCovarianceStamped& msg);
+
 void getGoalPos(const geometry_msgs::PoseStamped& msg);
 
 /**
