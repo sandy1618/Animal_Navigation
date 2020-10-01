@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+  <node name="spatial_driver" pkg="spatial_driver" type="spatial_node" >
+    <rosparam command="load" file="$(find spatial_driver)/config/sample.yaml" />
+
+    <param name="output_raw_anpp" value="true" />
+    <param name="anpp_output_path" value="$(find spatial_driver)/../anpp/human_%Y-%m-%dT%H-%M-%S.anpp" />
+  </node>
+</launch>

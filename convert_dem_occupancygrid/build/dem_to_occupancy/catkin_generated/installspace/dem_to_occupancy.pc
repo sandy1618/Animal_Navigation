@@ -1,8 +1,0 @@
-prefix=/home/kvothe/Animal_Navigation/convert_dem_occupancygrid/install
-
-Name: dem_to_occupancy
-Description: Description of dem_to_occupancy
-Version: 0.1.0
-Cflags: -I${prefix}/include
-Libs: -L${prefix}/lib 
-Requires: roscpp grid_map_msgs grid_map_ros

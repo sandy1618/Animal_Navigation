@@ -1,0 +1,38 @@
+port: /dev/ttyUSB0
+baudrate: 1000000
+frame_id: spatial
+publish_tf: false
+# tf_parent_frame_id: base_link
+# tf_child_frame_id: spatial
+use_device_timestamp: false
+use_ros_frame_convention: true
+# Hot start or cold start
+cold_start: false
+# output_raw_anpp: true
+# anpp_output_path: ./%Y-%m-%dT%H-%M-%S.anpp
+topic_prefix: spatial
+packets:
+  # System State
+  - id: 20
+    period_ms: 5
+  # Raw Sensor
+  - id: 28
+    hz: 200
+  # Raw GNSS
+  - id: 29
+    hz: 10
+  # Satellite Detailed
+  - id: 31
+    hz: 10
+  # Geodetic Position
+  - id: 32
+    hz: 10
+  # Euler Orientation
+  - id: 39
+    hz: 200
+  # Quaternion Orientation
+  - id: 40
+    hz: 200
+  # Raw Satellite Data
+  - id: 60
+    hz: 20

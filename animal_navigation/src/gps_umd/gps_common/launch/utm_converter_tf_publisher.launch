@@ -1,0 +1,12 @@
+<launch>
+ <node pkg="gps_common" type="utm_odometry_node" name="utm_odometry_node">
+  <remap from="/fix" to="/spatial/fix"/>
+  <remap from="/odom" to="/gps_common_navsat/odom"/>
+ </node>
+ <!-- <node pkg="tf" type="static_transform_publisher" name="static_transform" args="-485600 -4234000 -205 0 0 0 map spatial 100 "/> -->
+ <!-- <node pkg="gps_common" type="utm_transform" name="utm_transform_node" output="screen"/> -->
+ <!-- <node pkg="gps_common" type="pose_tf_to_msg" name="pose_tf_to_msg_node" output="screen"/> -->
+  <node pkg="gps_common" type="gnss_imu_adder" name="gnss_imu_adder_node" output="screen"/>
+
+
+</launch>

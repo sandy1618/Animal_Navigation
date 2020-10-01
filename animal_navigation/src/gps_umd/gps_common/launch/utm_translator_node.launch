@@ -1,0 +1,6 @@
+<launch>
+ <node pkg="gps_common" type="utm_odometry_node" name="utm_odometry_node">
+  <remap from="/fix" to="/spatial/fix"/>
+  <remap from="/odom" to="/gps_common_navsat/odom"/>
+ </node>
+</launch>

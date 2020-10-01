@@ -1,2 +1,0 @@
-convert_to_dem:dem_to_occupancy
--DCATKIN_DEVEL_PREFIX=/home/kvothe/Animal_Navigation/tohoku_acv_original/devel -DCMAKE_INSTALL_PREFIX=/home/kvothe/Animal_Navigation/tohoku_acv_original/install -G Unix Makefiles
