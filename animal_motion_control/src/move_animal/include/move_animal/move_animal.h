@@ -13,6 +13,7 @@
 
 // tf package import
 #include <tf2/utils.h>
+#include <tf/tf.h> // for quaternions.
 
 // definitions
 #define PI 3.14159265
@@ -32,6 +33,7 @@ struct pos {
  pos goal{}; // goal postion 
 double distance{}; // Euclidean distance 
 double ref_angle{}; // reference angle
+double roll{}, pitch{},yaw{} ; // roll pitch and yaw angles made global.
 light_signal_msg::light_signal cmd_sig{}; // contains the velocity
 
 

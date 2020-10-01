@@ -65,6 +65,39 @@ void getRobotPoseAMCL(const geometry_msgs::PoseWithCovarianceStamped &msg)
     computeSignalCommands();
 }
 
+void getRobotPose(const geometry_msgs::PoseWithCovarianceStamped &msg) // msg.pose.pose.orientation
+{
+    // ROS_INFO_STREAM("Seq: " << msg.header.seq);
+    auto frame_id_ = msg.header.frame_id;
+    auto pose_ = msg.pose.pose;
+    now.x = pose_.position.x;
+    now.y = pose_.position.y;
+    // todo: get different angles because just yaw is not enough
+    // now.az = tf2::getYaw(pose_.orientation);
+
+    tf::Quaternion q( pose_.orientation.x,
+                      pose_.orientation.y,
+                      pose_.orientation.z,
+                      pose_.orientation.w); 
+    tf::Matrix3x3 m(q);
+    
+    m.getRPY(roll,pitch,yaw); // roll , pitch , yaw are made global, so in header files.
+    ROS_INFO_STREAM("Human: "
+                    << "Roll Angle :"
+                    << " " << roll * R2D
+                    << " Pitch Angle :"
+                    << " " << pitch * R2D
+                    << " Yaw Angle :"
+                    << " " << yaw * R2D);   
+
+    //FOR HUMAN, THE YAW IS ACUTALLY THE ROLL BECAUE THE IMU IS PLACE SIDEWAYS. 
+    now.az = roll;
+
+    setNowError();
+    computeSignalCommands();
+}
+
+
 void setNowError()
 {
     nError.x = (next.x - now.x);
@@ -103,14 +136,14 @@ void setNowError()
 
 void computeSignalCommands()
 {
-    if (distance < 0.05)
+    if (distance < 1)
     {
         ROS_INFO("goal_reached");
         setZeroSignal();
     }
     else
     {
-        if (fabs(nError.az) > 10 * D2R)
+        if (fabs(nError.az) > 30 * D2R)
         {
 
             setRot();
@@ -172,6 +205,7 @@ void initialize(light_signal_msg::light_signal &cmd_sig)
     cmd_sig.stop = 0;
     cmd_sig.sound = 0;
 }
+
 int main(int argc, char **argv)
 {
 
@@ -188,10 +222,13 @@ int main(int argc, char **argv)
     ros::NodeHandle simple_nh("move_base_simple");
     ros::Subscriber goal_sub_ = simple_nh.subscribe("goal", 1, getGoalPos);
 
-    // Robot's Position and Orientation estimations.
+    // Robot's Position and Orientation estimations from gazebo simulation 
     // subscribe to topics (to get odometry information, we need to get a handle to the topic in the global namespace)
     ros::NodeHandle gn;
-    ros::Subscriber amcl_sub_ = gn.subscribe("amcl_pose", 1, getRobotPoseAMCL);
+    // ros::Subscriber amcl_sub_ = gn.subscribe("amcl_pose", 1, getRobotPoseAMCL);
+
+    ros::Subscriber pose_sub_ = gn.subscribe("/map/robot_pose", 1, getRobotPose); // from real world
+
 
     // Publishing signal commands
     ros::NodeHandle pub;
