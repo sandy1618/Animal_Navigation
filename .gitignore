@@ -4,4 +4,5 @@ build/
 devel/
 devel_isolated/
 build_isolated/
+*.code-workspace
 
