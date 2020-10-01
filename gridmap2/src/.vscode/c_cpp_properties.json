@@ -1,0 +1,28 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/home/kvothe/Animal_Navigation/gridmap2/devel/include/**",
+        "/opt/ros/kinetic/include/**",
+        "/home/kvothe/Animal_Navigation/gridmap2/src/grid_map_core/include/**",
+        "/home/kvothe/Animal_Navigation/gridmap2/src/grid_map_costmap_2d/include/**",
+        "/home/kvothe/Animal_Navigation/gridmap2/src/grid_map_cv/include/**",
+        "/home/kvothe/Animal_Navigation/gridmap2/src/grid_map_demos/include/**",
+        "/home/kvothe/Animal_Navigation/gridmap2/src/grid_map_filters/include/**",
+        "/home/kvothe/Animal_Navigation/gridmap2/src/grid_map_loader/include/**",
+        "/home/kvothe/Animal_Navigation/gridmap2/src/grid_map_octomap/include/**",
+        "/home/kvothe/Animal_Navigation/gridmap2/src/grid_map_pcl/include/**",
+        "/home/kvothe/Animal_Navigation/gridmap2/src/grid_map_ros/include/**",
+        "/home/kvothe/Animal_Navigation/gridmap2/src/grid_map_rviz_plugin/include/**",
+        "/home/kvothe/Animal_Navigation/gridmap2/src/grid_map_sdf/include/**",
+        "/home/kvothe/Animal_Navigation/gridmap2/src/grid_map_visualization/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS"
+    }
+  ]
+}

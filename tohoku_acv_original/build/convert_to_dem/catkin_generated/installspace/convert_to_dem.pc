@@ -1,8 +1,0 @@
-prefix=/home/kvothe/Animal_Navigation/tohoku_acv_original/install
-
-Name: convert_to_dem
-Description: Description of convert_to_dem
-Version: 0.1.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

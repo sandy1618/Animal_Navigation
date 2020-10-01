@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="port" default="/dev/ttyUSB0" />
+
+  <node name="spatial_driver" pkg="spatial_driver" type="spatial_node" output="screen" >
+    <rosparam command="load" file="$(find spatial_driver)/config/sample.yaml" />
+
+    <param name="port" value="$(arg port)" />
+    <param name="frame_id" value="spatial" />
+    <param name="topic_prefix" value="spatial" />
+  </node>
+</launch>

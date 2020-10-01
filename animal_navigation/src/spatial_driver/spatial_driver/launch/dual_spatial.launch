@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<launch>
+  <node name="spatial_driver_01" pkg="spatial_driver" type="spatial_node" >
+    <rosparam command="load" file="$(find spatial_driver)/config/sample.yaml" />
+
+    <param name="port" value="/dev/ttyUSB0" />
+    <param name="frame_id" value="spatial_01" />
+    <param name="topic_prefix" value="spatial_01" />
+  </node>
+
+  <node name="spatial_driver_02" pkg="spatial_driver" type="spatial_node" >
+    <rosparam command="load" file="$(find spatial_driver)/config/sample.yaml" />
+
+    <param name="port" value="/dev/ttyUSB1" />
+    <param name="frame_id" value="spatial_02" />
+    <param name="topic_prefix" value="spatial_02" />
+  </node>
+</launch>
