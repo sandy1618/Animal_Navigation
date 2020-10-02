@@ -1,0 +1,54 @@
+{
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "",
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "includePath": [
+                "/home/sandy/Animal_Navigation/animal_navigation_gazebo/devel_isolated/move_base/include/**",
+                "/home/sandy/Animal_Navigation/animal_navigation_gazebo/devel_isolated/global_planner/include/**",
+                "/home/sandy/Animal_Navigation/animal_navigation_gazebo/devel_isolated/navfn/include/**",
+                "/home/sandy/Animal_Navigation/animal_navigation_gazebo/devel_isolated/dwa_local_planner/include/**",
+                "/home/sandy/Animal_Navigation/animal_navigation_gazebo/devel_isolated/base_local_planner/include/**",
+                "/home/sandy/Animal_Navigation/animal_navigation_gazebo/devel_isolated/costmap_2d/include/**",
+                "/home/sandy/Animal_Navigation/animal_navigation_gazebo/devel_isolated/amcl/include/**",
+                "/home/sandy/Animal_Navigation/animal_navigation/devel/include/**",
+                "/home/sandy/Animal_Navigation/animal_navigation_gazebo/devel_isolated/turtlebot3_example/include/**",
+                "/home/sandy/Animal_Navigation/animal_navigation_gazebo/devel_isolated/turtlebot3_msgs/include/**",
+                "/home/sandy/Animal_Navigation/animal_navigation_gazebo/devel_isolated/teleop_tools_msgs/include/**",
+                "/home/sandy/Animal_Navigation/light_signal/devel/include/**",
+                "/opt/ros/kinetic/include/**",
+                "/home/sandy/Animal_Navigation/animal_navigation_gazebo/src/navigation/amcl/include/**",
+                "/home/sandy/Animal_Navigation/animal_navigation_gazebo/src/navigation/base_local_planner/include/**",
+                "/home/sandy/Animal_Navigation/animal_navigation_gazebo/src/navigation/carrot_planner/include/**",
+                "/home/sandy/Animal_Navigation/animal_navigation_gazebo/src/navigation/clear_costmap_recovery/include/**",
+                "/home/sandy/Animal_Navigation/animal_navigation_gazebo/src/navigation/costmap_2d/include/**",
+                "/home/sandy/Animal_Navigation/animal_navigation_gazebo/src/navigation/dwa_local_planner/include/**",
+                "/home/sandy/Animal_Navigation/animal_navigation_gazebo/src/navigation/global_planner/include/**",
+                "/home/sandy/Animal_Navigation/animal_navigation/src/gps_umd/gps_common/include/**",
+                "/home/sandy/Animal_Navigation/animal_navigation_gazebo/src/navigation/map_server/include/**",
+                "/home/sandy/Animal_Navigation/animal_navigation_gazebo/src/navigation/move_base/include/**",
+                "/home/sandy/Animal_Navigation/animal_navigation_gazebo/src/navigation/move_slow_and_clear/include/**",
+                "/home/sandy/Animal_Navigation/animal_navigation_gazebo/src/navigation/nav_core/include/**",
+                "/home/sandy/Animal_Navigation/animal_navigation_gazebo/src/navigation/navfn/include/**",
+                "/home/sandy/Animal_Navigation/animal_navigation/src/robot_setup_tf/include/**",
+                "/home/sandy/Animal_Navigation/animal_navigation_gazebo/src/navigation/rotate_recovery/include/**",
+                "/home/sandy/Animal_Navigation/animal_navigation_gazebo/src/navigation/simple_local_planner/include/**",
+                "/home/sandy/Animal_Navigation/animal_navigation/src/spatial_driver/spatial_driver/include/**",
+                "/home/sandy/Animal_Navigation/animal_navigation/src/spatial_driver/spatial_sdk_c/include/**",
+                "/home/sandy/Animal_Navigation/animal_navigation_gazebo/src/micronrobot/turtlebot3_simulations/turtlebot3_fake/include/**",
+                "/home/sandy/Animal_Navigation/animal_navigation_gazebo/src/micronrobot/turtlebot3_simulations/turtlebot3_gazebo/include/**",
+                "/home/sandy/Animal_Navigation/animal_navigation_gazebo/src/micronrobot/turtlebot3/turtlebot3_slam/include/**",
+                "/home/sandy/Animal_Navigation/animal_navigation_gazebo/src/navigation/voxel_grid/include/**",
+                "/usr/include/**"
+            ],
+            "name": "ROS",
+            "intelliSenseMode": "gcc-x64",
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "gnu11",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}

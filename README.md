@@ -1,4 +1,12 @@
 # Animal_Navigation
+## Main Packages at Work
+-gridmap2/ gridmap_pcl
+-animal_motion_control/ move_animal
+-light_signal_msg
+-animal_navigation 
+
+
+
 
 ### Workflow 
 

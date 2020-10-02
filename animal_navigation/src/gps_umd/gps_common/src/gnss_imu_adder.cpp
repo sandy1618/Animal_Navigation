@@ -47,7 +47,13 @@ void pose_imu_publisher(const sensor_msgs::Imu::ConstPtr& msg){ // msg->orientat
                     << " " << pitch * R2D
                     << "Yaw Angle :"
                     << " " << yaw * R2D);   
-        
+    gps_odom.header = gnss_msg.header;
+    gps_odom.pose = gnss_msg.pose;
+   // Add the imu values to this posewithconvariance
+    gps_odom.pose.pose.orientation = imu_msg.orientation;
+   // publish this value. 
+    pose_pub_.publish(gps_odom);
+         
   
 }
 
@@ -60,6 +66,10 @@ void gnss_to_mapframe(const nav_msgs::Odometry::ConstPtr& msg){
   gnss_msg.pose.pose.position.y = msg->pose.pose.position.y - 4234000;
   gnss_msg.pose.pose.position.z = msg->pose.pose.position.z - 204;
   gnss_msg.twist = msg->twist;
+
+
+
+ 
 }
 int main(int argc, char** argv){
   ros::init(argc, argv, "pose_tf_to_msg");
@@ -82,26 +92,26 @@ int main(int argc, char** argv){
     geometry_msgs::TransformStamped transformStamped;
 
     while (node.ok()){
-
+      //setup publisher.
+      pose_pub_= node.advertise<geometry_msgs::PoseWithCovarianceStamped >("/map/robot_pose", 200);
+      
       gnss_sub_ = node.subscribe("/gps_common_navsat/odom",200,gnss_to_mapframe);
       imu_sub_ = node.subscribe("/spatial/imu",200,pose_imu_publisher);
+
+
      // spinOnce for subscriber to take action 
       ros::spinOnce();
     // convert this tf message into posewithconvariance message 
-      gps_odom.header = gnss_msg.header;
-      gps_odom.pose = gnss_msg.pose;
+      
       // gps_odom.pose.pose.position.y =transformStamped.transform.translation.y;
       // gps_odom.pose.pose.position.z =transformStamped.transform.translation.z;
       
-    // Add the imu values to this posewithconvariance
-      gps_odom.pose.pose.orientation = imu_msg.orientation;
+   
 
 
-    //setup publisher.
-      pose_pub_= node.advertise<geometry_msgs::PoseWithCovarianceStamped >("/map/robot_pose", 200);
+    
 
-   // publish this value. 
-      pose_pub_.publish(gps_odom);
+   
 
     }
   return 0;
