@@ -1,0 +1,12 @@
+<launch>
+
+   <node pkg="imu_filter_madgwick" type="imu_filter_node" name="imu_filter_madgwick" output="screen" respawn="false" >
+   <remap from="imu/data_raw" to="/spatial/imu"/>
+    <remap from="imu/mag" to="/spatial/mag"/>
+    <!-- <param name="fixed_frame" value="map" /> -->
+    <param name="use_mag" value="true" />
+    <param name="use_magnetic_field_msg" value="true" />
+ </node>
+
+
+</launch>

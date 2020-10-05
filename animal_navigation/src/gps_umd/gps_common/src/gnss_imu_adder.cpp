@@ -85,10 +85,11 @@ int main(int argc, char** argv){
     tf2_ros::Buffer tfBuffer;
     tf2_ros::TransformListener listener(tfBuffer);
     geometry_msgs::TransformStamped transformStamped;
-    pose_pub_= node.advertise<geometry_msgs::PoseWithCovarianceStamped >("/map/robot_pose", 200);
+    pose_pub_= node.advertise<geometry_msgs::PoseWithCovarianceStamped >("/map/robot_pose", 2);
       
-    gnss_sub_ = node.subscribe("/gps_common_navsat/odom",200,gnss_to_mapframe);
-    imu_sub_ = node.subscribe("/spatial/imu",200,pose_imu_publisher);
+    gnss_sub_ = node.subscribe("/gps_common_navsat/odom",2,gnss_to_mapframe);
+    // imu_sub_ = node.subscribe("/imu/data",2,pose_imu_publisher);
+    imu_sub_ = node.subscribe("/spatial/imu",2,pose_imu_publisher);
    
    ros::Rate loop_rate(200);
 

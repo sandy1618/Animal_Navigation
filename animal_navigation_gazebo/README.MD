@@ -15,6 +15,7 @@ sudo apt-get install -y ros-kinetic-gmapping ros-kinetic-amcl
 sudo apt-get install ros-kinetic-nav-core
 
 ### Launches 
+rosbag play --clock -l <bagfile>
 export TURTLEBOT3_MODEL=burger
 
 roslaunch turtlebot3_gazebo turtlebot3_world.launch
