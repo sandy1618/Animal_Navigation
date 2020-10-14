@@ -8,7 +8,7 @@ def callback(msg):
 
     led_onoff(20, msg.buttons[1] == 1) #foward
 
-    led_onoff(21, msg.buttons[2] == 1) #right
+    led_onoff(21, msg.buttons[3] == 1) #right
 
     led_onoff(4, msg.buttons[0] == 1)
 
