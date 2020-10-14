@@ -1,5 +1,8 @@
 #include <iostream>
-#include <move_animal/move_animal.h>
+#include <move_animal/move_animal.h> 
+
+#define ANGLE_THRESHOLD 20
+#define MAGNETIC_OFFSET 26 * D2R
 
 ros::Publisher pub_sig_;
 
@@ -50,7 +53,7 @@ void getRobotPoseAMCL(const geometry_msgs::PoseWithCovarianceStamped &msg)
     auto pose_ = msg.pose.pose;
     now.x = pose_.position.x;
     now.y = pose_.position.y;
-    now.az = tf2::getYaw(pose_.orientation);
+    now.az = tf2::getYaw(pose_.orientation) ;
 
     //tf2:;getYaw(pose.orientation)
     ROS_INFO_STREAM("Robot"
@@ -90,8 +93,12 @@ void getRobotPose(const geometry_msgs::PoseWithCovarianceStamped &msg) // msg.po
                     << " Yaw Angle :"
                     << " " << yaw * R2D);   
 
-    //FOR HUMAN, THE YAW IS ACUTALLY THE ROLL BECAUE THE IMU IS PLACE SIDEWAYS. 
-    now.az = roll;
+    //FOR HUMAN, THE YAW is addede with pi for making it 0-360 degree.
+    // shifed by 180 degree
+    now.az =yaw  ; 
+
+    // For simulaiton , is is 
+    // now.az = yaw;
 
     setNowError();
     computeSignalCommands();
@@ -143,7 +150,7 @@ void computeSignalCommands()
     }
     else
     {
-        if (fabs(nError.az) > 30 * D2R)
+        if (fabs(nError.az) > ANGLE_THRESHOLD * D2R)
         {
 
             setRot();
@@ -234,10 +241,11 @@ int main(int argc, char **argv)
     ros::NodeHandle pub;
     pub_sig_ = pub.advertise<light_signal_msg::light_signal>("cmd_sig", 1);
 
-    // ros::rate(10);
-    pub_sig_.publish(cmd_sig);
+    // ros::loop_rate(10);
+    // pub_sig_.publish(cmd_sig);
 
     ros::spin();
 
+    
     return 0;
 }

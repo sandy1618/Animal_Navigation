@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <launch>
-  <param name="/use_sim_time" value="true" />
+  <!-- <param name="/use_sim_time" value="true" /> -->
  
   <!-- <node pkg="tf_static" type="static_transform_publisher" name="static_transform" args="485600 4234000 200 0 0 0 map spatial 100 "/> -->
 

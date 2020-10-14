@@ -16,7 +16,11 @@
 // definitions
 #define PI 3.14159265
 #define D2R 0.0174532925      // = 3.14159265/180
-#define R2D 57.2958 // radians to degree 
+#define R2D 57.2958 // radians to degree
+
+#define X_UTM  485600
+#define Y_UTM  4234000
+#define Z_UTM  2
 
 //Global Variables.
 ros::Subscriber imu_sub_;
@@ -57,9 +61,9 @@ void gnss_to_mapframe(const nav_msgs::Odometry::ConstPtr& msg){
   gnss_msg.header = msg->header;
   gnss_msg.header.frame_id = "map";
   gnss_msg.child_frame_id = msg->child_frame_id;
-  gnss_msg.pose.pose.position.x = msg->pose.pose.position.x - 485600;
-  gnss_msg.pose.pose.position.y = msg->pose.pose.position.y - 4234000;
-  gnss_msg.pose.pose.position.z = msg->pose.pose.position.z - 204;
+  gnss_msg.pose.pose.position.x = msg->pose.pose.position.x - X_UTM;
+  gnss_msg.pose.pose.position.y = msg->pose.pose.position.y - Y_UTM;
+  gnss_msg.pose.pose.position.z = Z_UTM ;
   gnss_msg.twist = msg->twist;
 
 
@@ -106,7 +110,11 @@ int main(int argc, char** argv){
     gps_odom.header = gnss_msg.header;
     gps_odom.pose = gnss_msg.pose;
    // Add the imu values to this posewithconvariance
-    gps_odom.pose.pose.orientation = imu_msg.orientation;
+    gps_odom.pose.pose.orientation= imu_msg.orientation;
+    // gps_odom.pose.pose.orientation.x = imu_msg.orientation.x;
+    // gps_odom.pose.pose.orientation.x = imu_msg.orientation.x;
+    // gps_odom.pose.pose.orientation.x = imu_msg.orientation.x;
+    // gps_odom.pose.pose.orientation.x = imu_msg.orientation.x;
    // publish this value. 
     pose_pub_.publish(gps_odom);
       

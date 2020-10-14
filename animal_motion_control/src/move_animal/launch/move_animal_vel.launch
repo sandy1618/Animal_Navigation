@@ -1,5 +1,5 @@
 <launch>
-    <node pkg="move_animal" type="move_animal" name="move_animal_node"/>
+    <node pkg="move_animal" type="move_animal" name="move_animal_node" ouptut="screen"/>
     <node pkg="move_animal" type="signal_to_velocity" name="signal_to_velocity_node"/>
 
 </launch>

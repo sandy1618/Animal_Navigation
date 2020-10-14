@@ -348,13 +348,15 @@ Spatial::publish_imu_raw_msg() {
     imu_msg.orientation.z = quaternion_orientation_packet_.orientation[3];
 
     if (use_ros_frame_convention_) {
-        // Spatial's fixed frame convention has the x axis rotated 180 deg
+        // Spatial's fixed frame convention has the x axis rotated 180 deg and a 90 degree yaw 
+        // Spatial is (NED North East Down = N-> x, E -> y, D -> z), 
+        // ROS is (ENU North East Up = E -> x , N-> y , U->z)
         const auto& imu_o = imu_msg.orientation;
         tf2::Quaternion imu_q(imu_o.x, imu_o.y, imu_o.z, imu_o.w);
 
-        // Rotate roll by 180 deg
+        // Rotate roll by 180 deg and yaw about 90 degress in spatial +ve direction
         tf2::Quaternion flip_roll;
-        flip_roll.setRPY(M_PI, 0, 0);
+        flip_roll.setRPY(M_PI, 0, M_PI_2);
 
         // Apply rotation to the IMU message
         imu_q = flip_roll * imu_q;

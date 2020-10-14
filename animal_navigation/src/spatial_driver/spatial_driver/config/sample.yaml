@@ -17,22 +17,22 @@ packets:
     period_ms: 5
   # Raw Sensor
   - id: 28
-    hz: 200
+    hz: 1
   # Raw GNSS
   - id: 29
-    hz: 10
+    hz: 1
   # Satellite Detailed
   - id: 31
-    hz: 10
+    hz: 1
   # Geodetic Position
   - id: 32
-    hz: 10
+    hz: 1
   # Euler Orientation
   - id: 39
-    hz: 200
+    hz: 1
   # Quaternion Orientation
   - id: 40
-    hz: 200
+    hz: 1
   # Raw Satellite Data
   - id: 60
-    hz: 20
+    hz: 2
