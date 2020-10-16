@@ -35,3 +35,24 @@ roslaunch hector_imu_attitude_to_tf example.launch
 
 
 Note: utm_transfom.cpp inside gps_common has the map to spatial transformnation. 
+
+
+Workflow 1:
+### Starting spatial node.
+sudo su
+roslaunch spatial_driver output_anpp_complete.launch
+
+### Starting the GNSS + IMU launch file
+roslaunch gps_common utm_converter_tf_publisher.launch
+
+### RUN mapserver and Rviz 
+
+### Starting the move_animal_sig.launch controller. 
+roslaunch move_animal move_animal_sig.launch
+
+### Starting the LED control in root. 
+sudo su
+rosrun move_animal led_control_cmd_sig.py 
+
+### Run Rosbag node. 
+

@@ -29,7 +29,7 @@ def cmd_sig_control(msg):
 
     led_onoff(21, msg.right == 1) #right
 
-    led_onoff(4, msg.buttons[0] == 1)
+    #led_onoff(4, msg.stop] == 1)
 
 def joy_control(msg):
     led_onoff(16, msg.buttons[0] == 1) # left
@@ -61,8 +61,8 @@ def setup_GPIO():
 def listener():
     rospy.init_node('led_control_cmd_sig')
     setup_GPIO()
-    rospy.Subscriber("joy", Joy, joy_control)
-    #  rospy.Subscriber("cmd_sig",light_signal,cmd_sig_control)
+    #rospy.Subscriber("joy", Joy, joy_control)
+    rospy.Subscriber("cmd_sig",light_signal,cmd_sig_control)
     # rospy.Subscriber("cmd_sig",light_signal,cmd_sig_test)
     # rospy.Subscriber("joy", Joy, joy_test)
     rospy.spin()
