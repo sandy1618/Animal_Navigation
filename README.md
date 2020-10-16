@@ -5,8 +5,10 @@
 -light_signal_msg
 -animal_navigation 
 
-
-
+### Utilities 
+#### Saving Maps 
+rosrun map_server map_saver -f mymap2 map:=/grid_map_pcl_loader_node/occupancy_grid
+rosrun map_server map_sever mymap2
 
 ### Workflow 
 
@@ -37,22 +39,22 @@ roslaunch hector_imu_attitude_to_tf example.launch
 Note: utm_transfom.cpp inside gps_common has the map to spatial transformnation. 
 
 
-Workflow 1:
-### Starting spatial node.
+## Workflow 1:
+#### Starting spatial node.
 sudo su
 roslaunch spatial_driver output_anpp_complete.launch
 
-### Starting the GNSS + IMU launch file
+#### Starting the GNSS + IMU launch file
 roslaunch gps_common utm_converter_tf_publisher.launch
 
-### RUN mapserver and Rviz 
+#### RUN mapserver and Rviz 
 
-### Starting the move_animal_sig.launch controller. 
+#### Starting the move_animal_sig.launch controller. 
 roslaunch move_animal move_animal_sig.launch
 
-### Starting the LED control in root. 
+#### Starting the LED control in root. 
 sudo su
 rosrun move_animal led_control_cmd_sig.py 
 
-### Run Rosbag node. 
+#### Run Rosbag node. 
 
