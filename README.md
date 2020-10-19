@@ -46,6 +46,7 @@ roslaunch spatial_driver output_anpp_complete.launch
 roslaunch gps_common utm_converter_tf_publisher.launch
 
 ### RUN mapserver and Rviz 
+rosrun map_server map_server map/mymap.yaml
 
 ### Starting the move_animal_sig.launch controller. 
 roslaunch move_animal move_animal_sig.launch
