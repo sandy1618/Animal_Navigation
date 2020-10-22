@@ -1,7 +1,7 @@
 #include <iostream>
 #include <move_animal/move_animal.h> 
 
-#define ANGLE_THRESHOLD 20
+#define ANGLE_THRESHOLD 10
 #define MAGNETIC_OFFSET 26 * D2R
 
 ros::Publisher pub_sig_;
@@ -53,7 +53,7 @@ void getRobotPoseAMCL(const geometry_msgs::PoseWithCovarianceStamped &msg)
     auto pose_ = msg.pose.pose;
     now.x = pose_.position.x;
     now.y = pose_.position.y;
-    now.az = tf2::getYaw(pose_.orientation) ;
+  
 
     //tf2:;getYaw(pose.orientation)
     ROS_INFO_STREAM("Robot"
@@ -63,6 +63,7 @@ void getRobotPoseAMCL(const geometry_msgs::PoseWithCovarianceStamped &msg)
                     << "Yaw Angle :"
                     << " " << now.az * R2D);
 
+    now.az = tf2::getYaw(pose_.orientation) ;
     setNowError();
 
     computeSignalCommands();
@@ -93,8 +94,8 @@ void getRobotPose(const geometry_msgs::PoseWithCovarianceStamped &msg) // msg.po
                     << " Yaw Angle :"
                     << " " << yaw * R2D);   
 
-    //FOR HUMAN, THE YAW is addede with pi for making it 0-360 degree.
-    // shifed by 180 degree
+    //FOR HUMAN, THE YAW 
+    
     now.az =yaw  ; 
 
     // For simulaiton , is is 
@@ -143,7 +144,7 @@ void setNowError()
 
 void computeSignalCommands()
 {
-    if (distance < 1)
+    if (distance < 0.3)
     {
         ROS_INFO("goal_reached");
         setZeroSignal();
@@ -170,7 +171,7 @@ void setZeroSignal()
     cmd_sig.left = 0;
     cmd_sig.right = 0;
     cmd_sig.forward = 0;
-    cmd_sig.stop = 0;
+    cmd_sig.stop = 1;
     cmd_sig.sound = 0;
 }
 
@@ -227,14 +228,15 @@ int main(int argc, char **argv)
 
     // separate node handle for having the namespace scope move_base_simple
     ros::NodeHandle simple_nh("move_base_simple");
-    ros::Subscriber goal_sub_ = simple_nh.subscribe("goal", 1, getGoalPos);
+    ros::Subscriber goal_sub_ = simple_nh.subscribe("goal", 5, getGoalPos);
 
     // Robot's Position and Orientation estimations from gazebo simulation 
     // subscribe to topics (to get odometry information, we need to get a handle to the topic in the global namespace)
     ros::NodeHandle gn;
-    // ros::Subscriber amcl_sub_ = gn.subscribe("amcl_pose", 1, getRobotPoseAMCL);
-
-    ros::Subscriber pose_sub_ = gn.subscribe("/map/robot_pose", 1, getRobotPose); // from real world
+    // For simulation
+    ros::Subscriber amcl_sub_ = gn.subscribe("amcl_pose", 1, getRobotPoseAMCL);
+    // For Real lif 
+    // ros::Subscriber pose_sub_ = gn.subscribe("/map/robot_pose", 1, getRobotPose); // from real world
 
 
     // Publishing signal commands

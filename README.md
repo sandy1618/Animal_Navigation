@@ -38,8 +38,25 @@ roslaunch hector_imu_attitude_to_tf example.launch
 
 Note: utm_transfom.cpp inside gps_common has the map to spatial transformnation. 
 
-
 ## Workflow 1:
+### For Running Turtle bot simulation 
+#### Run Gazebo 
+export TURTLEBOT3_MODEL=burger
+roslaunch turtlebot3_gazebo turtlebot3_world.launch 
+
+#### Run Navigation + Rviz 
+export TURTLEBOT3_MODEL=burger
+roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:=$HOME/Animal_Navigation/animal_navigation_gazebo/src/micronrobot/turtlebot3/turtlebot3_navigation/maps/map.yaml
+
+#### Run Command signal & comman velocity node. 
+<!-- - Check if the node is subscribing to AMCL signal .  -->
+roslaunch move_animal move_animal_vel.launch
+
+
+
+
+___ 
+## Workflow 2:
 #### Starting spatial node.
 sudo su
 roslaunch spatial_driver output_anpp_complete.launch
@@ -52,6 +69,7 @@ roslaunch gps_common utm_converter_tf_publisher.launch
 rosrun map_server map_server map/mymap.yaml
 
 #### Starting the move_animal_sig.launch controller. 
+<!-- Check if the node is subscribing to /map/robot_pose signal -->
 roslaunch move_animal move_animal_sig.launch
 
 #### Starting the LED control in root. 
@@ -59,4 +77,5 @@ sudo su
 rosrun move_animal led_control_cmd_sig.py 
 
 #### Run Rosbag node. 
+
 
