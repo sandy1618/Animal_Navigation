@@ -34,7 +34,8 @@ class FollowPath(State):
         rospy.loginfo('Starting a tf listner.')
         self.tf = TransformListener()
         self.listener = tf.TransformListener()
-        self.distance_tolerance = rospy.get_param('waypoint_distance_tolerance', 0.3)
+        self.distance_tolerance = rospy.get_param('waypoint_distance_tolerance', 0.2)
+        # give some tolerance otherwise, perfect 0 is not possible, so it will stop. 
 
     def execute(self, userdata):
         global waypoints

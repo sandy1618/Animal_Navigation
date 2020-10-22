@@ -144,7 +144,7 @@ void setNowError()
 
 void computeSignalCommands()
 {
-    if (distance < 0.3)
+    if (distance < 0.1)
     {
         ROS_INFO("goal_reached");
         setZeroSignal();
@@ -214,21 +214,41 @@ void initialize(light_signal_msg::light_signal &cmd_sig)
     cmd_sig.sound = 0;
 }
 
+
+ 
+void getGoalActionPose(const move_base_msgs::MoveBaseGoalConstPtr& move_base_goal, MoveBaseActionServer* as_)
+{
+    auto frame_id_ = move_base_goal->target_pose.header.frame_id;
+    auto pose_ = move_base_goal->target_pose.pose;
+    goal.x = pose_.position.x; // here next is the goal, but later
+    goal.y = pose_.position.y;
+
+    next = goal; // for first algorithm, goal is same as next position.
+    ROS_INFO_STREAM("Goal : "
+                    << "Position x,y :"
+                    << " " << goal.x << " , " << goal.y);
+    pub_sig_.publish(cmd_sig);
+    as_->setSucceeded();
+}
+
 int main(int argc, char **argv)
 {
 
     ros::init(argc, argv, "move_animal");
 
-    // ros::NodeHandle n;
-
-    // ros::Subscriber occupancy_grid_ = n.subscribe("map",10,printCallback2);
-
     // Initialize command signals
     initialize(cmd_sig);
+    
 
     // separate node handle for having the namespace scope move_base_simple
-    ros::NodeHandle simple_nh("move_base_simple");
-    ros::Subscriber goal_sub_ = simple_nh.subscribe("goal", 5, getGoalPos);
+    ros::NodeHandle simple_nh;
+    // ros::Subscriber goal_sub_ = simple_nh.subscribe("move_base_simple/goal", 5, getGoalPos);
+    
+    // NodeHandle instance must be created before this line. Otherwise strange error occurs.
+    MoveBaseActionServer as_(simple_nh, "move_base", boost::bind(&getGoalActionPose,_1,&as_),false);
+    
+    as_.start();
+    
 
     // Robot's Position and Orientation estimations from gazebo simulation 
     // subscribe to topics (to get odometry information, we need to get a handle to the topic in the global namespace)
@@ -243,8 +263,7 @@ int main(int argc, char **argv)
     ros::NodeHandle pub;
     pub_sig_ = pub.advertise<light_signal_msg::light_signal>("cmd_sig", 1);
 
-    // ros::loop_rate(10);
-    // pub_sig_.publish(cmd_sig);
+    
 
     ros::spin();
 

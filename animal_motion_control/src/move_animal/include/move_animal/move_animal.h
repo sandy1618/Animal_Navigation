@@ -1,6 +1,14 @@
 #ifndef MOVE_ANIMAL_ROS_H_
 #define MOVE_ANIMAL_ROS_H_
 
+//Move base action 
+#include <actionlib/server/simple_action_server.h>
+#include <move_base_msgs/MoveBaseAction.h>
+//typedefs to help us out with the action server so that we don't hace to type so much
+typedef actionlib::SimpleActionServer<move_base_msgs::MoveBaseAction> MoveBaseActionServer;
+
+// SimpleActionServer (ros::NodeHandle n, std::string name, ExecuteCallback execute_callback, bool auto_start)
+
 #include <ros/ros.h>
 #include <nav_msgs/OccupancyGrid.h>
 
@@ -58,6 +66,7 @@ void setZeroSignal();
 void setRot();
 void setVel();
 
+void getGoalActionPose(const move_base_msgs::MoveBaseGoalConstPtr& move_base_goal, MoveBaseActionServer* as_);
 
 
 

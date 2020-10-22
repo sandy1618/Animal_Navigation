@@ -10,14 +10,15 @@ add_compile_options(-std=c++11)
 find_package(catkin REQUIRED COMPONENTS
   costmap_2d
   geometry_msgs
-  light_signal_msg
-  move_base_msgs
+  light_signal_msg  
   nav_msgs
   roscpp
   rospy
   std_srvs
   tf2_geometry_msgs
   tf2_ros
+  actionlib
+  move_base_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -109,11 +110,11 @@ find_package(catkin REQUIRED COMPONENTS
 ## LIBRARIES: libraries you create in this project that dependent projects also need
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
+
 catkin_package(
-#  INCLUDE_DIRS include
-#  LIBRARIES move_animal
-#  CATKIN_DEPENDS costmap_2d geometry_msgs light_signal_msg move_base_msgs nav_msgs roscpp rospy std_srvs tf2_geometry_msgs tf2_ros
-#  DEPENDS system_lib
+
+  CATKIN_DEPENDS costmap_2d geometry_msgs light_signal_msg move_base_msgs nav_msgs roscpp rospy std_srvs tf2_geometry_msgs tf2_ros
+
 )
 
 ###########
