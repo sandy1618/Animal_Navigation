@@ -7,7 +7,7 @@ find_package(catkin REQUIRED
             geometry_msgs
             tf2_ros
             costmap_2d
-            light_signal_msg
+            #light_signal_msg
         )
 
 catkin_package(
@@ -18,9 +18,11 @@ catkin_package(
             geometry_msgs
             tf2_ros
             costmap_2d
-            light_signal_msg
+            #light_signal_msg
 )
 
+#add_dependencies(nav_core ${catkin_EXPORTED_TARGETS})
+#add_dependencies(your_program msg_pkg_generate_messages_cpp)
 
 ## Install project namespaced headers
 install(DIRECTORY include/${PROJECT_NAME}/

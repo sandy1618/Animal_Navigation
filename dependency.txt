@@ -1,0 +1,48 @@
+    1  sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+    2  sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+    3  sudo apt-get update
+    4  sudo apt-get install ros-kinetic-desktop-full
+    5  sudo apt-get update
+    6  sudo apt-get install ros-kinetic-desktop-full
+    7  echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
+    8  source ~/.bashrc
+    9  sudo apt install python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essentia
+   10  sudo apt install python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential
+   11  sudo apt install python-rosdep
+   12  sudo rosdep init
+   13  rosdep update
+   14  sudo rosdep init
+   15  rosdep update
+   16  sudo apt install git
+   17  ls
+   18  git clone https://github.com/sandy1618/Animal_Navigation.git
+   19  ls
+   20  cd Animal_Navigation/
+   21  ls
+   22  git branch -a
+   23  git branch checkout waypoint
+   24  git checkout waypoint
+   25  git log
+   26  ls
+   27  cd animal_navigation_gazebo/
+   28  ls
+   29  catkin_make_isolated
+   30  sudo apt-get install ros-kinetic--controller-manager
+   31  sudo apt-get install ros-kinetic-controller-manager
+   32  catkin_make_isolated
+   33  rosdep install navigation
+   34  sudo apt-get install libbullet-dev
+   35  catkin_make_isolated
+   36  sudo apt-get install libsdl-image1.2-dev
+   37  sudo apt-get install libsdl-de
+   38  sudo apt-get install libsdl-dev
+   39  catkin_make_isolated
+   40  sudo apt-get install ros-kinetic-joy ros-kinetic-joystick-drivers
+   41  catkin_make_isolated
+   42  sudo apt-get install ros-kinetic-tf2-sensor-msgs
+   43  history
+   44  echo history > ~/dependency.txt
+   45  echo history | cat ~/dependency.txt
+   46  echo history | ~/dependency.txt
+   47  echo history |less ~/dependency.txt
+   48  history > ~/dependency.txt 

@@ -48,6 +48,9 @@ roslaunch turtlebot3_gazebo turtlebot3_world.launch
 export TURTLEBOT3_MODEL=burger
 roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:=$HOME/Animal_Navigation/animal_navigation_gazebo/src/micronrobot/turtlebot3/turtlebot3_navigation/maps/map.yaml
 
+#### follow waypoints
+roslaunch follow_waypoints follow_waypoints.launch 
+
 #### Run Command signal & comman velocity node. 
 <!-- - Check if the node is subscribing to AMCL signal .  -->
 roslaunch move_animal move_animal_vel.launch
