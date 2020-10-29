@@ -2,9 +2,7 @@
 #include <move_animal/move_animal.h> 
 
 #define ANGLE_THRESHOLD 10
-#define MAGNETIC_OFFSET 26 * D2R
-
-ros::Publisher pub_sig_;
+#define DISTANCE_TOLERANCE 0.05
 
 void printCallback(const nav_msgs::OccupancyGrid::ConstPtr &msg)
 {
@@ -64,8 +62,9 @@ void getRobotPoseAMCL(const geometry_msgs::PoseWithCovarianceStamped &msg)
                     << " " << now.az * R2D);
 
     now.az = tf2::getYaw(pose_.orientation) ;
-    setNowError();
 
+
+    setNowError();
     computeSignalCommands();
 }
 
@@ -93,7 +92,7 @@ void getRobotPose(const geometry_msgs::PoseWithCovarianceStamped &msg) // msg.po
                     << " " << pitch * R2D
                     << " Yaw Angle :"
                     << " " << yaw * R2D);   
-
+ 
     //FOR HUMAN, THE YAW 
     
     now.az =yaw  ; 
@@ -144,10 +143,10 @@ void setNowError()
 
 void computeSignalCommands()
 {
-    if (distance < 0.1)
+    if (distance < DISTANCE_TOLERANCE)
     {
-        ROS_INFO("goal_reached");
-        setZeroSignal();
+        ROS_INFO("GOAL_REACHED");
+        setOneSignal();
     }
     else
     {
@@ -164,6 +163,8 @@ void computeSignalCommands()
     }
 
     pub_sig_.publish(cmd_sig);
+    
+    
 }
 
 void setZeroSignal()
@@ -172,6 +173,14 @@ void setZeroSignal()
     cmd_sig.right = 0;
     cmd_sig.forward = 0;
     cmd_sig.stop = 1;
+    cmd_sig.sound = 0;
+}
+void setOneSignal()
+{
+    cmd_sig.left = 1;
+    cmd_sig.right = 1;
+    cmd_sig.forward = 1;
+    cmd_sig.stop = 0;
     cmd_sig.sound = 0;
 }
 
@@ -252,17 +261,16 @@ int main(int argc, char **argv)
 
     // Robot's Position and Orientation estimations from gazebo simulation 
     // subscribe to topics (to get odometry information, we need to get a handle to the topic in the global namespace)
-    ros::NodeHandle gn;
+  
     // For simulation
-    ros::Subscriber amcl_sub_ = gn.subscribe("amcl_pose", 1, getRobotPoseAMCL);
+    ros::Subscriber amcl_sub_ = simple_nh.subscribe("amcl_pose", 1, getRobotPoseAMCL);
     // For Real lif 
     // ros::Subscriber pose_sub_ = gn.subscribe("/map/robot_pose", 1, getRobotPose); // from real world
 
 
-    // Publishing signal commands
-    ros::NodeHandle pub;
-    pub_sig_ = pub.advertise<light_signal_msg::light_signal>("cmd_sig", 1);
-
+  
+    pub_sig_ = simple_nh.advertise<light_signal_msg::light_signal>("cmd_sig", 1);
+    // pub_path_ = simple_nh.advertise<nav_msgs::Path>("path", 1);
     
 
     ros::spin();

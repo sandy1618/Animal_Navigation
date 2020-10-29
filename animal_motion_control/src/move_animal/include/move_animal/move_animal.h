@@ -23,6 +23,10 @@ typedef actionlib::SimpleActionServer<move_base_msgs::MoveBaseAction> MoveBaseAc
 #include <tf2/utils.h>
 #include <tf/tf.h> // for quaternions.
 
+// // for visualization 
+// #include <nav_msgs/Path.h>
+
+
 // definitions
 #define PI 3.14159265
 #define D2R 0.0174532925      // = 3.14159265/180
@@ -44,6 +48,11 @@ double ref_angle{}; // reference angle
 double roll{}, pitch{},yaw{} ; // roll pitch and yaw angles made global.
 light_signal_msg::light_signal cmd_sig{}; // contains the velocity
 
+// nav_msgs::Path path;
+geometry_msgs::PoseStamped path_pose;
+
+ros::Publisher pub_sig_;
+// ros::Publisher pub_path_;
 
 /**
  * @brief Get robot postioin via amcl callback
@@ -63,6 +72,7 @@ void setNowError();
 
 void computeSignalCommands();
 void setZeroSignal();
+void setOneSignal();
 void setRot();
 void setVel();
 

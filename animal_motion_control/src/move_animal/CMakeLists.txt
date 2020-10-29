@@ -168,8 +168,10 @@ target_link_libraries(signal_to_velocity
 
 catkin_install_python(PROGRAMS
 scripts/led_control_cmd_sig.py
+scripts/trajectory_publisher.py
 DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
+
 
 ## Mark executables for installation
 ## See http://docs.ros.org/melodic/api/catkin/html/howto/format1/building_executables.html

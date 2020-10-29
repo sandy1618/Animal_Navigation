@@ -51,6 +51,8 @@ roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:=$HOME/Ani
 #### follow waypoints
 roslaunch follow_waypoints follow_waypoints.launch 
 
+rostopic pub /path_ready std_msgs/Empty -1
+
 #### Run Command signal & comman velocity node. 
 <!-- - Check if the node is subscribing to AMCL signal .  -->
 roslaunch move_animal move_animal_vel.launch
