@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="rosbag" type="record" name="rosbag_record"
+       args="-o $(optenv BAG_PATH)/move_animal /cmd_sig /map /map/robot_pose /move_base_simple/goal"/> 
+</launch>

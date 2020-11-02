@@ -38,6 +38,18 @@ roslaunch hector_imu_attitude_to_tf example.launch
 
 Note: utm_transfom.cpp inside gps_common has the map to spatial transformnation. 
 
+## Rosbag Recorded Topics 
+/cmd_sig
+/map
+/map/robot_pose
+/map_metadata
+/move_base_simple/goal
+
+/gps_comon_navsat/odom
+/spatial/fix
+/spatial/imu
+
+
 ## Workflow 1:
 ### For Running Turtle bot simulation 
 #### Run Gazebo 
@@ -67,7 +79,7 @@ sudo su
 roslaunch spatial_driver output_anpp_complete.launch
 
 #### Starting the GNSS + IMU launch file
-roslaunch gps_common utm_converter_tf_publisher.launch
+roslaunch gps_common final_animal_pose.launch
 
 
 ### RUN mapserver and Rviz 
@@ -82,5 +94,7 @@ sudo su
 rosrun move_animal led_control_cmd_sig.py 
 
 #### Run Rosbag node. 
+export BAG_PATH=/home/sandy/bag
+roslaunch move_animal rosbag_record.launch
 
 
