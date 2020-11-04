@@ -8,8 +8,7 @@
  <!-- <node pkg="gps_common" type="pose_tf_to_msg" name="pose_tf_to_msg_node" output="screen"/> -->
   <node pkg="gps_common" type="gnss_imu_adder" name="gnss_imu_adder_node" output="screen"/>
 
-<!-- RVIZ -->
-  <node pkg="rviz" type="rviz" name="rviz1" args="-d $(find gps_common)/rviz/rviz.rviz"/>
+
 
 
 </launch>
