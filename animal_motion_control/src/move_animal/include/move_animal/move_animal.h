@@ -15,9 +15,11 @@ typedef actionlib::SimpleActionServer<move_base_msgs::MoveBaseAction> MoveBaseAc
 //position message 
 #include <geometry_msgs/PoseStamped.h>
 #include <geometry_msgs/PoseWithCovarianceStamped.h>
+#include <std_msgs/Header.h>
 
 //light message importing
 #include <light_signal_msg/light_signal.h>
+#include <light_signal_msg/state.h>
 
 // tf package import
 #include <tf2/utils.h>
@@ -47,6 +49,7 @@ double distance{}; // Euclidean distance
 double ref_angle{}; // reference angle
 double roll{}, pitch{},yaw{} ; // roll pitch and yaw angles made global.
 light_signal_msg::light_signal cmd_sig{}; // contains the velocity
+std_msgs::Header msg_header;
 
 // nav_msgs::Path path;
 geometry_msgs::PoseStamped path_pose;

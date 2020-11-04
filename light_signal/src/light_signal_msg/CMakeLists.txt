@@ -55,6 +55,7 @@ find_package(catkin REQUIRED COMPONENTS
 add_message_files(
    FILES
    light_signal.msg
+   state.msg
  )
 
 

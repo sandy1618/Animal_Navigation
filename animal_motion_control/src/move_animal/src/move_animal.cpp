@@ -51,6 +51,8 @@ void getRobotPoseAMCL(const geometry_msgs::PoseWithCovarianceStamped &msg)
     auto pose_ = msg.pose.pose;
     now.x = pose_.position.x;
     now.y = pose_.position.y;
+    msg_header = msg.header;
+
   
 
     //tf2:;getYaw(pose.orientation)
@@ -75,6 +77,7 @@ void getRobotPose(const geometry_msgs::PoseWithCovarianceStamped &msg) // msg.po
     auto pose_ = msg.pose.pose;
     now.x = pose_.position.x;
     now.y = pose_.position.y;
+    msg_header = msg.header;
     // todo: get different angles because just yaw is not enough
     // now.az = tf2::getYaw(pose_.orientation);
 
@@ -168,7 +171,8 @@ void computeSignalCommands()
 }
 
 void setZeroSignal()
-{
+{   
+    cmd_sig.header = msg_header;
     cmd_sig.left = 0;
     cmd_sig.right = 0;
     cmd_sig.forward = 0;
@@ -176,7 +180,10 @@ void setZeroSignal()
     cmd_sig.sound = 0;
 }
 void setOneSignal()
-{
+{   
+    // cmd_sig.header.stamp = ros::Time::now();
+    cmd_sig.header = msg_header;
+
     cmd_sig.left = 1;
     cmd_sig.right = 1;
     cmd_sig.forward = 1;
@@ -189,6 +196,9 @@ void setRot()
 
     if (nError.az > 0)
     { // IF DIFFE IS +VE, move left.
+        // cmd_sig.header.stamp = ros::Time::now();
+        cmd_sig.header = msg_header;
+
         cmd_sig.left = 1;
         cmd_sig.right = 0;
         cmd_sig.forward = 0;
@@ -197,6 +207,11 @@ void setRot()
     }
     else
     {
+        // cmd_sig.header.stamp = ros::Time::now();
+        // cmd_sig.header.stamp = msg_header.stamp;
+        cmd_sig.header = msg_header;
+
+        
         cmd_sig.left = 0;
         cmd_sig.right = 1;
         cmd_sig.forward = 0;
@@ -207,6 +222,11 @@ void setRot()
 
 void setVel()
 {
+    // cmd_sig.header.stamp = ros::Time::now();
+    // cmd_sig.header.stamp = msg_header.stamp;
+    cmd_sig.header = msg_header;
+
+
     cmd_sig.left = 0;
     cmd_sig.right = 0;
     cmd_sig.forward = 1;
@@ -216,6 +236,11 @@ void setVel()
 
 void initialize(light_signal_msg::light_signal &cmd_sig)
 {
+    // cmd_sig.header.stamp = ros::Time::now();
+    // cmd_sig.header.stamp = msg_header.stamp;
+    cmd_sig.header = msg_header;
+
+
     cmd_sig.left = 0;
     cmd_sig.right = 0;
     cmd_sig.forward = 0;

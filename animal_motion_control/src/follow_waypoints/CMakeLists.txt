@@ -9,13 +9,16 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   smach
   std_msgs
+  light_signal_msg
 )
+
+#add_dependencies(follow_waypoints ${catkin_EXPORTED_TARGETS})
 
 catkin_python_setup()
 
 catkin_package(
   LIBRARIES ${PROJECT_NAME}
-  CATKIN_DEPENDS actionlib geometry_msgs move_base_msgs rospy smach std_msgs
+  CATKIN_DEPENDS light_signal_msg actionlib geometry_msgs move_base_msgs rospy smach std_msgs
 )
 
 catkin_install_python(
