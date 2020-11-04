@@ -4,6 +4,6 @@
     <node pkg="follow_waypoints" type="follow_waypoints" name="follow_waypoints" output="screen" clear_params="true">
         <param name="goal_frame_id" value="map"/>
     </node>
-    <node pkg="move_animal" type="move_animal" name="move_animal_node" output="screen"/>
+    <node pkg="move_animal" type="move_animal_human" name="move_animal_human_node" output="screen"/>
     <node pkg="move_animal" type="trajectory_publisher.py" name="trajectory_publisher_node"/>
 </launch>

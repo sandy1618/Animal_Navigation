@@ -290,7 +290,7 @@ int main(int argc, char **argv)
     // For simulation
     ros::Subscriber amcl_sub_ = simple_nh.subscribe("amcl_pose", 1, getRobotPoseAMCL);
     // For Real lif 
-    // ros::Subscriber pose_sub_ = gn.subscribe("/map/robot_pose", 1, getRobotPose); // from real world
+    // ros::Subscriber pose_sub_ = simple_nh.subscribe("/map/robot_pose", 1, getRobotPose); // from real world
 
 
   

@@ -150,7 +150,13 @@ target_link_libraries(signal_to_velocity
    move_animal_lib
 )
 
-
+#Added the move_animal_human.cpp executable
+add_executable(move_animal_human src/move_animal_human.cpp)
+add_dependencies(move_animal_human ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(move_animal_human
+   ${catkin_LIBRARIES}
+   move_animal_lib
+)
 
 
 ## Specify libraries to link a library or executable target against
