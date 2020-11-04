@@ -1,0 +1,5 @@
+<launch>
+<!-- RVIZ -->
+  <node pkg="rviz" type="rviz" name="rviz1" args="-d $(find gps_common)/rviz/rviz.rviz"/>
+  
+</launch>
