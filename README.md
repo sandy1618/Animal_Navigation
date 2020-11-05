@@ -81,10 +81,6 @@ roslaunch spatial_driver output_anpp_complete.launch
 #### Starting the GNSS + IMU launch file
 roslaunch gps_common final_animal_pose.launch
 
-
-### RUN mapserver and Rviz 
-rosrun map_server map_server map/mymap.yaml
-
 #### Starting the move_animal_sig.launch controller. 
 <!-- Check if the node is subscribing to /map/robot_pose signal -->
 roslaunch move_animal move_animal_sig.launch
@@ -92,6 +88,9 @@ roslaunch move_animal move_animal_sig.launch
 #### Starting the LED control in root. 
 sudo su
 rosrun move_animal led_control_cmd_sig.py 
+
+### RUN mapserver and Rviz in other PC
+rosrun map_server map_server map/mymap2.yaml
 
 #### Run Rosbag node. 
 export BAG_PATH=/home/sandy/bag

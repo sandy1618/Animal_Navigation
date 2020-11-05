@@ -4,14 +4,17 @@ import rospy
 # for visualization 
 from nav_msgs.msg import Path
 from geometry_msgs.msg import PoseWithCovarianceStamped, PoseStamped
+# path_topic = "amcl_pose"
+path_topic = '/map/robot_pose'
 
 
 class Path_PubSub():
     def __init__(self):
+        global path_topic
         rospy.init_node("path_pubsub")
         #Creating a path object. 
         self.path_ = Path()
-        self.path_sub_ = rospy.Subscriber("amcl_pose",PoseWithCovarianceStamped,self.path_cb)
+        self.path_sub_ = rospy.Subscriber(path_topic,PoseWithCovarianceStamped,self.path_cb)
         # self.path_sub_ = rospy.Subscriber("/map/robot_pose",PoseWithCovarianceStamped,self.path_cb)
         self.path_pub_ = rospy.Publisher('path',Path,queue_size=5)
 

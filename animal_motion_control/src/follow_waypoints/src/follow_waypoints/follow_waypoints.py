@@ -21,10 +21,13 @@ from light_signal_msg.msg import state
 output_file_path = rospkg.RosPack().get_path('follow_waypoints')+"/saved_path/pose.csv"
 waypoints = []
 state_var = state()
+# path_topic = 'amcl_pose'
+path_topic = '/map/robot_pose'
 
 # def change_state()
 class FollowPath(State):
     def __init__(self):
+        global path_topic
         State.__init__(self, outcomes=['success'], input_keys=['waypoints'])
         self.frame_id = rospy.get_param('~goal_frame_id','map')
         self.odom_frame_id = rospy.get_param('~odom_frame_id','odom')
@@ -40,10 +43,18 @@ class FollowPath(State):
         self.listener = tf.TransformListener()
         self.distance_tolerance = rospy.get_param('waypoint_distance_tolerance', 0.2)
         # give some tolerance otherwise, perfect 0 is not possible, so it will stop. 
+        self.pose_sub = rospy.Subscriber(path_topic,PoseWithCovarianceStamped,self.path_adder) 
+
+    def path_adder(self,msg):
+        global animal_pose 
+        animal_pose = msg
 
     def execute(self, userdata):
         global waypoints
+        global animal_pose
         # Execute waypoints each in sequence
+       
+
         for waypoint in waypoints:
             # Break if preempted
             if waypoints == []:
@@ -65,11 +76,8 @@ class FollowPath(State):
             else:
                 #This is the loop which exist when the robot is near a certain GOAL point.
                 distance = 10
-                while(distance > self.distance_tolerance):
-                    now = rospy.Time.now()
-                    self.listener.waitForTransform(self.odom_frame_id, self.base_frame_id, now, rospy.Duration(4.0))
-                    trans,rot = self.listener.lookupTransform(self.odom_frame_id,self.base_frame_id, now)
-                    distance = math.sqrt(pow(waypoint.pose.pose.position.x-trans[0],2)+pow(waypoint.pose.pose.position.y-trans[1],2))
+                while(distance > self.distance_tolerance):                    
+                    distance = math.sqrt(pow(waypoint.pose.pose.position.x-animal_pose.pose.pose.position.x,2)+pow(waypoint.pose.pose.position.y-animal_pose.pose.pose.position.y,2))
         return 'success'
 
 def convert_PoseWithCovArray_to_PoseArray(waypoints):
@@ -222,12 +230,17 @@ class PathComplete(State):
 
         return 'success'
 
+
 def main():
 
     rospy.init_node('follow_waypoints')
     # while not rospy.is_shutdown():
 
     sm = StateMachine(outcomes=['success'])
+
+    # pose_sub = rospy.Subscriber("/map/robot_pose",PoseWithCovarianceStamped,self.path_cb) 
+    # path = 
+   
     
     # state_pub = rospy.Publisher('/state', state_var, queue_size=1)
 
@@ -244,6 +257,9 @@ def main():
                            transitions={'success':'GET_PATH'})
 
     outcome = sm.execute()
+
+    rospy.spin()
+    
 
 if __name__=="__main__":
     main()
