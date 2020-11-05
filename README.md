@@ -83,7 +83,7 @@ roslaunch gps_common final_animal_pose.launch
 
 #### Starting the move_animal_sig.launch controller. 
 <!-- Check if the node is subscribing to /map/robot_pose signal -->
-roslaunch move_animal move_animal_sig.launch
+roslaunch move_animal move_animal_waypoint_sig.launch
 
 #### Starting the LED control in root. 
 sudo su

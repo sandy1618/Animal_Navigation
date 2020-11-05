@@ -1,5 +1,4 @@
 <launch>
     <node pkg="move_animal" type="move_animal_human" name="move_animal_human_node" output="screen"/>
-    <!-- <node pkg="move_animal" type="signal_to_velocity" name="signal_to_velocity_node"/> -->
-
+    <node pkg="move_animal" type="led_control_cmd_sig.py" name="led_control_cmd_sig_node"/>
 </launch>
