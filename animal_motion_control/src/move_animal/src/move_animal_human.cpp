@@ -1,8 +1,8 @@
 #include <iostream>
 #include <move_animal/move_animal.h> 
 
-#define ANGLE_THRESHOLD 10
-#define DISTANCE_TOLERANCE 0.05
+float ANGLE_TOLERANCE=10;
+float DISTANCE_TOLERANCE=0.5;
 
 void printCallback(const nav_msgs::OccupancyGrid::ConstPtr &msg)
 {
@@ -153,7 +153,7 @@ void computeSignalCommands()
     }
     else
     {
-        if (fabs(nError.az) > ANGLE_THRESHOLD * D2R)
+        if (fabs(nError.az) > ANGLE_TOLERANCE * D2R)
         {
 
             setRot();
@@ -276,6 +276,12 @@ int main(int argc, char **argv)
 
     // separate node handle for having the namespace scope move_base_simple
     ros::NodeHandle simple_nh;
+
+    simple_nh.getParam("~ANGLE_TOLERANCE",ANGLE_TOLERANCE);
+    ROS_INFO_STREAM("Angle tolerance " << ANGLE_TOLERANCE);
+    simple_nh.getParam("~DISTANCE_TOLERANCE",DISTANCE_TOLERANCE);
+    ROS_INFO_STREAM("Distance tolerance" << DISTANCE_TOLERANCE);
+
     // ros::Subscriber goal_sub_ = simple_nh.subscribe("move_base_simple/goal", 5, getGoalPos);
     
     // NodeHandle instance must be created before this line. Otherwise strange error occurs.

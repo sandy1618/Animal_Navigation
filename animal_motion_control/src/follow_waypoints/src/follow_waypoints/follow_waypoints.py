@@ -23,6 +23,8 @@ waypoints = []
 state_var = state()
 # position_topic = 'amcl_pose'
 position_topic = '/map/robot_pose'
+DISTANCE_TOLERANCE = 0.5
+
 
 # def change_state()
 class FollowPath(State):
@@ -41,7 +43,7 @@ class FollowPath(State):
         rospy.loginfo('Starting a tf listner.')
         self.tf = TransformListener()
         self.listener = tf.TransformListener()
-        self.distance_tolerance = rospy.get_param('waypoint_distance_tolerance', 0.2)
+        self.distance_tolerance = rospy.get_param('waypoint_distance_tolerance', DISTANCE_TOLERANCE)
         # give some tolerance otherwise, perfect 0 is not possible, so it will stop. 
         self.pose_sub = rospy.Subscriber(position_topic,PoseWithCovarianceStamped,self.path_adder) 
 
@@ -236,9 +238,15 @@ def main():
     rospy.init_node('follow_waypoints')
     # while not rospy.is_shutdown():
     global output_file_path 
-    output_file_path = rospy.get_param('~output_file_path')
     global position_topic 
+    global DISTANCE_TOLERANCE
+
+    output_file_path = rospy.get_param('~output_file_path')
+    rospy.loginfo("Setting output_path_file %s" % output_file_path)    
     position_topic = rospy.get_param('~position_topic')
+    rospy.loginfo("Setting position_topic %s" % position_topic)  
+    DISTANCE_TOLERANCE=rospy.get_param('~DISTANCE_TOLERANCE')
+    rospy.loginfo("Setting distance_tolerance %f" % DISTANCE_TOLERANCE)  
 
 
     sm = StateMachine(outcomes=['success'])
