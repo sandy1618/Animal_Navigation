@@ -21,13 +21,13 @@ from light_signal_msg.msg import state
 output_file_path = rospkg.RosPack().get_path('follow_waypoints')+"/saved_path/pose.csv"
 waypoints = []
 state_var = state()
-# path_topic = 'amcl_pose'
-path_topic = '/map/robot_pose'
+# position_topic = 'amcl_pose'
+position_topic = '/map/robot_pose'
 
 # def change_state()
 class FollowPath(State):
     def __init__(self):
-        global path_topic
+        global position_topic
         State.__init__(self, outcomes=['success'], input_keys=['waypoints'])
         self.frame_id = rospy.get_param('~goal_frame_id','map')
         self.odom_frame_id = rospy.get_param('~odom_frame_id','odom')
@@ -43,7 +43,7 @@ class FollowPath(State):
         self.listener = tf.TransformListener()
         self.distance_tolerance = rospy.get_param('waypoint_distance_tolerance', 0.2)
         # give some tolerance otherwise, perfect 0 is not possible, so it will stop. 
-        self.pose_sub = rospy.Subscriber(path_topic,PoseWithCovarianceStamped,self.path_adder) 
+        self.pose_sub = rospy.Subscriber(position_topic,PoseWithCovarianceStamped,self.path_adder) 
 
     def path_adder(self,msg):
         global animal_pose 
@@ -235,6 +235,11 @@ def main():
 
     rospy.init_node('follow_waypoints')
     # while not rospy.is_shutdown():
+    global output_file_path 
+    output_file_path = rospy.get_param('~output_file_path')
+    global position_topic 
+    position_topic = rospy.get_param('~position_topic')
+
 
     sm = StateMachine(outcomes=['success'])
 

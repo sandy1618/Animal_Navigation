@@ -60,15 +60,15 @@ roslaunch turtlebot3_gazebo turtlebot3_world.launch
 export TURTLEBOT3_MODEL=burger
 roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:=$HOME/Animal_Navigation/animal_navigation_gazebo/src/micronrobot/turtlebot3/turtlebot3_navigation/maps/map.yaml
 
-#### follow waypoints
-roslaunch follow_waypoints follow_waypoints.launch 
-
-rostopic pub /path_ready std_msgs/Empty -1
 
 #### Run Command signal & comman velocity node. 
 <!-- - Check if the node is subscribing to AMCL signal .  -->
 roslaunch move_animal move_animal_vel.launch
 
+#### follow waypoints
+roslaunch move_animal move_animal_waypoint.launch 
+
+rostopic pub /path_ready std_msgs/Empty -1
 
 
 
@@ -81,9 +81,13 @@ roslaunch spatial_driver output_anpp_complete.launch
 #### Starting the GNSS + IMU launch file
 roslaunch gps_common final_animal_pose.launch
 
-#### Starting the move_animal_sig.launch controller. 
+#### Starting the move_animal_waypoint controller. 
 <!-- Check if the node is subscribing to /map/robot_pose signal -->
-roslaunch move_animal move_animal_waypoint_sig.launch
+roslaunch move_animal move_animal_waypoint.launch
+
+#### Starting the move_animal_waypoint controller sig controller.
+roslaunch move_animal move_animal_sig .launch
+
 
 #### Starting the LED control in root. 
 sudo su
@@ -92,8 +96,16 @@ rosrun move_animal led_control_cmd_sig.py
 ### RUN mapserver and Rviz in other PC
 rosrun map_server map_server map/mymap2.yaml
 
+### Rviz 
+roslaunch move_animal rviz_display.launch
+
 #### Run Rosbag node. 
 export BAG_PATH=/home/sandy/bag
 roslaunch move_animal rosbag_record.launch
 
 
+### Bash Alias 
+
+alias start='rostopic pub /path_ready std_msgs/Empty -1'
+alias reset='rostopic pub /path_reset std_msgs/Empty -1'
+alias start_file='rostopic pub /start_journey std_msgs/Empty -1'

@@ -1,8 +1,20 @@
 <launch>
   <env name="ROSCONSOLE_FORMAT" value="[${severity}][${thread}][${node}/${function}:${line}]: ${message}"/>
+  
+  <arg name="waypoint_file" default="/home/sandy/Animal_Navigation/animal_motion_control/src/follow_waypoints/saved_path/pose2.csv" />
+  <!-- <arg name="position_topic" default="/map/robot_pose" /> -->
+  <arg name="position_topic" default="$(optenv POSITION_TOPIC /map/robot_pose)" />
 
+    
+    
     <node pkg="follow_waypoints" type="follow_waypoints" name="follow_waypoints" output="screen" clear_params="true">
         <param name="goal_frame_id" value="map"/>
+        <param name="output_file_path" value="$(arg waypoint_file)" />
+        <param name="position_topic" value="$(arg position_topic)" />
     </node>
-    <node pkg="move_animal" type="trajectory_publisher.py" name="trajectory_publisher_node"/>
+
+    <node pkg="move_animal" type="trajectory_publisher.py" name="trajectory_publisher_node">
+     <param name="position_topic" value="$(arg position_topic)" />
+    </node>
+
 </launch>
