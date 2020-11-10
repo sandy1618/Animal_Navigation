@@ -1,4 +1,12 @@
 <launch>
-    <node pkg="move_animal" type="move_animal_human" name="move_animal_human_node" output="screen"/>
+  <arg name="DISTANCE_TOLERANCE" default="$(optenv DISTANCE_TOLERANCE 0.5)" />
+  <arg name="ANGLE_TOLERANCE" default="$(optenv ANGLE_TOLERANCE 20)" />
+
+    <node pkg="move_animal" type="move_animal" name="move_animal_human_node" output="screen">
+        <param name="DISTANCE_TOLERANCE" value="$(arg DISTANCE_TOLERANCE)" />
+        <param name="ANGLE_TOLERANCE" value="$(arg ANGLE_TOLERANCE)" />
+
+    </node>
+  
     <node pkg="move_animal" type="led_control_cmd_sig.py" name="led_control_cmd_sig_node"/>
 </launch>
