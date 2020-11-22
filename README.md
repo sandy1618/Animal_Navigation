@@ -110,4 +110,6 @@ alias start='rostopic pub /path_ready std_msgs/Empty -1'
 alias reset='rostopic pub /path_reset std_msgs/Empty -1'
 alias start_file='rostopic pub /start_journey std_msgs/Empty -1'
 
+
+
 scp dog@192.168.179.5:/home/dog/Animal_Navigation/data/tamura/* /home/sandy/Animal_Navigation/PostProcessing/data/tamura/

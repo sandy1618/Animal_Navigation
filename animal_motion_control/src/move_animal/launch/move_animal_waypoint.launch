@@ -4,7 +4,6 @@
    from the env. variable POSITION_TOPIC with default value as given -->
   <arg name="position_topic" default="$(optenv POSITION_TOPIC /map/robot_pose)" />
   <arg name="DISTANCE_TOLERANCE" default="$(optenv DISTANCE_TOLERANCE 0.5)" />
-
   <arg name="WAYPOINT_PATH" default="$(optenv WAYPOINT_PATH /home/sandy/Animal_Navigation/animal_motion_control/src/follow_waypoints/saved_path/pose2.csv)" />
     
   <node pkg="follow_waypoints" type="follow_waypoints" name="follow_waypoints" output="screen" clear_params="true">

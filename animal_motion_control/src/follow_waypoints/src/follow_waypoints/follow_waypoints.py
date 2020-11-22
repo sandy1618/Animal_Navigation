@@ -242,9 +242,11 @@ def main():
     global DISTANCE_TOLERANCE
 
     output_file_path = rospy.get_param('~output_file_path')
-    rospy.loginfo("Setting output_path_file %s" % output_file_path)    
+    rospy.loginfo("Setting output_path_file %s" % output_file_path)
+
     position_topic = rospy.get_param('~position_topic')
     rospy.loginfo("Setting position_topic %s" % position_topic)  
+    
     DISTANCE_TOLERANCE=rospy.get_param('~DISTANCE_TOLERANCE')
     rospy.loginfo("Setting distance_tolerance %f" % DISTANCE_TOLERANCE)  
 
