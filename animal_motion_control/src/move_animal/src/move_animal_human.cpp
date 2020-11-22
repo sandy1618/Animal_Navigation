@@ -276,10 +276,10 @@ int main(int argc, char **argv)
 
     // separate node handle for having the namespace scope move_base_simple
     ros::NodeHandle simple_nh;
-
-    simple_nh.getParam("~ANGLE_TOLERANCE",ANGLE_TOLERANCE);
+    ros::NodeHandle n("~");
+    n.getParam("ANGLE_TOLERANCE",ANGLE_TOLERANCE);
     ROS_INFO_STREAM("Angle tolerance " << ANGLE_TOLERANCE);
-    simple_nh.getParam("~DISTANCE_TOLERANCE",DISTANCE_TOLERANCE);
+    n.getParam("DISTANCE_TOLERANCE",DISTANCE_TOLERANCE);
     ROS_INFO_STREAM("Distance tolerance" << DISTANCE_TOLERANCE);
 
     // ros::Subscriber goal_sub_ = simple_nh.subscribe("move_base_simple/goal", 5, getGoalPos);

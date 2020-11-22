@@ -13,9 +13,12 @@ import sys
 import os
 from os.path import expanduser
 home = expanduser("~")
-dir_path = home + '/Animal_Navigation/PostProcessing/data/'
-# file_path = "2020-11-06-11-12-37"
-file_path = "2020-11-06-11-10-07"
+dir_path = home + '/Animal_Navigation/data/tamura/'
+# file_path = "2020-11-10-17-46-45"
+file_path = "2020-11-10-17-58-24"
+# file_path = "2020-11-10-18-46-55"
+# file_path = "2020-11-10-18-48-28"
+
 
 # dir_path = os.getcwd() 
 # print dir_path

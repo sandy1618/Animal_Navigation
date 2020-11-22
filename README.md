@@ -89,9 +89,9 @@ roslaunch move_animal move_animal_waypoint.launch
 roslaunch move_animal move_animal_sig.launch
 
 
-#### Starting the LED control in root. 
+<!-- #### Starting the LED control in root. 
 sudo su
-rosrun move_animal led_control_cmd_sig.py 
+rosrun move_animal led_control_cmd_sig.py  -->
 
 ### RUN mapserver and Rviz in other PC
 rosrun map_server map_server map/mymap2.yaml
@@ -110,4 +110,4 @@ alias start='rostopic pub /path_ready std_msgs/Empty -1'
 alias reset='rostopic pub /path_reset std_msgs/Empty -1'
 alias start_file='rostopic pub /start_journey std_msgs/Empty -1'
 
-scp dog@192.168.179.5:/home/dog/Animal_Navigation/data/* ./data/
+scp dog@192.168.179.5:/home/dog/Animal_Navigation/data/tamura/* /home/sandy/Animal_Navigation/PostProcessing/data/tamura/

@@ -1,7 +1,7 @@
 #include <iostream>
 #include <move_animal/move_animal.h> 
 
-#define ANGLE_THRESHOLD 10
+#define ANGLE_TOLERANCE 10
 #define DISTANCE_TOLERANCE 0.05
 
 void printCallback(const nav_msgs::OccupancyGrid::ConstPtr &msg)
@@ -153,7 +153,7 @@ void computeSignalCommands()
     }
     else
     {
-        if (fabs(nError.az) > ANGLE_THRESHOLD * D2R)
+        if (fabs(nError.az) > ANGLE_TOLERANCE * D2R)
         {
 
             setRot();
