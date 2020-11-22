@@ -288,9 +288,9 @@ int main(int argc, char **argv)
     // subscribe to topics (to get odometry information, we need to get a handle to the topic in the global namespace)
   
     // For simulation
-    ros::Subscriber amcl_sub_ = simple_nh.subscribe("amcl_pose", 1, getRobotPoseAMCL);
+    // ros::Subscriber amcl_sub_ = simple_nh.subscribe("amcl_pose", 1, getRobotPoseAMCL);
     // For Real lif 
-    // ros::Subscriber pose_sub_ = simple_nh.subscribe("/map/robot_pose", 1, getRobotPose); // from real world
+    ros::Subscriber pose_sub_ = simple_nh.subscribe("/map/robot_pose", 1, getRobotPose); // from real world
 
 
   
