@@ -7,13 +7,13 @@ from light_signal_msg.msg import light_signal
 
 def cmd_sig_control(msg):
     if msg.left == 1:
-        subprocess.call("aplay ~/Animal_Navigation/animal_motion_control/src/move_animal/scripts/left.wav", shell=True)
+        subprocess.call("aplay -D default:CARD=Device ~/Animal_Navigation/animal_motion_control/src/move_animal/scripts/left.wav", shell=True)
         
     if msg.forward == 1: 
-        subprocess.call("aplay ~/Animal_Navigation/animal_motion_control/src/move_animal/scripts/front.wav", shell=True)
+        subprocess.call("aplay -D default:CARD=Device ~/Animal_Navigation/animal_motion_control/src/move_animal/scripts/front.wav", shell=True)
     
     if msg.right == 1: 	
-         subprocess.call("aplay ~/Animal_Navigation/animal_motion_control/src/move_animal/scripts/right.wav", shell=True)
+         subprocess.call("aplay -D default:CARD=Device ~/Animal_Navigation/animal_motion_control/src/move_animal/scripts/right.wav", shell=True)
 
 def listener():
     rospy.init_node('audio_control_cmd_sig')
