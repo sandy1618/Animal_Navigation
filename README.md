@@ -88,6 +88,9 @@ roslaunch move_animal move_animal_waypoint.launch
 #### Starting the move_animal_waypoint controller sig controller.
 roslaunch move_animal move_animal_sig.launch
 
+### Starting led controlerl 
+roslaunch move_animal move_animal_led_sig.launch
+
 
 <!-- #### Starting the LED control in root. 
 sudo su

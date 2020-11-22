@@ -1,0 +1,3 @@
+<launch>
+     <node pkg="move_animal" type="led_control_cmd_sig.py" name="led_control_cmd_sig_node"/>
+</launch>
