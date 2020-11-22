@@ -74,10 +74,18 @@ rostopic pub /path_ready std_msgs/Empty -1
 
 ___ 
 ## Workflow 2:
+### Wearable Human Suit Up PC:
+
 #### Starting spatial node.
 sudo su
 roslaunch spatial_driver output_anpp_complete.launch
 
+
+### Starting led controlerl 
+roslaunch move_animal move_animal_led_sig.launch
+
+
+### Laptop PC 
 #### Starting the GNSS + IMU launch file
 roslaunch gps_common final_animal_pose.launch
 
@@ -88,14 +96,6 @@ roslaunch move_animal move_animal_waypoint.launch
 #### Starting the move_animal_waypoint controller sig controller.
 roslaunch move_animal move_animal_sig.launch
 
-### Starting led controlerl 
-roslaunch move_animal move_animal_led_sig.launch
-
-
-<!-- #### Starting the LED control in root. 
-sudo su
-rosrun move_animal led_control_cmd_sig.py  -->
-
 ### RUN mapserver and Rviz in other PC
 rosrun map_server map_server map/mymap2.yaml
 
@@ -103,7 +103,6 @@ rosrun map_server map_server map/mymap2.yaml
 roslaunch move_animal rviz_display.launch
 
 #### Run Rosbag node. 
-export BAG_PATH=/home/sandy/bag
 roslaunch move_animal rosbag_record.launch
 
 
@@ -114,5 +113,6 @@ alias reset='rostopic pub /path_reset std_msgs/Empty -1'
 alias start_file='rostopic pub /start_journey std_msgs/Empty -1'
 
 
+## Utilities.
 
-scp dog@192.168.179.5:/home/dog/Animal_Navigation/data/tamura/* /home/sandy/Animal_Navigation/PostProcessing/data/tamura/
+scp dog@192.168.1.2:/home/dog/Animal_Navigation/data/tamura/* /home/sandy/Animal_Navigation/PostProcessing/data/tamura/
