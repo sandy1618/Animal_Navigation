@@ -5,11 +5,11 @@
   <arg name="position_topic" default="$(optenv POSITION_TOPIC /map/robot_pose)" />
   <arg name="DISTANCE_TOLERANCE" default="$(optenv DISTANCE_TOLERANCE 0.5)" />
 
-  <arg name="waypoint_file" default="/home/sandy/Animal_Navigation/animal_motion_control/src/follow_waypoints/saved_path/pose2.csv" />
+  <arg name="WAYPOINT_PATH" default="$(optenv WAYPOINT_PATH /home/sandy/Animal_Navigation/animal_motion_control/src/follow_waypoints/saved_path/pose2.csv)" />
     
   <node pkg="follow_waypoints" type="follow_waypoints" name="follow_waypoints" output="screen" clear_params="true">
       <param name="goal_frame_id" value="map"/>
-      <param name="output_file_path" value="$(arg waypoint_file)" />
+      <param name="output_file_path" value="$(arg WAYPOINT_PATH)" />
       <!-- Using arguments as param that will be used by the node -->
       <param name="position_topic" value="$(arg position_topic)" />
       <param name="DISTANCE_TOLERANCE" value="$(arg DISTANCE_TOLERANCE)" />
