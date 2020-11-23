@@ -163,20 +163,29 @@ def cmd_sig_control(msg):
         subprocess.call("amixer -c 1 cset numid=6 30,30", shell=True)
         subprocess.call("aplay -D default:CARD=Device ~/Animal_Navigation/animal_motion_control/src/move_animal/scripts/left.wav", shell=True)
         #lenevo PC settings.
-        subprocess.call("amixer set Master 100%", shell=True)
-        subprocess.call("amixer -c 0 cset numid=3 87,87", shell=True)
-        subprocess.call("aplay  ~/Animal_Navigation/animal_motion_control/src/move_animal/scripts/left.wav", shell=True)
+        # subprocess.call("amixer set Master 100%", shell=True)
+        # subprocess.call("amixer -c 0 cset numid=3 87,87", shell=True)
+        # subprocess.call("aplay  ~/Animal_Navigation/animal_motion_control/src/move_animal/scripts/left.wav", shell=True)
         
     if forward_state == 1: 
-        subprocess.call("aplay -D default:CARD=Device ~/Animal_Navigation/animal_motion_control/src/move_animal/scripts/forward.wav", shell=True)
-        subprocess.call("aplay  ~/Animal_Navigation/animal_motion_control/src/move_animal/scripts/front.wav", shell=True)
+         # Human Suit  
+        subprocess.call("amixer -c 1 cset numid=6 30,30", shell=True)
+        subprocess.call("aplay -D default:CARD=Device ~/Animal_Navigation/animal_motion_control/src/move_animal/scripts/front.wav", shell=True)
+        
+        # subprocess.call("aplay  ~/Animal_Navigation/animal_motion_control/src/move_animal/scripts/front.wav", shell=True)
 
-    if right_state == 1: 	
+    if right_state == 1: 
+         # Human Suit  
+        subprocess.call("amixer -c 1 cset numid=6 30,30", shell=True)	
         subprocess.call("aplay -D default:CARD=Device ~/Animal_Navigation/animal_motion_control/src/move_animal/scripts/right.wav", shell=True)
-        subprocess.call("aplay  ~/Animal_Navigation/animal_motion_control/src/move_animal/scripts/right.wav", shell=True)
+        
+        # subprocess.call("aplay  ~/Animal_Navigation/animal_motion_control/src/move_animal/scripts/right.wav", shell=True)
     if stop_state == 1: 	
+         # Human Suit  
+        subprocess.call("amixer -c 1 cset numid=6 30,30", shell=True)
         subprocess.call("aplay -D default:CARD=Device ~/Animal_Navigation/animal_motion_control/src/move_animal/scripts/right.wav", shell=True)
-        subprocess.call("aplay  ~/Animal_Navigation/animal_motion_control/src/move_animal/scripts/stop.wav", shell=True)
+        
+        # subprocess.call("aplay  ~/Animal_Navigation/animal_motion_control/src/move_animal/scripts/stop.wav", shell=True)
 
 
 
