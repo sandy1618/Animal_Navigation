@@ -164,21 +164,21 @@ def cmd_sig_control(msg):
     # state_checker
     if left_state == 1:
         subprocess.call(aplay_cmd_pi+aplay_path+sounds[0], shell=True)        
-        subprocess.call(aplay_cmd_pc+aplay_path+sounds[0], shell=True)
+        # subprocess.call(aplay_cmd_pc+aplay_path+sounds[0], shell=True)
         
 
         
     if forward_state == 1: 
         subprocess.call(aplay_cmd_pi+aplay_path+sounds[1], shell=True)        
-        subprocess.call(aplay_cmd_pc+aplay_path+sounds[1], shell=True)
+        # subprocess.call(aplay_cmd_pc+aplay_path+sounds[1], shell=True)
 
     if right_state == 1: 
         subprocess.call(aplay_cmd_pi+aplay_path+sounds[2], shell=True)        
-        subprocess.call(aplay_cmd_pc+aplay_path+sounds[2], shell=True)
+        # subprocess.call(aplay_cmd_pc+aplay_path+sounds[2], shell=True)
 
     if stop_state == 1: 	
         subprocess.call(aplay_cmd_pi+aplay_path+sounds[3], shell=True)        
-        subprocess.call(aplay_cmd_pc+aplay_path+sounds[3], shell=True)
+        # subprocess.call(aplay_cmd_pc+aplay_path+sounds[3], shell=True)
 
 
 
