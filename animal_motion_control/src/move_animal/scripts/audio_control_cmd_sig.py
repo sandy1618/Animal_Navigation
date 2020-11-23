@@ -154,7 +154,7 @@ def cmd_sig_control(msg):
     prev_left = left
     prev_right = right
     prev_forward = forward
-    # aplay_cmd_pc = "aplay -D default:CARD=Device "
+    aplay_cmd_pi = "aplay -D default:CARD=Device "
     aplay_cmd_pc = "aplay "
     aplay_path = "~/Animal_Navigation/animal_motion_control/src/move_animal/scripts/"
     sounds = ["left.wav","front.wav","right.wav","stop.wav"]
@@ -163,46 +163,32 @@ def cmd_sig_control(msg):
 
     # state_checker
     if left_state == 1:
-        # # Human Suit          
-        # subprocess.call("amixer -c 1 cset numid=6 30,30", shell=True)
-        # subprocess.call(aplay_cmd_pc+aplay_path+sounds[0], shell=True)
-
-        ##lenevo PC settings.
-        subprocess.call("amixer set Master 100%", shell=True)        
+        subprocess.call(aplay_cmd_pi+aplay_path+sounds[0], shell=True)        
         subprocess.call(aplay_cmd_pc+aplay_path+sounds[0], shell=True)
+        
 
         
     if forward_state == 1: 
-        #  # Human Suit          
-        # subprocess.call("amixer -c 1 cset numid=6 30,30", shell=True)
-        # subprocess.call(aplay_cmd_pc+aplay_path+sounds[1], shell=True)
-
-        ##lenevo PC settings.
-        subprocess.call("amixer set Master 100%", shell=True)        
+        subprocess.call(aplay_cmd_pi+aplay_path+sounds[1], shell=True)        
         subprocess.call(aplay_cmd_pc+aplay_path+sounds[1], shell=True)
 
     if right_state == 1: 
-        # # Human Suit          
-        # subprocess.call("amixer -c 1 cset numid=6 30,30", shell=True)
-        # subprocess.call(aplay_cmd_pc+aplay_path+sounds[2], shell=True)
-
-        ##lenevo PC settings.
-        subprocess.call("amixer set Master 100%", shell=True)        
+        subprocess.call(aplay_cmd_pi+aplay_path+sounds[2], shell=True)        
         subprocess.call(aplay_cmd_pc+aplay_path+sounds[2], shell=True)
 
     if stop_state == 1: 	
-        # # Human Suit          
-        # subprocess.call("amixer -c 1 cset numid=6 30,30", shell=True)
-        # subprocess.call(aplay_cmd_pc+aplay_path+sounds[3], shell=True)
-
-        ##lenevo PC settings.
-        subprocess.call("amixer set Master 100%", shell=True)        
+        subprocess.call(aplay_cmd_pi+aplay_path+sounds[3], shell=True)        
         subprocess.call(aplay_cmd_pc+aplay_path+sounds[3], shell=True)
 
 
 
 
 def listener():
+    #Human suit 
+    subprocess.call("amixer -c 1 cset numid=6 30,30", shell=True)
+    #lenevo pc
+    subprocess.call("amixer set Master 100%", shell=True) 
+
     rospy.init_node('audio_control_cmd_sig')
     rospy.Subscriber("cmd_sig",light_signal,cmd_sig_control)
     rospy.spin()
