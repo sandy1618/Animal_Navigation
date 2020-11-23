@@ -116,3 +116,5 @@ alias start_file='rostopic pub /start_journey std_msgs/Empty -1'
 ## Utilities.
 
 scp dog@192.168.1.2:/home/dog/Animal_Navigation/data/tamura/* /home/sandy/Animal_Navigation/PostProcessing/data/tamura/
+
+rosparam set /use_sim_time true
