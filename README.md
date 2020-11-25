@@ -75,7 +75,6 @@ rostopic pub /path_ready std_msgs/Empty -1
 ___ 
 ## Workflow 2:
 ### Wearable Human Suit Up PC:
-
 #### Starting spatial node.
 sudo su
 roslaunch spatial_driver output_anpp_complete.launch
