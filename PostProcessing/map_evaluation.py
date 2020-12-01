@@ -7,6 +7,12 @@ import pandas as pd
 from datetime import datetime
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib
+font = {'family' : 'normal',
+        'weight' : 'bold',
+        'size'   : 26}
+
+matplotlib.rc('font', **font)
 # %matplotlib inline 
 import seaborn as sns;sns.set()
 import sys
@@ -15,11 +21,17 @@ from os.path import expanduser
 import math
 
 home = expanduser("~")
-dir_path = home + '/Animal_Navigation/data/tamura/'
-file_path = "2020-11-10-17-46-45"
+# dir_path = home + '/Animal_Navigation/data/tamura/'
+dir_path = os.getcwd() + "/"
+# file_path = "2020-11-10-17-46-45"
 # file_path = "2020-11-10-17-58-24"
 # file_path = "2020-11-10-18-46-55"
 # file_path = "2020-11-10-18-48-28"
+# file_path = "2020-11-25-17-21-12"
+file_path = "2020-11-25-19-07-38"
+
+
+
 
 
 # dir_path = os.getcwd() 
@@ -45,12 +57,12 @@ for index,state in enumerate(state_list):
     if state == 1 :
         
         start_time = state_df.loc[index,time_column]
-        print "start"
+        print("start")
         
     if state == 2 : 
         
         end_time = state_df.loc[index,time_column]
-        print "end"
+        print("end")
 
 
 # If there is no start_time / end_time, then make the starting time or end time.
@@ -136,15 +148,27 @@ def euclidean_distance_calc(x_list,y_list):
 # Measure of Deviation 1
 waypoint_distance = euclidean_distance_calc(waypoint_list_x,waypoint_list_y)
 trajectory_distance = euclidean_distance_calc(trajectory_list_x,trajectory_list_y)
-print "waypoint_distance",waypoint_distance
-print "trajectory_distance",trajectory_distance
+print ("waypoint_distance",waypoint_distance)
+print ("trajectory_distance",trajectory_distance)
 trajectory_ratio = (((trajectory_distance-waypoint_distance)/waypoint_distance))*100
-print "trajectory_ratio",trajectory_ratio
+# Trajectory Deviation Ratio : TDR 
+print ("TDR",trajectory_ratio)
 
 # Navigation time evaluation: 
 navigation_time = (end_time - start_time) * pow(10,-9)
-print "navigation_time",navigation_time
+print ("navigation_time",navigation_time)
 
+
+
+image_path = dir_path+file_path+"/"+file_path+".png"
+output_path =  dir_path+file_path+"/"+file_path+".txt"
+with open(output_path, 'w') as f:
+    # f.write("waypoint_distance",waypoint_distance)
+    print >> f,"waypoint_distance",waypoint_distance    # Python 2.x
+    print >> f, "trajectory_distance",trajectory_distance
+    print >> f, "TDR",trajectory_ratio
+    print >> f,"navigation_time",navigation_time
+    # print('Filename:', filename, file=f)
 
 
 
@@ -152,11 +176,12 @@ print "navigation_time",navigation_time
 fig, ax = plt.subplots()
 ax.plot(waypoint_list_x,waypoint_list_y,'ro-',label="Waypoints")
 ax.plot(trajectory_list_x,trajectory_list_y,'b.-',label="Trajectory")
-plt.xlabel('X distance')
-plt.ylabel('Y distance')
+plt.xlabel('X distance',fontsize=22)
+plt.ylabel('Y distance',fontsize=22)
 #Plotting startig & ending poistions 
 ax.scatter(trajectory_list_x[0],trajectory_list_y[0],s=100,marker='D',c='red',label = "Begin")
 ax.scatter(trajectory_list_x[-1],trajectory_list_y[-1],s=100,marker='D',c='black',label = "End")
-plt.title("Distance")
+plt.title("Human Trajectory with Waypoint",fontsize=22)
 plt.legend()
+plt.savefig(image_path,bbox_inches='tight')
 plt.show()
