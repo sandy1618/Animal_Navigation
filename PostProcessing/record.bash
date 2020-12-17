@@ -1,17 +1,26 @@
 #!/bin/bash
 cd ~/Animal_Navigation/PostProcessing/data/
-# rosbag record -a
-rosbag record /cmd_sig \
-/gps_common_navsat/odom \
-/map/robot_pose \
-/path \
-/spatial/imu \
-/waypoints \
-/tf \
-/tf_static \
-/state \
-/move_base/cancel \
-/move_base/feedback \
-/move_base/goal \
-/move_base/result \
-/move_base/status \
+rosbag record -a -x "/path"
+
+# rosbag record /clock /
+# /cmd_sig /
+# /gps_common_navsat/odom /
+# /map /
+# /map/robot_pose /
+# /map_metadata /
+# /move_base/goal /
+# /move_base/result /
+# /move_base/status /
+# /rosout /
+# /rosout_agg /
+# /spatial/fix /
+# /spatial/imu /
+# /spatial/mag / 
+# /spatial/number_of_satellites /
+# /spatial/posture /
+# /spatial/pressure /
+# /spatial/raw_gnss_packet /
+# /spatial/temp /
+# /start_journey /
+# /state /
+# /waypoints

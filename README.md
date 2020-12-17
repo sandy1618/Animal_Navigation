@@ -95,6 +95,9 @@ roslaunch move_animal move_animal_waypoint.launch
 #### Starting the move_animal_waypoint controller sig controller.
 roslaunch move_animal move_animal_sig.launch
 
+# LATEST BOTH FILES AT ONCE. 
+roslaunch move_animal move_animal_waypoint_sig.launch
+
 ### RUN mapserver and Rviz in other PC
 rosrun map_server map_server map/mymap2.yaml
 
@@ -107,9 +110,11 @@ roslaunch move_animal rosbag_record.launch
 
 ### Bash Alias 
 
-alias start='rostopic pub /path_ready std_msgs/Empty -1'
-alias reset='rostopic pub /path_reset std_msgs/Empty -1'
+alias start='rostopic pub /path_ready std_msgs/Empty -1 && rostopic pub -l --once /state light_signal_msg/state '{header: auto,state: 1}''
+alias stop='rostopic pub /path_reset std_msgs/Empty -1 && rostopic pub -l --once /state light_signal_msg/state '{header: auto,state: 2}''
 alias start_file='rostopic pub /start_journey std_msgs/Empty -1'
+
+
 
 
 ## Utilities.
@@ -117,3 +122,5 @@ alias start_file='rostopic pub /start_journey std_msgs/Empty -1'
 scp dog@192.168.1.2:/home/dog/Animal_Navigation/data/tamura/* /home/sandy/Animal_Navigation/PostProcessing/data/tamura/
 
 rosparam set /use_sim_time true
+# rosbag record excluding path
+rosbag record -a -x "/path"

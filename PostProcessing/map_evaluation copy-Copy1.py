@@ -19,7 +19,40 @@ import sys
 import os
 from os.path import expanduser
 import math
+# converting & appending the time into multiple format for simplification of functions later. 
+class Datetime_Dataframe:
+    def __init__(self, df: pd.DataFrame):
+        self.df = df.copy()
+    
+  
+    
+    def time_col_concat(self,col1,col2,new_col_name):
+        if self.df[col1].dtype == 'int64':
+            self.df[col1]= self.df[col1].astype(str)
+        if self.df[col2].dtype == 'int64':
+            self.df[col2] = self.df[col2].astype(str)
+        temp = self.df[col1] + self.df[col2]
+        temp = temp.astype('int64')
+        try:
+            self.df.insert(1,new_col_name,temp)
+        except: 
+            pass
+        return self.df
+        
+    def time_diff(self, time_col, ref_time, new_col_name):
+    
+        temp_nano = self.df[time_col] - ref_time
+        temp_milli = temp_nano*math.pow(10,-6)
+        temp = temp_nano*math.pow(10,-9)
+        try:
+            self.df.insert(2,new_col_name,temp)
+            self.df.insert(3,new_col_name+"milli",temp_milli)
+            self.df.insert(4,new_col_name+"nano",temp_nano)
+        except:
+            pass
+        return self.df
 
+#___________________________  AUTOMATING DIRECTORY _______________________________________________
 home = expanduser("~")
 # dir_path = home + '/Animal_Navigation/data/tamura/'
 dir_path = os.getcwd() + "/"
@@ -29,7 +62,6 @@ dir_path = os.getcwd() + "/"
 # file_path = "2020-11-10-18-48-28"
 # file_path = "2020-11-25-17-21-12"
 file_path = "2020-11-25-17-40-24"
-
 
 # dir_path = os.getcwd() 
 # print dir_path
@@ -45,7 +77,7 @@ state_df = pd.read_csv(state_path)
 waypoint_df = pd.read_csv(waypoint_path)
 trajectory_df = pd.read_csv(trajectory_path)
 
-
+# __________START TIME & END TIME ___________________________-
 # Geeting the start time & end time from state_df.
 state_df.loc[:,time_column]
 state_list = list(state_df.loc[:,'state'])
@@ -68,6 +100,7 @@ if not start_time :
 if not end_time :
     end_time = trajectory_df[time_column].iloc[-1]
     
+#___________________________________________________________________________________________#
 
 waypoint_list_x = list(waypoint_df.loc[:,'x'])
 waypoint_list_y = list(waypoint_df.loc[:,'y'])
@@ -94,6 +127,11 @@ def interval_extractor(time_column, start_time, end_time, df, column):
 # Now, this list is extracted based on the start_time & end_time. 
 trajectory_list_x = interval_extractor(time_column,start_time,end_time,trajectory_df,'x')
 trajectory_list_y = interval_extractor(time_column,start_time,end_time,trajectory_df,'y')
+
+
+
+
+
 
 
 #  distance = math.sqrt(pow(waypoint.pose.pose.position.x-animal_pose.pose.pose.position.x,2)+pow(waypoint.pose.pose.position.y-animal_pose.pose.pose.position.y,2))
@@ -195,9 +233,7 @@ with open(output_path, 'w') as f:
 # converting & appending the time into multiple format for simplification of functions later. 
 class Datetime_Dataframe:
     def __init__(self, df: pd.DataFrame):
-        self.df = df.copy()
-    
-  
+        self.df = df.copy()  
     
     def time_col_concat(self,col1,col2,new_col_name):
         if self.df[col1].dtype == 'int64':
@@ -224,12 +260,12 @@ class Datetime_Dataframe:
             pass
         return self.df
 sensor_time = "sensor_time"
+rosbag_time = "rosbagTimestamp"
 ref_time = start_time
 time_diff = "time_diff"
 time_convert_obj = Datetime_Dataframe(trajectory_df)
 new_trajectory_df=time_convert_obj.time_col_concat("secs","nsecs",sensor_time)
-new_trajectory_df=time_convert_obj.time_diff(sensor_time,ref_time,time_diff)
-new_trajectory_df.head(1)
+new_trajectory_df=time_convert_obj.time_diff(rosbag_time,ref_time,time_diff)
 from scipy.spatial.transform import Rotation 
 euler_name = ["roll","pitch","yaw"]
 quat_name = ["x.1","y.1","z.1","w"]

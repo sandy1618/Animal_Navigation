@@ -20,7 +20,7 @@ from light_signal_msg.msg import state
 #Path for saving and retreiving the pose.csv file 
 output_file_path = rospkg.RosPack().get_path('follow_waypoints')+"/saved_path/pose.csv"
 waypoints = []
-state_var = state()
+# state_var = state()
 # position_topic = 'amcl_pose'
 position_topic = '/map/robot_pose'
 DISTANCE_TOLERANCE = 0.5
@@ -101,7 +101,8 @@ class GetPath(State):
         State.__init__(self, outcomes=['success'], input_keys=['waypoints'], output_keys=['waypoints'])
         # Create publsher to publish waypoints as pose array so that you can see them in rviz, etc.
         self.poseArray_publisher = rospy.Publisher('/waypoints', PoseArray, queue_size=1)
-        self.state_pub = rospy.Publisher('/state', state, queue_size=2)
+        #Publishing state messgae 
+        # self.state_pub = rospy.Publisher('/state', state, queue_size=2)
         # Start thread to listen for reset messages to clear the waypoint queue
         def wait_for_path_reset():
             """thread worker function"""
@@ -130,7 +131,7 @@ class GetPath(State):
         # Start thread to listen for when the path is ready (this function will end then)
         # Also will save the clicked path to pose.csv file
         def wait_for_path_ready():
-            global state_var
+            # global state_var
             
 
             """thread worker function"""
@@ -140,10 +141,10 @@ class GetPath(State):
             
             #START OF NAVIGATI ON HERE. SO, WILL MAKE THE SATE TRUE HERE .
          
-            state_var.header.stamp = rospy.get_rostime()
-            state_var.state = 1
-            rospy.loginfo('Making state to 1')
-            self.state_pub.publish(state_var)
+            # state_var.header.stamp = rospy.get_rostime()
+            # state_var.state = 1
+            # rospy.loginfo('Making state to 1')
+            # self.state_pub.publish(state_var)
             
             with open(output_file_path, 'w') as file:
                 for current_pose in waypoints:
@@ -212,10 +213,10 @@ class GetPath(State):
 class PathComplete(State):
     def __init__(self):
         State.__init__(self, outcomes=['success'])
-        self.state_pub = rospy.Publisher('/state', state, queue_size=2)
+        # self.state_pub = rospy.Publisher('/state', state, queue_size=2)
 
     def execute(self, userdata):
-        global state_var
+        # global state_var
         
         rospy.loginfo('###############################')
         rospy.loginfo('##### REACHED FINISH GATE #####')
@@ -224,10 +225,10 @@ class PathComplete(State):
         # rospy.Time.init()
         
          
-        state_var.header.stamp = rospy.Time.now()
-        state_var.state = 2
-        rospy.loginfo('Making state to 2: Goal Reached.')
-        self.state_pub.publish(state_var)
+        # state_var.header.stamp = rospy.Time.now()
+        # state_var.state = 2
+        # rospy.loginfo('Making state to 2: Goal Reached.')
+        # self.state_pub.publish(state_var)
 
 
         return 'success'

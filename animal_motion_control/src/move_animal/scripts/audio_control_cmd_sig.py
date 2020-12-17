@@ -14,7 +14,7 @@ right_state = 0
 forward_state = 0 
 stop_state = 0
 count = 0
-AUDIO_WAIT_TIME_THRESHOLD = 5
+# AUDIO_WAIT_TIME_THRESHOLD
 prev_time = 0
 now_time = 0
 
@@ -154,7 +154,10 @@ def cmd_sig_control(msg):
     prev_left = left
     prev_right = right
     prev_forward = forward
-    aplay_cmd_pi = "aplay -D default:CARD=Device "
+    #Human suit
+    # aplay_cmd_pi = "aplay -D default:CARD=Device " # space must be there at end. 
+    #Lenevo PC
+    aplay_cmd_pi = "aplay "
     # aplay_cmd_pi = "aplay "
     aplay_path = "~/Animal_Navigation/animal_motion_control/src/move_animal/scripts/"
     sounds = ["left.wav","front.wav","right.wav","stop.wav"]
@@ -178,12 +181,14 @@ def cmd_sig_control(msg):
 
 
 def listener():
+    global AUDIO_WAIT_TIME_THRESHOLD
     #Human suit 
-    subprocess.call("amixer -c 1 cset numid=6 30,30", shell=True)
+    # subprocess.call("amixer -c 1 cset numid=6 30,30", shell=True)
     #lenevo pc
     subprocess.call("amixer set Master 100%", shell=True) 
 
     rospy.init_node('audio_control_cmd_sig')
+    AUDIO_WAIT_TIME_THRESHOLD = rospy.get_param('~AUDIO_WAIT_TIME_THRESHOLD') 
     rospy.Subscriber("cmd_sig",light_signal,cmd_sig_control)
     rospy.spin()
 
