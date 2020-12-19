@@ -1,4 +1,13 @@
 # Animal_Navigation
+git clone https://github.com/sandy1618/Animal_Navigation.git
+
+## Dependencies : 
+### Kinectic 
+
+### Melodic 
+sudo apt-get install ros-melodic-navigation
+sudo apt-get install ros-melodic-joy ros-melodic-joystick-drivers
+
 ## Main Packages at Work
 -gridmap2/ gridmap_pcl
 -animal_motion_control/ move_animal
