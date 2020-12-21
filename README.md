@@ -17,6 +17,10 @@ sudo apt-get install libgps-dev
 sudo apt-get install ros-melodic-tf2-sensor-msgs
 sudo apt-get install ros-melodic-map-server
 
+# for audio
+sudo apt install alsa-utils
+
+
 
 ## Main Packages at Work
 -gridmap2/ gridmap_pcl
@@ -24,6 +28,21 @@ To make the occupancy grid map. But not used after saving it in map_server.
 -animal_motion_control/ move_animal
 -light_signal_msg
 -animal_navigation 
+
+## Order Of packgage installation & sourcing  for better overlay of workspaces. 
+It means, build the package, & add the execute source into bash file.
+catkin_make
+source /home/alien/Animal_Navigation/light_signal/devel/setup.bash
+catkin_make
+source /home/alien/Animal_Navigation/animal_navigation/devel/setup.bash
+catkin_make
+source /home/alien/Animal_Navigation/animal_motion_control/devel/setup.bash
+catkin_make
+source /home/alien/Animal_Navigation/animal_navigation_gazebo/devel/setup.bash
+
+
+
+
 
 ### Utilities 
 #### Saving Maps 

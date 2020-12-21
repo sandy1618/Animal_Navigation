@@ -1,5 +1,4 @@
 #!/bin/bash
-cd ~/Animal_Navigation/PostProcessing/data/
 rosbag record -a -x "/path"
 
 # rosbag record /clock /

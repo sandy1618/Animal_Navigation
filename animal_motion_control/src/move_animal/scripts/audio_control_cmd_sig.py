@@ -18,39 +18,6 @@ count = 0
 prev_time = 0
 now_time = 0
 
-
-# def state_changer(state, prev, now, time):
-#     global left 
-#     global right
-#     global forward 
-#     global prev_left
-#     global prev_right 
-#     global prev_forward 
-#     global left_state 
-#     global right_state 
-#     global forward_state 
-#     global stop_state 
-#     global count
-#     global prev_time
-#     global now_time
-#     global AUDIO_WAIT_TIME_THRESHOLD
-
-#     if prev == 0 and now == 1:
-#         state = 1   
-#         prev_time  = time      
-#     elif prev == 1 and now == 0:
-#         state = 0
-#         prev_time  = time        
-#     elif prev == 1 and now == 1:
-#         state = 2
-#         now_time = time
-#         if (now_time - prev_time) == AUDIO_WAIT_TIME_THRESHOLD:
-#             state = 1
-#             prev_time = time
-
-#      # UPDATING PREV. STATES.  
-#     prev_left = left
-    
 def cmd_sig_control(msg):
     global left 
     global right
@@ -124,25 +91,6 @@ def cmd_sig_control(msg):
             prev_time = time        
     else :
         forward_state = 0
-    
-    # if prev_left == 0 and msg.left == 1:
-    #     left_state = 1         
-    # else :
-    #     left_state = 0
-    # prev_left = left
-    # if prev_right == 0 and msg.right == 1:
-    #     right_state = 1 
-    #     prev_right = right
-    # else :
-    #     right_state = 0
-    #     prev_right = right
-
-    # if prev_forward == 0 and msg.forward == 1:
-    #     forward_state = 1 
-    #     prev_forward = forward
-    # else :
-    #     forward_state = 0
-    #     prev_forward = forward
 
     if left*right*forward == 1:
         count +=1
@@ -158,9 +106,9 @@ def cmd_sig_control(msg):
     prev_right = right
     prev_forward = forward
     #Human suit
-    # aplay_cmd_pi = "aplay -D default:CARD=Device " # space must be there at end. 
+    aplay_cmd_pi = "aplay -D default:CARD=Device " # space must be there at end. 
     #Lenevo PC
-    aplay_cmd_pi = "aplay "
+    # aplay_cmd_pi = "aplay "
     # aplay_cmd_pi = "aplay "
     aplay_path = "~/Animal_Navigation/animal_motion_control/src/move_animal/scripts/"
     sounds = ["left.wav","front.wav","right.wav","stop.wav"]
@@ -186,7 +134,7 @@ def cmd_sig_control(msg):
 def listener():
     global AUDIO_WAIT_TIME_THRESHOLD
     #Human suit 
-    # subprocess.call("amixer -c 1 cset numid=6 30,30", shell=True)
+    subprocess.call("amixer -c 1 cset numid=6 30,30", shell=True)
     #lenevo pc
     subprocess.call("amixer set Master 100%", shell=True) 
 
