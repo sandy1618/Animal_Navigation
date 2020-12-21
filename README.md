@@ -3,13 +3,24 @@ git clone https://github.com/sandy1618/Animal_Navigation.git
 
 ## Dependencies : 
 ### Kinectic 
+Run catkin_make on the light_signal/ folder so that light_msg depedencies are installed.
+sudo apt-get install ros-kinetic-navigation
+sudo apt-get install ros-kinetic-joy ros-kinetic-joystick-drivers
+sudo apt-get install libgps-dev
+sudo apt-get install ros-kinetic-tf2-sensor-msgs
 
 ### Melodic 
+Run catkin_make on the light_signal/ folder so that light_msg depedencies are installed.
 sudo apt-get install ros-melodic-navigation
 sudo apt-get install ros-melodic-joy ros-melodic-joystick-drivers
+sudo apt-get install libgps-dev
+sudo apt-get install ros-melodic-tf2-sensor-msgs
+sudo apt-get install ros-melodic-map-server
+
 
 ## Main Packages at Work
 -gridmap2/ gridmap_pcl
+To make the occupancy grid map. But not used after saving it in map_server. 
 -animal_motion_control/ move_animal
 -light_signal_msg
 -animal_navigation 
