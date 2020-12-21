@@ -3,6 +3,7 @@
 
 float ANGLE_TOLERANCE=10;
 float DISTANCE_TOLERANCE=0.5;
+float WARNING_TOLERANCE = DISTANCE_TOLERANCE + 1.4 ; 
 
 void printCallback(const nav_msgs::OccupancyGrid::ConstPtr &msg)
 {
@@ -146,6 +147,8 @@ void setNowError()
 
 void computeSignalCommands()
 {
+    
+
     if (distance < DISTANCE_TOLERANCE)
     {
         ROS_INFO("GOAL_REACHED");
@@ -153,6 +156,13 @@ void computeSignalCommands()
     }
     else
     {
+        // Pre warning system based on distacne to generate audio signals for warn audio signals.
+        if (distance < WARNING_TOLERANCE){
+            cmd_sig.sound = 1 ;
+        }
+        else {
+            cmd_sig.sound = 0;
+        }
         if (fabs(nError.az) > ANGLE_TOLERANCE * D2R)
         {
 
@@ -177,7 +187,7 @@ void setZeroSignal()
     cmd_sig.right = 0;
     cmd_sig.forward = 0;
     cmd_sig.stop = 1;
-    cmd_sig.sound = 0;
+    // cmd_sig.sound = 0;
 }
 void setOneSignal()
 {   
@@ -188,7 +198,7 @@ void setOneSignal()
     cmd_sig.right = 1;
     cmd_sig.forward = 1;
     cmd_sig.stop = 0;
-    cmd_sig.sound = 0;
+    // cmd_sig.sound = 0;
 }
 
 void setRot()
@@ -203,7 +213,7 @@ void setRot()
         cmd_sig.right = 0;
         cmd_sig.forward = 0;
         cmd_sig.stop = 0;
-        cmd_sig.sound = 0;
+        // cmd_sig.sound = 0;
     }
     else
     {
@@ -216,7 +226,7 @@ void setRot()
         cmd_sig.right = 1;
         cmd_sig.forward = 0;
         cmd_sig.stop = 0;
-        cmd_sig.sound = 0;
+        // cmd_sig.sound = 0;
     }
 }
 
@@ -231,7 +241,7 @@ void setVel()
     cmd_sig.right = 0;
     cmd_sig.forward = 1;
     cmd_sig.stop = 0;
-    cmd_sig.sound = 0;
+    // cmd_sig.sound = 0;
 }
 
 void initialize(light_signal_msg::light_signal &cmd_sig)

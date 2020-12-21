@@ -70,6 +70,7 @@ def cmd_sig_control(msg):
     left = msg.left
     right = msg.right
     forward = msg.forward
+    sound = msg.sound
     time = msg.header.stamp.secs
     # rospy.loginfo(time)
     
@@ -150,6 +151,8 @@ def cmd_sig_control(msg):
         else:
             stop_state = 2
         
+
+    # State based approach for prewarning sound signal 
     # UPDATING PREV. STATES.  
     prev_left = left
     prev_right = right
