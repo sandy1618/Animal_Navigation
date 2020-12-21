@@ -121,6 +121,14 @@ roslaunch spatial_driver output_anpp_complete.launch
 
 ### Starting led controlerl 
 roslaunch move_animal move_animal_led_sig.launch
+#### Audio
+roslaunch move_animal move_animal_audio_sig.launch
+#### LED+AUDIO signal
+roslaunch move_animal move_animal_led_audio_sig.launch
+### LED+WARN Audio signal
+roslaunch move_animal move_animal_led_audio_sig.launch
+
+
 
 
 ### Laptop PC 
@@ -146,7 +154,6 @@ roslaunch move_animal rviz_display.launch
 #### Run Rosbag node. 
 roslaunch move_animal rosbag_record.launch
 
-
 ### Bash Alias 
 
 alias start='rostopic pub /path_ready std_msgs/Empty -1 && rostopic pub -l --once /state light_signal_msg/state '{header: auto,state: 1}''
@@ -163,3 +170,5 @@ scp dog@192.168.1.2:/home/dog/Animal_Navigation/data/tamura/* /home/sandy/Animal
 rosparam set /use_sim_time true
 # rosbag record excluding path
 rosbag record -a -x "/path"
+
+rosbag play -l --clock <bag_name> --topics /cmd_sig

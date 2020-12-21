@@ -1,0 +1,9 @@
+<launch>
+     
+      <arg name="AUDIO_WAIT_TIME_THRESHOLD" default="$(optenv AUDIO_WAIT_TIME_THRESHOLD 2)" /> 
+     <node pkg="move_animal" type="warn_audio_control_cmd_sig.py" name="warn_audio_control_cmd_sig_node">
+          <param name="AUDIO_WAIT_TIME_THRESHOLD" value="$(arg AUDIO_WAIT_TIME_THRESHOLD)" /> 
+     </node>
+     <node pkg="move_animal" type="led_control_cmd_sig.py" name="led_control_cmd_sig_node"/>
+
+</launch>

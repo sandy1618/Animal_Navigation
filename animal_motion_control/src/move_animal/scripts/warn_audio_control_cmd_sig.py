@@ -8,10 +8,12 @@ right = 0
 forward = 0 
 prev_left = 0
 prev_right = 0 
-prev_forward = 0 
+prev_forward = 0
+prev_sound = 0 
 left_state = 0 
 right_state = 0 
 forward_state = 0 
+sound_state = 0
 stop_state = 0
 count = 0
 # AUDIO_WAIT_TIME_THRESHOLD
@@ -20,21 +22,23 @@ now_time = 0
 counter = 0
     
 def cmd_sig_control(msg):
-    global left 
-    global right
-    global forward 
-    global prev_left
-    global prev_right 
-    global prev_forward 
-    global left_state 
-    global right_state 
-    global forward_state 
-    global stop_state 
-    global count
+    # global left 
+    # global right
+    # global forward 
+    # global prev_left
+    # global prev_right 
+    # global prev_forward 
+    # global left_state 
+    # global right_state 
+    # global forward_state 
+    # global stop_state 
+    # global count
     global prev_time
     global now_time
     global AUDIO_WAIT_TIME_THRESHOLD
-    global counter # for counting no. of times warning to be played. 
+    global counter # for counting no. of times warning to be played.
+    global prev_sound
+    global sound_state 
     
     left = msg.left
     right = msg.right
