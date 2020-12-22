@@ -100,7 +100,7 @@ class GetPath(State):
     def __init__(self):
         State.__init__(self, outcomes=['success'], input_keys=['waypoints'], output_keys=['waypoints'])
         # Create publsher to publish waypoints as pose array so that you can see them in rviz, etc.
-        self.poseArray_publisher = rospy.Publisher('/waypoints', PoseArray, queue_size=1)
+        self.poseArray_publisher = rospy.Publisher('/waypoints', PoseArray, queue_size=10, latch=True)
         #Publishing state messgae 
         # self.state_pub = rospy.Publisher('/state', state, queue_size=2)
         # Start thread to listen for reset messages to clear the waypoint queue

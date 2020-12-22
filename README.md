@@ -126,7 +126,7 @@ roslaunch move_animal move_animal_audio_sig.launch
 #### LED+AUDIO signal
 roslaunch move_animal move_animal_led_audio_sig.launch
 ### LED+WARN Audio signal
-roslaunch move_animal move_animal_led_audio_sig.launch
+roslaunch move_animal move_animal_led_warn_audio_sig.launch
 
 
 
