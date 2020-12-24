@@ -94,7 +94,7 @@ def cmd_sig_control(msg):
         forward_state = 0
         forward_prev_time  = time        
     elif prev_forward == 1 and msg.forward == 1:
-        forward_state = 2
+        forward_state = 0
         forward_now_time = time
         if (abs(forward_now_time - forward_prev_time) >= AUDIO_WAIT_TIME_THRESHOLD) and stop_state == 0:
             forward_state = 1
