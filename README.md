@@ -172,3 +172,4 @@ rosparam set /use_sim_time true
 rosbag record -a -x "/path"
 
 rosbag play -l --clock <bag_name> --topics /cmd_sig
+
