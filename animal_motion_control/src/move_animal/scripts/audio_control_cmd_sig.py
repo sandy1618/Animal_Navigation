@@ -15,8 +15,13 @@ forward_state = 0
 stop_state = 0
 count = 0
 # AUDIO_WAIT_TIME_THRESHOLD
-prev_time = 0
-now_time = 0
+
+left_prev_time = 0
+forward_prev_time = 0
+right_prev_time = 0
+left_now_time = 0
+forward_now_time = 0
+right_now_time = 0
 
 def cmd_sig_control(msg):
     global left 
@@ -30,9 +35,14 @@ def cmd_sig_control(msg):
     global forward_state 
     global stop_state 
     global count
-    global prev_time
-    global now_time
     global AUDIO_WAIT_TIME_THRESHOLD
+
+    global left_prev_time
+    global forward_prev_time
+    global right_prev_time
+    global left_now_time
+    global forward_now_time
+    global right_now_time
     
     left = msg.left
     right = msg.right
@@ -49,55 +59,56 @@ def cmd_sig_control(msg):
 
     if prev_left == 0 and msg.left == 1:
         left_state = 1   
-        prev_time  = time      
+        left_prev_time  = time      
     elif prev_left == 1 and msg.left == 0:
         left_state = 0
-        prev_time  = time        
+        left_prev_time  = time        
     elif prev_left == 1 and msg.left == 1:
-        left_state = 2
-        now_time = time
-        if (now_time - prev_time) == AUDIO_WAIT_TIME_THRESHOLD and stop_state == 0:
+        left_state = 0
+        left_now_time = time
+        if (abs(left_now_time - left_prev_time) >= AUDIO_WAIT_TIME_THRESHOLD) and stop_state == 0:
             left_state = 1
-            prev_time = time        
+            left_prev_time = time        
     else :
         left_state = 0
     
     if prev_right == 0 and msg.right == 1:
         right_state = 1   
-        prev_time  = time      
+        right_prev_time  = time      
     elif prev_right == 1 and msg.right == 0:
         right_state = 0
-        prev_time  = time        
+        right_prev_time  = time        
     elif prev_right == 1 and msg.right == 1:
-        right_state = 2
-        now_time = time
-        if (now_time - prev_time) == AUDIO_WAIT_TIME_THRESHOLD and stop_state == 0:
+        right_state = 0
+        right_now_time = time
+        if (abs(right_now_time - right_prev_time) >= AUDIO_WAIT_TIME_THRESHOLD) and stop_state == 0:
             right_state = 1
-            prev_time = time        
+            right_prev_time = time        
     else :
         right_state = 0
     
     if prev_forward == 0 and msg.forward == 1:
         forward_state = 1   
-        prev_time  = time      
+        forward_prev_time  = time      
     elif prev_forward == 1 and msg.forward == 0:
         forward_state = 0
-        prev_time  = time        
+        forward_prev_time  = time        
     elif prev_forward == 1 and msg.forward == 1:
         forward_state = 2
-        now_time = time
-        if (now_time - prev_time) == AUDIO_WAIT_TIME_THRESHOLD and stop_state == 0:
+        forward_now_time = time
+        if (abs(forward_now_time - forward_prev_time) >= AUDIO_WAIT_TIME_THRESHOLD) and stop_state == 0:
             forward_state = 1
-            prev_time = time        
+            forward_prev_time = time        
     else :
         forward_state = 0
-
+        
+    # Stop state logic
     if left*right*forward == 1:
         count +=1
         if count == 20 or count == 100:
             stop_state = 1
         else:
-            stop_state = 2
+            stop_state = 0
         
 
     # State based approach for prewarning sound signal 
