@@ -1,0 +1,4 @@
+waypoint_distance: 42.007537359885326 
+trajectory_distance: 48.414177441073214 
+TDR: 15.251167966122775 
+navigation_time: 108.86040222400001 

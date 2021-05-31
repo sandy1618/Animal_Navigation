@@ -1,0 +1,2 @@
+rosbagTimestamp,map_load_time,secs,nsecs,resolution,width,height,origin,position,x,y,z,orientation,x,y,z,w
+1606295379778499775,,1606291004,51471862,0.300000011921,146,113,,,-27.224698,75.717007,0.0,,0.0,0.0,0.0,1.0

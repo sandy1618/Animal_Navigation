@@ -193,54 +193,54 @@ with open(output_path, 'w') as f:
 
 
 # converting & appending the time into multiple format for simplification of functions later. 
-class Datetime_Dataframe:
-    def __init__(self, df: pd.DataFrame):
-        self.df = df.copy()
+# class Datetime_Dataframe:
+#     def __init__(self, df: pd.DataFrame):
+#         self.df = df.copy()
     
   
     
-    def time_col_concat(self,col1,col2,new_col_name):
-        if self.df[col1].dtype == 'int64':
-            self.df[col1]= self.df[col1].astype(str)
-        if self.df[col2].dtype == 'int64':
-            self.df[col2] = self.df[col2].astype(str)
-        temp = self.df[col1] + self.df[col2]
-        temp = temp.astype('int64')
-        try:
-            self.df.insert(1,new_col_name,temp)
-        except: 
-            pass
-        return self.df
+#     def time_col_concat(self,col1,col2,new_col_name):
+#         if self.df[col1].dtype == 'int64':
+#             self.df[col1]= self.df[col1].astype(str)
+#         if self.df[col2].dtype == 'int64':
+#             self.df[col2] = self.df[col2].astype(str)
+#         temp = self.df[col1] + self.df[col2]
+#         temp = temp.astype('int64')
+#         try:
+#             self.df.insert(1,new_col_name,temp)
+#         except: 
+#             pass
+#         return self.df
         
-    def time_diff(self, time_col, ref_time, new_col_name):
-        temp_nano = self.df[time_col] - ref_time
-        temp_milli = temp_nano*math.pow(10,-6)
-        temp = temp_nano*math.pow(10,-9)
-        try:
-            self.df.insert(2,new_col_name,temp)
-            self.df.insert(3,new_col_name+"milli",temp_milli)
-            self.df.insert(4,new_col_name+"nano",temp_nano)
-        except:
-            pass
-        return self.df
-sensor_time = "sensor_time"
-ref_time = start_time
-time_diff = "time_diff"
-time_convert_obj = Datetime_Dataframe(trajectory_df)
-new_trajectory_df=time_convert_obj.time_col_concat("secs","nsecs",sensor_time)
-new_trajectory_df=time_convert_obj.time_diff(sensor_time,ref_time,time_diff)
-new_trajectory_df.head(1)
-from scipy.spatial.transform import Rotation 
-euler_name = ["roll","pitch","yaw"]
-quat_name = ["x.1","y.1","z.1","w"]
+#     def time_diff(self, time_col, ref_time, new_col_name):
+#         temp_nano = self.df[time_col] - ref_time
+#         temp_milli = temp_nano*math.pow(10,-6)
+#         temp = temp_nano*math.pow(10,-9)
+#         try:
+#             self.df.insert(2,new_col_name,temp)
+#             self.df.insert(3,new_col_name+"milli",temp_milli)
+#             self.df.insert(4,new_col_name+"nano",temp_nano)
+#         except:
+#             pass
+#         return self.df
+# sensor_time = "sensor_time"
+# ref_time = start_time
+# time_diff = "time_diff"
+# time_convert_obj = Datetime_Dataframe(trajectory_df)
+# new_trajectory_df=time_convert_obj.time_col_concat("secs","nsecs",sensor_time)
+# new_trajectory_df=time_convert_obj.time_diff(sensor_time,ref_time,time_diff)
+# new_trajectory_df.head(1)
+# from scipy.spatial.transform import Rotation 
+# euler_name = ["roll","pitch","yaw"]
+# quat_name = ["x.1","y.1","z.1","w"]
 
-quat_df = new_trajectory_df.loc[: , "x.1":"w"]
-quat_df
-rot = Rotation.from_quat(quat_df)
-rot_euler = rot.as_euler('xyz', degrees=True)
-euler_df = pd.DataFrame(data=rot_euler, columns=euler_name)
-euler_trajectory_df=new_trajectory_df.join(euler_df)
-euler_trajectory_df.describe()
-euler_trajectory_df.tail()
-euler_trajectory_df.plot(kind="scatter" , x="time_diff",y="yaw")
-plt.show()
+# quat_df = new_trajectory_df.loc[: , "x.1":"w"]
+# quat_df
+# rot = Rotation.from_quat(quat_df)
+# rot_euler = rot.as_euler('xyz', degrees=True)
+# euler_df = pd.DataFrame(data=rot_euler, columns=euler_name)
+# euler_trajectory_df=new_trajectory_df.join(euler_df)
+# euler_trajectory_df.describe()
+# euler_trajectory_df.tail()
+# euler_trajectory_df.plot(kind="scatter" , x="time_diff",y="yaw")
+# plt.show()
